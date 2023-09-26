@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: transparent;
+}
+
+header .container {
+    margin: 0px 170px;
+}
+
+header .header-p {
+    padding: 20px 0px;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .navbar .logo {
+    flex: 3;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: larger;
+    color: white;
+}
+
+header .navbar .logo span {
+    font-size: 35px;
+    color: #ff9900;
+}
+
+header .navbar .nav {
+    flex: 2;
+}
+
+header .navbar .nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navbar .nav ul a {
+    color: white;
+    font-size: 18px;
+}
+
+header .navbar .icon {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: end;
+}
+
+header .navbar .icon span {
+    color: white;
+    font-size: 20px;
+}
+
+header .navbar .icon .search input[type=text] {
+    width: 136px;
+    height: 46px;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 5px;
+}
+
+header .navbar .icon .search {
+    float: right;
+    margin: 7px;
+}
+
+header .navbar .icon .search input::placeholder {
+    padding-left: 28px;
+    color: white;
+    font-size: 16px;
+}
+
+header .navbar .icon .search .search button {
+    background-color: #0074D9;
+    color: #f2f2f2;
+    float: right;
+    padding: 5px 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* =======================homepage============================== */
+
+.homepage {
+    position: relative;
+    z-index: -1;
+}
+
+.homepage .back-video {
+    width: 100%;
+    height: auto;
+}
+
+.homepage::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.314);
+    z-index: 1;
+}
+
+.homepage .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: 2;
+    padding: 400px 170px;
+}

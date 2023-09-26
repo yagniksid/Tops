@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="01_form_validation.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <!-- Heading -->
+            <h1>Registration for Job</h1>
+            <form action="#">
+                <!-- FirstName -->
+                <div class="row">
+                    <div class="col1"><label for="fname">First Name</label></div>
+                    <div class="col"><input type="text" name="FirstName" id="fname" placeholder="Enter First Name"
+                            onblur="return check_blank_value(this, 'msg')"
+                            onkeyup="return name_expression(this, 'msg')"></div>
+                    <div class="col"><span id="msg"></span></div>
+                </div>
+                <!-- MiddleName -->
+                <div class="row">
+                    <div class="col1"><label for="mname">Middle Name</label></div>
+                    <div class="col"><input type="text" name="MiddleName" id="mname" placeholder="Enter Middle Name"
+                            onblur="return check_blank_value(this, 'msg1')"
+                            onkeyup="return name_expression(this, 'msg1')"></div>
+                    <div class="col"><span id="msg1"></span></div>
+                </div>
+                <!-- LastName -->
+                <div class="row">
+                    <div class="col1"><label for="lname">Last Name</label></div>
+                    <div class="col"><input type="text" name="LastName" id="lname" placeholder="Enter Last Name"
+                            onblur="return check_blank_value(this, 'msg2')"
+                            onkeyup="return name_expression(this, 'msg2')"></div>
+                    <div class="col"><span id="msg2"></span></div>
+                </div>
+                <!-- Address -->
+                <div class="row">
+                    <div class="col1"><label for="Add">Address</label></div>
+                    <div class="col"><textarea name="Address" id="add" cols="30" rows="4" placeholder="Enter Address"
+                            onblur="return check_blank_value(this, 'msg3')" onkeyup="return addresslength()"
+                            maxlength="250"></textarea></div>
+                    <div class="col"><span id="msg3"></span></div>
+                </div>
+                <!-- Date Of Birth -->
+                <div class="row">
+                    <div class="col1"><label for="DOB">Date of Birth</label></div>
+                    <div class="col"><input type="date" name="DOB" id="dob"
+                            onblur="return check_blank_value(this, 'msg4')"></div>
+                    <div class="col"><span id="msg4"></span></div>
+                </div>
+                <!-- Gender -->
+                <div class="row">
+                    <div class="col1"><label for="Gender">Gender</label></div>
+                    <div class="col"><input type="radio" name="Gender" id="male"
+                            onblur="return gender_check(this, 'msg5')"><label for="male">Male</label><input type="radio"
+                            name="Gender" id="female" onblur="return gender_check(this, 'msg5')"><label
+                            for="female">Female</label></div>
+                    <div class="col"><span id="msg5"></span></div>
+                </div>
+                <!-- Experience -->
+                <div class="row">
+                    <div class="col1"><label for="Experience">Experience</label></div>
+                    <div class="col"><select name="Experience" id="exp" onblur="return exp_check(this, 'msg6')">
+                            <option value="-1"> --- Select --- </option>
+                            <option value=""> Front End</option>
+                            <option value="">Back End</option>
+                            <option value="">Fullstack</option>
+                            <option value="">Mernstack</option>
+                            <option value="">Mobile Devlopment</option>
+                            <option value="">Cyber Security</option>
+                            <option value="">Software Testing</option>
+                            <option value="">Hardware Networking</option>
+                            <option value="">Digital Marketing</option>
+                        </select> </div>
+                    <div class="col"><span id="msg6"></span></div>
+                </div>
+                <!-- Mobile No -->
+                <div class="row">
+                    <div class="col1"><label for="Mobile">Mobile No</label></div>
+                    <div class="col"><input type="text" name="Mobile" id="mob" placeholder="Enter Mobile No"
+                            onblur="return check_blank_value(this, 'msg7')"
+                            onkeyup="return num_expression(this, 'msg7')" maxlength="10"></div>
+                    <div class="col"><span id="msg7"></span></div>
+                </div>
+                <!-- Email -->
+                <div class="row">
+                    <div class="col1"><label for="Email">Email id</label></div>
+                    <div class="col"><input type="text" name="Email" id="email" placeholder="Enter email"
+                            onblur="return check_blank_value(this, 'msg8')" onkeyup="return email_ex()"></div>
+                    <div class="col"><span id="msg8"></span></div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="col1"><label for="Password">Create Password</label></div>
+                    <div class="col"><input type="password" name="Password" id="pass" placeholder="Enter Password"
+                            onblur="return check_blank_value(this, 'msg9')" onkeyup="return pass_ex()"></div>
+                    <div class="col"><span id="msg9"></span></div>
+                </div>
+                <!-- Show Password -->
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"><input type="checkbox" name="Spass" onclick="showpass()"><label for="Spass">Show
+                            Password</label></div>
+                    <div class="col"></div>
+                </div>
+                <!-- Button -->
+                <div class="row">
+                    <div class="col2"><button type="submit" onclick="return check_form()">Register</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="01_form_validation.js"></script>
+</body>
+
+</html>

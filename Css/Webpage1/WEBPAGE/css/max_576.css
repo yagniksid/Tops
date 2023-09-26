@@ -1,0 +1,228 @@
+@media (max-width:576px) {
+    header{
+        display: none;
+    }
+/* =======================homepage================= */
+
+    .homepage .nav-bar .nav ul {
+        display: none;
+    }
+    .homepage .toglebtn{
+        display: block;
+    }
+    .homepage .homepage-p {
+        padding: 8px 0px;
+    }
+    .homepage .page {
+        margin: 0px 30px;
+    }
+    .homepage .page h1 {
+        width: 100%;
+        font-size: 30px;
+    }
+    .homepage .page h3 {
+       font-size: 17px;
+    }
+    .homepage .page {
+        padding-top: 25px;
+    }
+    .homepage .grid-box {
+        padding-top: 50px;
+        margin: 0px 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 90%;
+    }
+/* -----------------------------info---------------------------- */
+
+.info {
+    margin: 0px 30px;
+    padding: 70px 0px;
+}
+
+.info .info-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* ------------------------section-3--------------------- */
+.section-3 .details {
+    display: flex;
+    flex-direction: column;
+}
+.section-3 .details .left-side h1 {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    font-size: 30px;
+    width: 60%;
+}
+.section-3 .details .right-side .right-box {
+    margin: 50px 0px;
+}
+.section-3 .details .right-side .box2 .text {
+    display: flex;
+    padding-top: 20px;
+    gap: 30px;
+    align-items: center;
+}
+
+/* -------------------------hero image------------------------ */
+.hero-image .text {
+    padding-left: 30px;
+    padding-top: 70px;
+}
+.hero-image .text h1 {
+    font-size: 40px;
+}
+.hero-image .text h3 {
+    font-size: 18px;
+}
+
+/* ----------------------------SECION-4------------------------ */
+.section-4 .container {
+    margin: 0px 30px;
+}
+.section-4 .section-p {
+    padding: 50px 0px;
+}
+.section-4 .grid-trust {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+.section-4 .grid-trust .trust-box h1 {
+    font-size: 30px;
+}
+.section-4 .grid-trust .sub-box h1 {
+    font-size: 40px;
+
+}
+.section-4 .grid-trust .sub-box h4 {
+    font-size: 20px;
+}
+/* ----------------------------section 5----------------------- */
+.section-5 .container {
+    margin: 0px 30px;
+}
+.section-5 .sec-p {
+    padding: 30px 0px;
+}
+.section-5 .iformation {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-5 .iformation .content .content-info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+/* ---------------------------section 6--------------------- */
+.section-6 .text {
+    width: 95%;
+    padding-left: 10px;
+}
+.section-6 .text h3 {
+    font-size: 15px;
+}
+.section-6 .text h1 {
+    font-size: 40px;
+    line-height: 40px;
+}
+.section-6 .text p {
+    font-size: 15px;
+    line-height: 30px;
+}
+/* ------------------------section-7---------------------- */
+.section-7 .container {
+    margin: 0px 30px;
+}
+.section-7 .sec-p {
+    padding: 50px 0px;
+}
+.section-7 .grid-lay {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* ----------------------secti-8----------------------------- */
+
+.section-8 .container {
+    margin: 0px 30px;
+}
+.section-8 .sec-p {
+    padding: 30px 0px;
+}
+.section-8 .get-grid .left-side .user {
+    font-size: 60px;
+    color: #03c1be;
+}
+.section-8 .get-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+.section-8 .get-grid .left-side .text h1 {
+    font-size: 40px;
+}
+.section-8 .get-grid .left-side .text h3 {
+    font-size: 18px;
+}
+.section-8 .get-grid .right-side {
+    text-align: left;
+}
+/* ================================section 9================================= */
+
+.section-9 .container {
+    margin: 0px 40px;
+}
+.section-9 .sec-p {
+    padding-top: 70px;
+}
+.section-9 .testimonials .user-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    row-gap: 70px;
+}
+
+.section-9 .testimonials .text h3 {
+    font-size: 15px;
+}
+.section-9 .testimonials .text h1 {
+    font-size: 40px;
+}
+.section-9 .testimonials .user-box .user img {
+    top: -20%;
+    height: 100px;
+    width: 100px;
+    left: 35%;
+}
+.section-9 .testimonials .user-box .user p {
+    padding: 30px 0px 10px 0px;
+    color: #6e7d7c;
+}
+
+/* =================================footer============================== */
+
+footer .foot-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+footer .foot-grid .subfoot .links {
+    display: flex;
+    gap: 220px;
+}
+
+/* ===================================section 10==================== */
+
+.section-10 .end-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+}

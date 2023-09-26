@@ -1,0 +1,61 @@
+Assignment: Bootstrap Basic & Advance
+
+Q: What are the advantages of Bootstrap? 
+A: The Benefits of Using Bootstrap Framework
+
+Easy to prevent repetitions among multiple projects. Responsive design that can be used to adapt screen sizes and choose what shows and what doesn't on any given device. Maintaining consistency among projects when using multiple developer teams.
+
+Q: What is a Bootstrap Container, and how does it work?
+A: In Bootstrap, container is used to set the content's margins dealing with the responsive behaviors of your layout. It contains the row elements and the row elements are the container of columns (known as grid system). The container class is used to create boxed content.
+
+Q: What are the default Bootstrap text settings?
+A: Bootstrap 5 uses a default font-size of 1rem (16px by default), and its line-height is 1.5. In addition, all <p> elements have margin-top: 0 and margin-bottom: 1rem (16px by default).
+
+Q: What do you know about the Bootstrap Grid System?
+A: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, six default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
+
+Q: What is the difference between Bootstrap 4 and Bootstrap 5
+A:  Basis Of			Bootstrap 4				  Bootstrap 5
+(1) Grid System			It has 5 tier (xs, sm, md, lg, xl).	  It has 6 tier (xs, sm, md, lg, xl, xxl).
+(2) Color			It has limited colors.			  Extra colors added with the looks, A card improved color palette. there are various shades available to choose.
+(3) Jquery			It has jqeury and all related plugins.	  Jquery is removed and switched to vanilla JS with some working plugins.
+(4) Internet Explorer		Bootstrap 4 supports both IE 10 and 11.   Bootstrap 5 doesn’t support IE 10 and 11.
+(5) Form Elements		Radio buttons, checkboxes have 		  The look of form elements will not change, on different OS or browser.The forms can be customized and form 
+				different look in different OS and 	  controls can be added, they would not depend on browser. 
+				browsers.The form uses whatever default
+				browsers provide.
+(6)Utilities API		We cannot modify utilities in 		  Bootstrap 5 gave freedom to modify and also create our own utility
+				bootstrap 4
+(7)Bootstrap Icons		Bootstrap 4 doesn’t have its own SVG 	  Bootstrap 5 have its own SVG icons
+				icons, we have to use font-awesome 
+				for icons.
+
+Q: What is a Button Group, and what is the class for a basic Button Group? 
+A: “Button Groups” in Bootstrap is a class of name “btn-group” which is used to create a series of buttons in groups (without spaces) vertically or horizontally. Syntax: This is the basic syntax of the button group class where each button has its own class of “btn”.
+
+Q: How can you use Bootstrap to make thumbnails?
+A: Step 1: Include Bootstrap and jQuery CDN into the <head> tag before all other stylesheets to load our CSS.
+
+   Step 2: Add <div> tag in the HTML body with class row. In that <div> create four div sections to create four images.
+
+   Step 3: Add “col-sm-6” and “col-md-3” to four div sections which creates webpage responsive.
+
+   Step 4: Add <a> tag with class value thumbnail to define the link of the image in the next line.
+
+Q: In Bootstrap 4, what is flexbox? 
+A: Flexbox. The biggest difference between Bootstrap 3 and Bootstrap 4 is that Bootstrap 4 now uses flexbox, instead of floats, to handle the layout. The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning. 
+
+Q: How can one create an alert in Bootstrap? 
+A: 	<div class="alert alert-warning">
+  		<strong>Warning!</strong> Indicates a warning that might need attention.
+  	</div>
+
+Q: What is a bootstrap card and how would you create one?
+A: 	<div class="card" style="width: 18rem;">
+  	   <img src="..." class="card-img-top" alt="...">
+  	    <div class="card-body">
+    	      <h5 class="card-title">Card title</h5>
+    		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    		  <a href="#" class="btn btn-primary">Go somewhere</a>
+ 	    </div>
+	</div>

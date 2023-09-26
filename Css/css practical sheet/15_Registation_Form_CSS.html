@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(24, 245, 49);
+        }
+        .regform{
+            height: 800px;
+            max-width:50%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+            margin: 20px auto;
+            display: grid;
+            place-content: center;
+        }
+        h1{
+            text-align: center;
+            padding: 20px 0px;
+            font-size: 40px;
+        }
+        .row{
+            display: flex;
+            padding: 4px;
+            gap: 55px;
+        }
+        .row .col-1{
+            flex: 1;
+            text-align: center;
+        }
+        .row .col-2{
+            flex: 3;
+        }
+        .row .col-2 input{
+            height: 40px;
+            width: 320px;
+        }
+        .row .go-1{
+        flex: 1;
+        }
+        .row .go-2{
+            flex: 3;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        .row .l-1{
+            flex: 1;
+        }
+        .row .l-2{
+            flex: 3;
+            margin-top: 5px;
+            padding-bottom: 5px;
+        }
+        .row .l-2 select{
+            height: 40px;
+            width: 320px;
+            border-radius: 5px;
+        }
+        .row .check{
+            flex: 2;
+        }
+        button{
+            height: 35px;
+            width: 55%;
+            margin-left: 120px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        } 
+        input{
+            border-radius: 5px;
+            border: 1px solid #8f8f8f;
+            padding-left: 7px;
+        }
+        .col-2 textarea{
+            height: 100px;
+            width: 275px;
+        }
+      
+        label{
+            display: flex;
+            justify-content: end;
+            text-align: end;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div class="regform">
+        <h1>Registation for Job</h1>
+            <!-- 1st row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Fist Name</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" placeholder="Enter First Name">
+                </div>
+            </div>
+            <!-- end 01st row-->
+
+            <!-- 2nd row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Middle Name</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" placeholder="Enter Middle Name">
+                </div>
+            </div>
+            <!-- end 02nd row -->
+
+            <!-- 03rd row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Last Name</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" placeholder="Enter Last Name">
+                </div>
+            </div>
+            <!-- end 03rd row -->
+
+            <!-- 04th row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Address</label>
+                </div>
+                <div class="col-2">
+                    <textarea name="" id="" cols="45" rows="07" placeholder="Enter Address"></textarea>
+                </div>
+            </div>
+            <!-- end 04th row -->
+
+            <!-- 05th row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Date of Birth</label>
+                </div>
+                <div class="col-2">
+                    <input type="date">
+                </div>
+            </div>
+            <!-- end 05th row -->
+
+            <!-- 06th row -->
+            <div class="row">
+                <div class="go-1">
+                    <label for="">Gender</label>
+                </div>
+                <div class="go-2">
+                    <input type="radio" name="radio1">
+                    <span>Male</span>
+                    <input type="radio" name="radio1">
+                    <span>Female</span>
+                </div>
+            </div>
+            <!-- end 06th row -->
+
+            <!-- 07th row -->
+            <div class="row">
+                <div class="l-1">
+                    <label for="">Experiance</label>
+                </div>
+                <div class="l-2">
+                    <select name="" id="">
+                        <option value="">---Select---</option>
+                        <option value="">Front End Development</option>
+                        <option value="">Back End Development</option>
+                        <option value="">React JS Development</option>
+                        <option value="">Full Stack</option>
+                    </select>
+                </div>
+            </div>
+            <!-- end 07th row -->
+
+            <!-- 08th row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Mobile No</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" placeholder="Enter Mobile No">
+                </div>
+            </div>
+            <!-- end 08th row -->
+
+            <!-- 09th row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Email id</label>
+                </div>
+                <div class="col-2">
+                    <input type="email" placeholder="Enter E-mail">
+                </div>
+            </div>
+            <!-- end 09th row -->
+
+            <!-- 10th row -->
+            <div class="row">
+                <div class="col-1">
+                    <label for="">Create Password</label>
+                </div>
+                <div class="col-2">
+                    <input type="password" placeholder="Enter Password">
+                </div>
+            </div>
+            <!-- end 10th row -->
+
+            <!-- 11th row -->
+            <div class="row">
+                <div class="go-1"></div>
+                <div class="go-2">
+                    <input type="checkbox">
+                    <span>Show Password</span>
+                </div>
+            </div>
+            <!-- end 11th row -->
+
+            <!-- 12th row -->
+            <div class="row">
+                <div class="check">
+                    <button>Register</button>
+                </div>
+            </div>
+            <!-- end 12th row -->
+
+        </div>
+        <!-- end regform -->
+    </form>
+    <!-- end form -->
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<style>
+    .regform {
+        border: 2px solid black;
+        width: 60%;
+    }
+</style>
+
+<body>
+    <div class="container regform p-4">
+        <h1 class="pb-3">New user registration</h1>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="fname">First name</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <input class="form-control" type="text" placeholder="Enter Firstname">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="lname">Last name</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <input class="form-control" type="text" placeholder="Enter lastname">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="dob">Date</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <input class="form-control" type="date">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="gen">Gender</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <div class="form-check-inline">
+                    <input type="radio" name="gen" class="form-check-input">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" name="gen" class="form-check-input">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="Adress" class="form-label">Adress</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <textarea name="Adress" id="" cols="30" rows="2" placeholder="Enter Adress"
+                    class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="Adress" class="form-label">City</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <select name="" id="" class="form-select">
+                    <option value="">---select---</option>
+                    <option value="">Surat</option>
+                    <option value="">Ahemdabadd</option>
+                    <option value="">Vadodra</option>
+                    <option value="">Rajkot</option>
+                </select>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="Email">Email</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <div class="input-group">
+                    <input class="form-control" type="text">
+                    <label for="" class="input-group-text">.com</label>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="pass">Password</label>
+            </div>
+            <div class="col-lg-10 col-12">
+                <input class="form-control" type="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-5 col-12">
+            </div>
+            <div class="col-lg-3 col-12">
+                <input type="checkbox">
+                <label class="form-label" for="pass">Show Password</label>
+            </div>
+            <div class="col-lg-10 col-12">
+            </div>
+        </div>
+        <div class="row d-flex align-items-center py-1">
+            <div class="col-lg-2 col-12">
+                <label class="form-label" for="fname"></label>
+            </div>
+            <div class="col-lg-3 col-12">
+            </div>
+            <div class="col-lg-4 col-12">
+                <button class="btn btn-outline-primary">Register</button>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function myfunction(arr) {
+            let countObject = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                let value = arr[i];
+
+
+                if (!countObject.hasOwnProperty(value)) {
+                    countObject[value] = 1;
+                } else {
+
+                    countObject[value]++;
+                }
+            }
+
+            return countObject;
+        }
+
+        let numbersArray = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+        let countObject = myfunction(numbersArray);
+        console.log(countObject);
+    </script>
+</body>
+
+</html>

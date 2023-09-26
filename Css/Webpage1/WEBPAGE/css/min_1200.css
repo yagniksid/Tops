@@ -1,0 +1,58 @@
+@media (min-width:1200px) {
+    /* ================================section 9================================= */
+
+    .section-9 .container {
+        margin: 0px 100px;
+    }
+
+    .section-9 .sec-p {
+        padding-top: 100px;
+    }
+
+    .section-9 .testimonials .user-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .section-9 .testimonials .text h3 {
+        font-size: 18px;
+    }
+
+    .section-9 .testimonials .text h1 {
+        font-size: 50px;
+    }
+
+    .section-9 .testimonials .user-box .user img {
+        top: -29%;
+        left: 34%
+    }
+
+    .section-9 .testimonials .user-box .user p {
+        padding: 30px 0px 10px 0px;
+        color: #6e7d7c;
+    }
+
+    /* =================================footer============================== */
+
+    footer .foot-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    footer .foot-grid .subfoot .links {
+        display: flex;
+        gap: 90px;
+    }
+
+    /* ===================================section 10==================== */
+
+    .section-10 .end-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}

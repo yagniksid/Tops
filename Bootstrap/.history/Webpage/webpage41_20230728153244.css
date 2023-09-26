@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ================================= */
+.homepage {
+    position: relative;
+}
+
+.homepage .topheader {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 111;
+}
+
+.homepage .headerval {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    z-index: 111;
+}
+
+.homepage .topheader .search {
+    height: 40px;
+    width: 40px;
+    background-color: #FFA41F;
+    display: grid;
+    place-content: center;
+    color: white;
+}
+
+.homepage .topheader a {
+    color: white;
+}
+
+.homepage .topheader ul span {
+    color: #FFA41F;
+}
+
+.homepage .topheader ul li {
+    color: white;
+}
+
+.homepage .navbar .navbar-nav {
+    display: flex !important;
+    justify-content: end;
+    width: 100%;
+}
+
+.homepage .navbar .navbar-nav a {
+    color: white;
+}
+
+.homepage .navbar .navbar-nav .dropdown-menu a {
+    color: black;
+}
+
+.homepage .banner1 {
+    background: url(image/banner1.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner2 {
+    background: url(image/banner2.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner3 {
+    background: url(image/banner3.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner4 {
+    background: url(image/banner4.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .sm-change {
+    letter-spacing: 5px;
+}
+
+.homepage .bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: unset;
+}
+
+.homepage .m-title {
+    background-color: #FFA41F;
+    padding: 5px 20px;
+}
+
+.homepage .readbtn,
+.contbtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.515);
+    border: 1px solid transparent;
+    font-weight: bold;
+    color: white;
+    transition: 0.2s ease all;
+}
+
+.homepage button span {
+    color: #FFA41F;
+}
+
+.homepage button:hover {
+    color: #FFA41F;
+}
+
+.owl-theme .owl-nav {
+    position: relative;
+}
+
+.owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    top: -164px;
+    left: -45px;
+    background-color: rgb(178, 171, 171) !important;
+    height: 35px;
+    width: 35px;
+    border-radius: 50% !important;
+    border: 2px solid black !important;
+}
+
+.owl-theme .owl-nav .owl-next {
+    position: absolute;
+    top: -164px;
+    right: -45px;
+    background-color: rgb(178, 171, 171) !important;
+    height: 35px;
+    width: 35px;
+    border-radius: 50% !important;
+    border: 2px solid black !important;
+}
+
+.servicesSec .icons {
+    color: #FFA41F;
+    font-size: 50px;
+}
+
+.goodTest .btnOrange {
+    background-color: #FFA41F;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.goodTest .btnOrange:hover {
+    background-color: #09428c;
+}
+
+.specialMenu {
+    background-color: #141414;
+}
+
+.specialMenu .list-group a {
+    color: white;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.specialMenu .list-group-item {
+    border-color: transparent;
+}
+
+.specialMenu .list-group-item.active {
+    background-color: #FFA41F !important;
+    border-color: transparent;
+    position: relative;
+}
+
+.specialMenu .list-group-item.active::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #FFA41F;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 117px;
+    bottom: -9px;
+}
+
+.specialMenu .menulist img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    outline: 2px solid white;
+    outline-offset: 5px;
+}
+
+.specialMenu .menulist {
+    display: flex;
+    gap: 40px;
+}
+
+.specialMenu .menulist .amt h4 {
+    color: #FFA41F;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.specialMenu .menulist .text p {
+    font-size: 14px;
+}
+
+.specialMenu .tab-content {
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+@media (max-width:576px) {
+    .specialMenu .menulist {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

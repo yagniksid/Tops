@@ -1,0 +1,303 @@
+@media (min-width:992px) {
+    header {
+        display: block;
+    }
+
+    header .nav-bar .contact ul {
+        display: flex;
+        gap: 10px;
+    }
+
+    header .nav-bar .contact {
+        flex: 0.5;
+    }
+
+    /* header .nav-bar .contact ul {
+        font-size: 12px;
+    }
+
+    header .nav-bar .contact ul i {
+        font-size: 15px;
+    } */
+
+    /* =======================homepage================= */
+
+    .homepage .nav-bar .nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: end;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .homepage .toglebtn {
+        display: none;
+    }
+
+    .homepage .homepage-p {
+        padding: 42px 0px;
+    }
+
+    .homepage .page {
+        margin: 0px 100px;
+    }
+
+    .homepage .page h1 {
+        padding-bottom: 30px;
+        width: 70%;
+        font-size: 58px;
+        color: white;
+    }
+
+    .homepage .page h3 {
+        padding-bottom: 20px;
+        padding-top: 30px;
+        color: white;
+    }
+
+    .homepage .page {
+        padding-top: 50px;
+    }
+
+    .homepage .grid-box {
+        padding-top: 100px;
+        margin: 0px 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 90%;
+    }
+
+    /* -----------------------------info---------------------------- */
+
+    .info {
+        margin: 0px 100px;
+        padding: 80px 0px;
+    }
+
+    .info .info-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+
+    /* ------------------------section-3--------------------- */
+    .section-3 .details {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section-3 .details .left-side h1 {
+        padding-top: 300px;
+        padding-left: 60px;
+        font-size: 50px;
+        width: 60%;
+        color: white;
+    }
+
+    .section-3 .details .right-side .right-box {
+        margin: 120px 50px;
+    }
+
+    .section-3 .details .right-side .box2 .text {
+        display: flex;
+        padding-top: 20px;
+        gap: 30px;
+        align-items: center;
+    }
+
+    /* -------------------------hero image------------------------ */
+    .hero-image .text {
+        padding-left: 70px;
+        padding-top: 550px;
+    }
+
+    .hero-image .text h1 {
+        font-size: 45px;
+    }
+
+    .hero-image .text h3 {
+        font-size: 24px;
+    }
+
+    /* ----------------------------SECION-4------------------------ */
+    .section-4 .container {
+        margin: 0px 120px;
+    }
+
+    .section-4 .section-p {
+        padding: 100px 0px;
+    }
+
+    .section-4 .grid-trust {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .section-4 .grid-trust .trust-box h1 {
+        font-size: 40px;
+    }
+
+    .section-4 .grid-trust .sub-box h1 {
+        font-size: 55px;
+
+    }
+
+    .section-4 .grid-trust .sub-box h4 {
+        font-size: 24px;
+    }
+
+    /* ----------------------------section 5----------------------- */
+    .section-5 .container {
+        margin: 0px 100px;
+    }
+
+    .section-5 .sec-p {
+        padding: 80px 0px;
+    }
+
+    .section-5 .iformation {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section-5 .iformation .content .content-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+
+    /* ---------------------------section 6--------------------- */
+    .section-6 .text {
+        width: 52%;
+    }
+
+    .section-6 .text h3 {
+        font-size: 15px;
+    }
+
+    .section-6 .text h1 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .section-6 .text p {
+        font-size: 18px;
+        line-height: 33Px;
+    }
+
+    /* ------------------------section-7---------------------- */
+    .section-7 .container {
+        margin: 0px 100px;
+    }
+
+    .section-7 .sec-p {
+        padding: 80px 0px;
+    }
+
+    .section-7 .grid-lay {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-7 .grid-lay .lay ul {
+        gap: 30px;
+        top: 65%;
+        padding: 8px 0px;
+    }
+
+    /* ----------------------secti-8----------------------------- */
+
+    .section-8 .container {
+        margin: 0px 100px;
+    }
+
+    .section-8 .sec-p {
+        padding: 80px 0px;
+    }
+
+    .section-8 .get-grid .left-side .user {
+        font-size: 80px;
+        color: #03c1be;
+    }
+
+    .section-8 .get-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .section-8 .get-grid .left-side .text h1 {
+        font-size: 50px;
+    }
+
+    .section-8 .get-grid .left-side .text h3 {
+        font-size: 20px;
+    }
+
+    .section-8 .get-grid .right-side {
+        text-align: right;
+    }
+
+    /* ================================section 9================================= */
+
+    .section-9 .container {
+        margin: 0px 70px;
+    }
+
+    .section-9 .sec-p {
+        padding-top: 100px;
+    }
+
+    .section-9 .testimonials .user-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .section-9 .testimonials .text h3 {
+        font-size: 18px;
+    }
+
+    .section-9 .testimonials .text h1 {
+        font-size: 50px;
+    }
+
+    .section-9 .testimonials .user-box .user img {
+        top: -23%;
+        height: 100px;
+        width: 100px;
+        left: 32%
+    }
+
+    .section-9 .testimonials .user-box .user p {
+        padding: 30px 0px 10px 0px;
+        color: #6e7d7c;
+    }
+
+    /* =================================footer============================== */
+
+    footer .foot-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer .foot-grid .subfoot .links {
+        display: flex;
+        gap: 90px;
+    }
+
+    /* ===================================section 10==================== */
+
+    .section-10 .end-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}

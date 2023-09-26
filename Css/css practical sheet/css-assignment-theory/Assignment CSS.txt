@@ -1,0 +1,97 @@
+Assginment: Module2: CSS and CSS3
+
+
+Q: What are the benefits of using CSS? 
+A: With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out,
+what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
+
+Q: What are the disadvantages of CSS? 
+A: There could be cross-browser issues while using CSS.
+  -There are multiple levels of CSS such as CSS, CSS 2, CSS 3. This can create confusion for non-developers and beginners.
+
+Q: What is the difference between CSS2 and CSS3?
+A: CSS3 is split into many various documents known as Modules. each module adds new capability or extends options outlined in
+   CSS2 over conserving backward compatibility. Work on CSS3 started around the time of publication of the initial CSS2 recommendation.
+  -The CSS3 version supports more browsers than CSS2.
+  -CSS3 introduces several new selectors. Those new selectors square measure largely in an exceeding type of pseudo-elements and pseudo-categories.
+
+Q: Name a few CSS style components.
+A: Selector: class name, id name or element name that is target
+  -Attribute: name of the attribute you want to style for example border, color, background, position etc.
+  -Value of Property: value that will be assigned to attribute.
+
+Q: What do you understand by CSS opacity?
+A: The opacity CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden,
+   and is the opposite of transparency.
+
+Q: How can the background color of an element be changed? 
+A: Use the CSS background-color property. Set it to the color name or code you want and place it inside a style attribute.
+
+Q: How can image repetition of the backup be controlled? 
+A: To control the repetition of an image in the background, use the background-repeat property.
+
+Q: What is the use of the background-position property? 
+A: The background-position property sets the starting position of a background image.
+
+Q: Which property controls the image scroll in the background? 
+A: The background-attachment property sets whether a background image scrolls with the rest of the page, or is fixed.
+
+Q: Why should background and color be used as separate properties? 
+A: There are two reasons behind this:
+  -It enhances the legibility of style sheets. The background property is a complex property in CSS, and if it is combined with color,
+   the complexity will further increase.
+  -Color is an inherited property while the background is not. So this can make confusion further.
+
+Q: How to center block elements using CSS1? 
+A: To centrally align the block elements, we can simply make use of the <center> tag.
+
+Q: How to maintain the CSS specifications? 
+A: The CSS specifications are maintained by the World Wide Web Consortium (W3C).
+  -The Specification also specify how stylesheets can be included in your web document and how to target specific media e.g print or screen.
+  -The CSS Specification prior to CSS3 was a single Specification, CSS3 on the other hand is divided into Modules which are 
+   Independent Specifications that can be worked on by different     author(s) at different paces, that's why we have Selector Level 3 Specification,
+   CSS Color 4, CSS Backgrounds and so on. Some of these modules are revisions of CSS2.1, and some are newly created, but all fall under the banner of CSS3.
+
+Q: What are the ways to integrate CSS as a web page? 
+A: CSS may be added to HTML in three different ways. To style a single HTML element on the page, use Inline CSS in a style attribute.
+   By adding CSS to the head section of our HTML document, we can embed an internal stylesheet. We can also connect to an 
+   external stylesheet that separates our CSS from our HTML. 
+
+Q: What is embedded style sheets? 
+A: There are three kinds of styles. Inline styles are those that are used as part of the HTML tag itself.
+   Embedded styles are located in the header of a page, and apply to that entire page. An external style sheet is a 
+   separate text file that each page in the web site can link to it in order to receive it's instructions.
+
+Q: What are the external style sheets? 
+A: An external style sheet is a separate CSS file that can be accessed by creating a link within the head section of the webpage.
+   Multiple webpages can use the same link to access the stylesheet. The link to an external style sheet is placed within the head section of the page.
+
+Q: What are the advantages and disadvantages of using external style sheets? 
+A: Advantages:
+  -With the help of External Style Sheets, the styles of numerous documents can be organized from one single file.
+  -In External Style Sheets, Classes can be made for use on numerous HTML element types in many forms of the site.
+  -In complex contexts, Methods like selector and grouping can be implemented to apply styles.
+
+   Disadvantages:
+  -An extra download is essential to import style information for each file.
+  -The execution of the file may be deferred till the external style sheet is loaded.
+  -While implementing style sheets, we need to test Web pages with multiple browsers in order to check compatibility issues.
+
+Q: What is the meaning of the CSS selector? 
+A: A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which 
+   HTML elements should be selected to have the CSS property values inside the rule applied to them.
+
+Q: What are the media types allowed by CSS?
+A: ->all=Suitable for all devices.
+   ->aural=Intended for speech synthesizers.	
+   ->braille=Intended for braille tactile feedback devices.
+   ->embossed=Intended for paged braille printers.
+   ->handheld=Intended for handheld devices (typically small screen, monochrome, limited bandwidth).
+   ->print=Intended for paged, opaque material and for documents viewed on screen in print preview mode. Please consult the section on paged media.
+   ->projection=Intended for projected presentations, for example projectors or print to transparencies. Please consult the section on paged media.
+   ->screen=Intended primarily for color computer screens.
+   ->tty=Intended for media using a fixed-pitch character grid, such as teletypes, terminals, or portable devices with limited display capabilities.	
+   ->tv=Intended for television-type devices.
+ 
+Q: What is the rule set?
+A: A CSS rule set contains one or more selectors and one or more declarations. 

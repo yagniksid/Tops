@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Effect Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body{
+            background: radial-gradient(#f3d1de 173px, #a74957 406px, #f3bfc8 750px, #f3bfc8 1000px);
+            position: relative;
+        }
+        .main{
+            height: 640px;
+            width: 100%;
+        }
+        .div1{
+            display: flex;
+            height: 250px;
+            width: 350px;
+            /* border: 2px solid black; */
+            box-shadow: 0px 0px 7px black;
+            margin: auto;
+            padding: 10px;
+            display: grid;
+            place-content: center;
+            position: relative;
+            top: 170px;
+        }
+        h1::before{
+            content: "\2014";
+            color: blue;
+        }
+        h1::after{
+            content: "\2014";
+            color: blue;
+        }
+        h1{
+            position: absolute;
+            top: 20px;
+            left: 115px;
+            margin: auto;
+        }
+        input{
+            height: 30px;
+            width: 300px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button{
+            height: 35px;
+            width: 100px;
+            border: none;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 220px;
+            right: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="div1">
+            <h1>Login</h1>
+            <input type="text" placeholder="Enter Email">
+            <br>
+            <input type="password" placeholder="Enter Password">
+            <button>Login
+                <i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

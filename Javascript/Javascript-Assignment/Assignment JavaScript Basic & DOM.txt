@@ -1,0 +1,95 @@
+Assignment: JavaScript Basic & DOM
+
+Q: What is JavaScript?
+A: JavaScript is the Programming Language for the Web. JavaScript can update and change both HTML and CSS. JavaScript can calculate, manipulate and validate data.
+ 
+Q: What is the use of isNaN function?
+A: In JavaScript NaN is short for "Not-a-Number".
+  -The isNaN() method returns true if a value is NaN.
+  -The isNaN() method converts the value to a number before testing it.
+
+Q: What is negative Infinity?
+A: The negative infinity in JavaScript is a constant value that is used to represent a value that is the lowest available
+ 
+Q: Which company developed JavaScript? 
+A: JavaScript was created at Netscape Communications by Brendan Eich in 1995.
+
+Q: What are undeclared and undefined variables?
+A: Undeclared − It occurs when a variable which hasn’t been declared using var, let or const is being tried to access.
+   Undefined − It occurs when a variable has been declared using var, let or const but isn’t given a value.
+
+Q: Write the code for adding new elements dynamically? 
+A: New elements can be dynamically created in JavaScript with the help of createElement() method. The attributes of the created element can be set using the setAttribute() method.
+  -For Eg: let newDiv = document.createElement("div");
+
+Q: What is the difference between ViewState and SessionState?
+A: A ViewState is a state of a page within a browser wherein the values of controls persist when post back operation is done. When another page is loaded, 
+   the previous page data is no longer available. - SessionState is the data of a user session and is maintained on the server side.
+ 
+Q: What is === operator?
+A: strict equality ( === ) operator.
+
+Q: How can the style/class of an element be changed?
+A:-style.property: Changing CSS with the help of the style property
+	Syntax:- document.getElementById("id").style.property = new_style
+
+  -Changing the class itself: We can use two properties that can be used to manipulate the classes.
+
+			     -The classList Property: The classList is a read-only property that returns the CSS class names of an element as a DOMTokenList object.
+				Syntax:- document.getElementById("id").classList
+
+  			     -The className Property: This property is used to set the current class of the element to the specified class.
+				Syntax:- document.getElementById("id").className = class
+
+Q: How to read and write a file using JavaScript?
+A: Files can be read and written by using java script functions – fopen(),fread() and fwrite().
+  -The function fopen() takes two parameters – 1. Path and 2. Mode (0 for reading and 3 for writing). The fopen() function returns -1, if the file is successfully opened.
+
+Q: What are all the looping structures in JavaScript?
+A: For loop:  for (initialization; condition; increment){
+							code to be executed  
+							}
+
+  -while loop:  while (condition){  
+    			      code to be executed  
+			      }
+
+  -do while loop: do{  
+    		     code to be executed  
+		     }while (condition); 
+
+  -For in loop:  for(variable in object){
+    					Code to be executed
+					}
+
+Q: How can you convert the string of any base to an integer in JavaScript?
+A: To convert a string to an integer parseInt(), Number(), and Unary operator(+) function is used in javascript. parseInt() function returns Nan( not a number)
+   when the string doesn't contain number. If a string with a number is sent, then only that number will be returned as the output.
+ 
+Q: What is the function of the delete operator?
+A: The function of the delete operator is delete()
+ 
+Q: What are all the types of Pop up boxes available in JavaScript?
+A: JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+ 
+Q: What is the use of Void (0)? 
+A: void is an important keyword in JavaScript which can be used as a unary operator that appears before its single operand, which may be of any type. 
+   This operator specifies an expression to be evaluated without returning a value
+
+Q: How can a page be forced to load another page in JavaScript?
+A: In JavaScript, we can use window. location object to force a page to load another page. We can use the location object to set the URL of a new page
+   	Syntax:- window.location.href = url;
+ 
+Q: What are the disadvantages of using innerHTML in JavaScript?
+A: Disadvantages of innerHTML
+  -Event handlers attached to any DOM element are preserved.
+  -Replacement is done everywhere.
+  -It is not possible to append innerHTML.
+  -Breaks the document.
+  -Used for Cross-site Scripting.
+
+
+
+
+
+

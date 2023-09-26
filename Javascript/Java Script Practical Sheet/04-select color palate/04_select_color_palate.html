@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            border: 2px solid black;
+            height: 350px;
+            width: 300px;
+            margin: 0px auto;
+        }
+
+        .setclr {
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
+            margin-left: 5px;
+            padding: 20px;
+        }
+
+        button {
+            height: 30px;
+            margin-left: 10px;
+            width: 100px;
+            font-size: 18px;
+        }
+
+        form {
+            text-align: center;
+            margin: 50px 0px;
+        }
+
+        label {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <form action="#">
+            <label for="">Set color</label>
+            <input type="color" id="color">
+            <button onclick="setclr() ">Set color</button>
+        </form>
+        <hr>
+        <div class="setclr">Hello</div>
+
+        <script src="04_select_color.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+/* bootstrap icon */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+
+.homepage {
+    position: relative;
+}
+
+.homepage .topheader {
+    position: absolute;
+    z-index: 1111;
+    width: 100%;
+    top: 0;
+}
+
+.homepage .header {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    top: 56px;
+}
+
+.homepage .topheader .searchbar {
+    height: 40px;
+    width: 40px;
+    display: grid;
+    place-content: center;
+    background-color: #FFA41F;
+}
+
+.topheader .icon {
+    color: white;
+}
+
+.topheader .icon a {
+    color: white;
+
+}
+
+.topheader ul {
+    color: white;
+}
+
+.topheader ul a {
+    color: #FFA41F;
+}
+
+.homepage .navbar .navbar-nav {
+    display: flex !important;
+    justify-content: end;
+    width: 100%;
+}
+
+.header p {
+    color: white;
+}
+
+.header .navbar-nav a {
+    color: white;
+}
+
+.homepage .banner1 {
+    background: url(Image/banner1.jpg) no-repeat center;
+    background-position: cover;
+    padding: 372px 40px 180px 40px;
+}
+
+.homepage .banner2 {
+    background: url(Image/banner2.jpg) no-repeat center;
+    background-position: cover;
+    padding: 372px 40px 180px 40px;
+
+}
+
+.homepage .banner3 {
+    background: url(Image/banner3.jpg) no-repeat center;
+    background-position: cover;
+    padding: 372px 40px 180px 40px;
+
+}
+
+.homepage .banner4 {
+    background: url(Image/banner4.jpg) no-repeat center;
+    background-position: cover;
+    padding: 372px 40px 180px 40px;
+
+}
+
+.homepage h5 {
+    color: white;
+    letter-spacing: 5px;
+}
+
+.homepage .title {
+    background-color: #FFA41F;
+    padding: 5px 20px;
+    color: black;
+}
+
+.homepage .banner1 p {
+    letter-spacing: 1px;
+}
+
+.homepage .readbtn,
+.contbtn {
+    height: 35px;
+    width: 140px;
+    background-color: rgba(255, 255, 255, 0.17);
+    color: white;
+    border: none;
+}
+
+.homepage .btn .contbtn a {
+    color: white;
+    text-decoration: none;
+}
+
+.homepage .readbtn a {
+    color: white;
+    text-decoration: none;
+}
+
+.homepage .btn span {
+    color: #FFA41F;
+}
+
+.homepage .bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: unset;
+}
+
+.bx-wrapper .bx-pager {
+    position: absolute;
+    top: 290px;
+    right: 0px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 7% !important;
+}
+
+.bx-wrapper .bx-controls-direction .bx-prev {
+    background: url(Image/left.png);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+.bx-wrapper .bx-controls-direction .bx-next {
+    position: fixed;
+    background: url(Image/right.png);
+    top: 50%;
+    right: 10px;
+}
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #d10b0b;
+    padding-top: 9px;
+}

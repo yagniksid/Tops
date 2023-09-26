@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", sans-serif;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ================================= */
+.homepage {
+    position: relative;
+}
+
+.homepage .topheader {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 111;
+}
+
+.homepage .headerval {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    z-index: 111;
+}
+
+.homepage .topheader .search {
+    height: 40px;
+    width: 40px;
+    background-color: #FFA41F;
+    display: grid;
+    place-content: center;
+    color: white;
+}
+
+.homepage .topheader a {
+    color: white;
+}
+
+.homepage .topheader ul span {
+    color: #FFA41F;
+}
+
+.homepage .topheader ul li {
+    color: white;
+}
+
+.homepage .navbar .navbar-nav {
+    display: flex !important;
+    justify-content: end;
+    width: 100%;
+}
+
+.homepage .navbar .navbar-nav a {
+    color: white;
+}
+
+.homepage .navbar .navbar-nav .dropdown-menu a {
+    color: black;
+}
+
+.homepage .banner1 {
+    background: url(image/banner1.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner2 {
+    background: url(image/banner2.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner3 {
+    background: url(image/banner3.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .banner4 {
+    background: url(image/banner4.jpg) no-repeat center;
+    background-size: cover;
+    padding: 250px 40px;
+}
+
+.homepage .sm-change {
+    letter-spacing: 5px;
+}
+
+.homepage .bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: unset;
+}
+
+.homepage .m-title {
+    background-color: #FFA41F;
+    padding: 5px 20px;
+}
+
+.homepage .readbtn,
+.contbtn {
+    width: 120px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.515);
+    border: 1px solid transparent;
+    font-weight: bold;
+    color: white;
+    transition: 0.2s ease all;
+}
+
+.homepage button span {
+    color: #FFA41F;
+}
+
+.homepage button:hover {
+    color: #FFA41F;
+}
+
+.owl-theme .owl-nav {
+    position: relative;
+}
+
+.owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    top: -164px;
+    left: -45px;
+    background-color: rgb(178, 171, 171) !important;
+    height: 35px;
+    width: 35px;
+    border-radius: 50% !important;
+    border: 2px solid black !important;
+}
+
+.owl-theme .owl-nav .owl-next {
+    position: absolute;
+    top: -164px;
+    right: -45px;
+    background-color: rgb(178, 171, 171) !important;
+    height: 35px;
+    width: 35px;
+    border-radius: 50% !important;
+    border: 2px solid black !important;
+}
+
+.servicesSec .icons {
+    color: #FFA41F;
+    font-size: 50px;
+}
+
+.goodTest .btnOrange {
+    background-color: #FFA41F;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.goodTest .btnOrange:hover {
+    background-color: #09428c;
+}
+
+.specialMenu {
+    background-color: #141414;
+}
+
+.specialMenu .list-group a {
+    color: white;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.specialMenu .list-group-item {
+    border-color: transparent;
+}
+
+.specialMenu .list-group-item.active {
+    background-color: #FFA41F !important;
+    border-color: transparent;
+    position: relative;
+}
+
+.specialMenu .list-group-item.active::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #FFA41F;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 117px;
+    bottom: -9px;
+}
+
+.specialMenu .menulist img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    outline: 2px solid white;
+    outline-offset: 5px;
+}
+
+.specialMenu .menulist {
+    display: flex;
+    gap: 40px;
+}
+
+.specialMenu .menulist .amt h4 {
+    color: #FFA41F;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.specialMenu .menulist .text p {
+    font-size: 14px;
+}
+
+.specialMenu .tab-content {
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+.centerContent {
+    display: grid;
+    place-content: center;
+}
+
+.BookTable {
+    background: url(image/banner2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.BookTable input[type="time"],
+[type="date"],
+select {
+    background-color: transparent !important;
+    color: white !important;
+    border-radius: 0 !important;
+    border-top: 2px solid white !important;
+    border-bottom: 2px solid white !important;
+    border-right: 2px solid white !important;
+    border-left: 0 !important;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.BookTable option {
+    background-color: black !important;
+}
+
+.BookTable input[type="time"]:focus,
+[type="date"]:focus,
+select:focus {
+    box-shadow: none !important;
+}
+
+.BookTable span {
+    color: #FFA41F;
+}
+
+.BookTable .input-group-text {
+    background-color: transparent;
+    border-radius: 0;
+    border-top: 2px solid white !important;
+    border-bottom: 2px solid white !important;
+    border-left: 2px solid white !important;
+    border-right: 0 !important;
+}
+
+.btnbook {
+    background-color: #FFA41F;
+    color: white;
+    width: 100%;
+    border-radius: 0;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btnbook:hover {
+    background-color: transparent;
+    color: #FFA41F;
+    border: 2px solid #FFA41F;
+}
+
+.custReview .title p {
+    letter-spacing: 3px;
+}
+
+.custReview .quote {
+    height: 40px;
+    width: 40px;
+    background-color: #FFA41F;
+    color: white;
+    display: grid;
+    place-content: center;
+    font-size: 22px;
+    border-radius: 50%;
+}
+
+.footer {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.footer .title h1 {
+    letter-spacing: 1px;
+}
+
+.footer .formtitle {
+    color: #FFA41F;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.btnsubmit {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    border-radius: 0;
+}
+
+.btnsubmit:hover {
+    background-color: #FFA41F;
+    color: white;
+}
+
+.bottomfooter {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.Foodimage {
+    position: relative;
+    overflow: hidden;
+}
+
+.Foodimage .foodText {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFA41F;
+    height: 0%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1) all;
+}
+
+.Foodimage:hover .foodText {
+    height: 20%;
+}
+
+.footer input[type="text"],
+textarea {
+    border-radius: 0 !important;
+}
+
+.bookingForm input[type="date"],
+select,
+textarea {
+    border: 1px solid rgba(128, 128, 128, 0.323) !important;
+    color: black !important;
+    border-radius: 5px !important;
+}
+
+.bookingForm option {
+    color: black !important;
+}
+
+.accordion-item {
+    border-radius: 0 !important;
+    border: 2px solid white !important;
+    background-color: transparent !important;
+}
+
+.accordion-item button {
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    color: white !important;
+}
+
+@media (max-width:576px) {
+    .specialMenu .menulist {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .centerContent {
+        display: unset;
+        place-content: unset;
+    }
+
+    .owl-theme .owl-nav .owl-prev {
+        position: unset;
+        display: none !important;
+    }
+
+    .owl-theme .owl-nav .owl-next {
+        position: unset;
+        display: none !important;
+    }
+
+    .show768 {
+        display: none;
+    }
+
+    .show576 {
+        display: block;
+    }
+}
+
+@media (min-width:576px) {
+    .centerContent {
+        display: unset;
+        place-content: unset;
+    }
+
+    .show768 {
+        display: none;
+    }
+
+    .show576 {
+        display: block;
+    }
+}
+
+@media (min-width:768px) {
+    .centerContent {
+        display: grid;
+        place-content: center;
+    }
+
+    .show768 {
+        display: block;
+    }
+
+    .show576 {
+        display: none;
+    }
+
+}
