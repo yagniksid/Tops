@@ -1,0 +1,60 @@
+.homepage {
+    margin: 70px 70px;
+}
+
+.header {
+    display: grid;
+    place-content: center;
+    color: white;
+    background-color: #071952;
+    height: 10vh;
+    margin-bottom: 20px;
+}
+
+.navmenu {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background-color: #F5F5DC;
+    color: #071952;
+    height: 10vh;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    height: 30vh;
+    margin-bottom: 20px;
+    color: #071952;
+}
+
+.subcontainer1 {
+    flex: 1;
+    display: grid;
+    place-content: center;
+    background-color: #9EDDFF;
+}
+
+.subcontainer2 {
+    display: grid;
+    place-content: center;
+    flex: 2;
+    background-color: #6499E9;
+    color: #191717;
+}
+
+.subcontainer3 {
+    flex: 1;
+    display: grid;
+    place-content: center;
+    background-color: #9EDDFF;
+}
+
+.footer {
+    background-color: #EAD7BB;
+    color: #071952;
+    display: grid;
+    place-content: center;
+    height: 10vh;
+}

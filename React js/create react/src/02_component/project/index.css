@@ -1,0 +1,13 @@
+.container {
+    background-color: #b687bd;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-around;
+    height: 80vh;
+}
+
+.subcontainer {
+    background-color: #5fe07d85;
+    color: white;
+}
