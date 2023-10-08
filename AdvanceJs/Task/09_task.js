@@ -1,7 +1,6 @@
 const products = require("../task.json");
 /*
-// find product by gender
-
+//1.find product by gender
 
 // function findProductsByGender(userInputGender) {
     //     let data = products.filter((product) => {
@@ -15,7 +14,7 @@ const products = require("../task.json");
 // let data = findProductsByGender("Kids");
 // console.log("product data:", data);
 
-// count products by gender give by the user
+//2.count products by gender give by the user
 
 function getProductCountByGender(userGender) {
     
@@ -31,7 +30,8 @@ let femaleProductCount = getProductCountByGender("female");
 console.log("femaleProductCount :", femaleProductCount)
 
 
-// Function to find descriptions of products in a specific category
+//3.Function to find descriptions of products in a specific category
+
 function productDescriptions(category) {
     let matchProducts = products.filter(product => product.category.includes(category));
     
