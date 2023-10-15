@@ -1,14 +1,14 @@
 import React from 'react'
-import data from "../../../../AdvanceJs/data.json"
-import { Table } from "reactstrap"
+import citydata from "../../../../AdvanceJs/data.json"
+import { Table } from "reactstrap";
 export default function CityTable() {
     return (
         <>
-            <Table>
+            <Table striped>
                 <thead>
-                    <tr className="table-success">
+                    <tr>
                         <th>
-                            SR.
+                            SR.NO
                         </th>
                         <th>
                             CITY
@@ -23,12 +23,12 @@ export default function CityTable() {
                 </thead>
                 <tbody>
                     {
-                        data.map((e, i) => {
+                        citydata.map((e, i) => {
                             return (
-                                <tr key={i} className="table-secondary">
-                                    <td>
+                                <tr key={i}>
+                                    <th>
                                         {i + 1}
-                                    </td>
+                                    </th>
                                     <td>
                                         {e.city}
                                     </td>

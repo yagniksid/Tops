@@ -6,13 +6,17 @@ import HomePage from "./02_component/project/HomePage"
 import PropsChange from "./03_Props/PropsChange"
 import PropsClassCom from "./03_Props/PropsClassCom"
 import PropsFunCom from "./03_Props/PropsFunCom"
-import Fragmentt from "./Map-key.jsx/Fragmentt"
-import MapKey from "./Map-key.jsx/MapKey"
-import CityTable from "./Map-key.jsx/CityTable"
-import ConditionCom from "./04_ConditionalREndering/ConditionFunCom"
-import ConditionFunCom from "./04_ConditionalREndering/ConditionFunCom"
+import Fragmentt from "./04_Map-key/Fragmentt"
+import MapKey from "./04_Map-key/MapKey"
+import ConditionCom from "./05_ConditionalREndering/ConditionFunCom"
+import ConditionFunCom from "./05_ConditionalREndering/ConditionFunCom"
 import UseStateFun from "./06_useState/useStateFun"
 import UseStateClass from "./06_useState/UseStateClass"
+import LifeCycle from "./08_LifeCycle/lifeCycle"
+import CityTable from "./04_Map-key/CityTable"
+import Useeffect from "./07_UseEffect/Useeffect"
+import InputData from "./09_Input/InputData"
+import DeleteData from "./09_Input/DeleteData"
 
 function App() {
 
@@ -33,15 +37,22 @@ function App() {
       {/* -------------------------------------------FRAGMENT--------------------------------------------- */}
       {/* <Fragmentt />
       <Fragmentt /> */}
-
+      {/* <CityTable /> */}
       {/* -------------------------------------------MAPKEY--------------------------------------------- */}
       {/* <MapKey /> */}
+
       {/* -------------------------------------------CONDITIONAL RENDERING--------------------------------------------- */}
       {/* <ConditionFunCom /> */}
       {/* -------------------------------------------USE STATE--------------------------------------------- */}
       {/* <UseStateFun /> */}
-      <UseStateClass />
-
+      {/* <UseStateClass /> */}
+      {/* -------------------------------------------LIFE-CYCLE--------------------------------------------- */}
+      {/* <LifeCycle /> */}
+      {/* -------------------------------------------LIFE-CYCLE--------------------------------------------- */}
+      {/* <Useeffect /> */}
+      {/* -------------------------------------------INPUT--------------------------------------------- */}
+      {/* <InputData /> */}
+      < DeleteData />
     </div>
 
   )
