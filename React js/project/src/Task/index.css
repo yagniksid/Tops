@@ -1,0 +1,31 @@
+.main {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.colorchange {
+    background-color: red;
+    display: grid;
+    place-content: center;
+    height: 300px;
+    width: 300px;
+}
+
+.formcss {
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 500px;
+    height: auto;
+    padding: 30px;
+}
+
+.tablecss {
+    width: 1000px !important;
+}
+
+.maindiv {
+    display: grid;
+    place-content: center;
+    margin-top: 20px;
+}
