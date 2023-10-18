@@ -1,5 +1,6 @@
 import './App.css'
 import AddDelete from './Task/AddDelete'
+import AddDeleteUpdate from './Task/AddDeleteUpdate'
 import ChangeColor from './Task/ChangeColor'
 import ProductTable from './Task/ProductTable'
 import StateProject from './Task/StateProject'
@@ -9,11 +10,12 @@ function App() {
   return (
     <div className='appContainer'>
 
-      {/* // <HomePage />
-    // <ProductTable />
-    // <ChangeColor /> */}
+      {/* <HomePage /> */}
+      {/* <ProductTable /> */}
+      {/* <ChangeColor /> */}
       {/* <StateProject /> */}
-      <AddDelete />
+      {/* <AddDelete /> */}
+      <AddDeleteUpdate />
     </div>
   )
 }

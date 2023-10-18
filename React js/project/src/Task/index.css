@@ -1,7 +1,6 @@
-.main {
+/* .main {
     display: grid;
-    justify-content: center;
-    text-align: center;
+    place-content: center;
 }
 
 .colorchange {
@@ -10,22 +9,30 @@
     place-content: center;
     height: 300px;
     width: 300px;
+} */
+
+.mainclass {
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 20px;
+    width: 30%;
 }
 
 .formcss {
-    border: 2px solid black;
-    border-radius: 30px;
-    width: 500px;
-    height: auto;
-    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
 }
 
 .tablecss {
-    width: 1000px !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-align: center;
 }
 
-.maindiv {
-    display: grid;
-    place-content: center;
-    margin-top: 20px;
+.subtable {
+    width: 70% !important;
 }
