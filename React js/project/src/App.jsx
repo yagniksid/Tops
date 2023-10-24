@@ -2,8 +2,10 @@ import './App.css'
 import AddDelete from './Task/AddDelete'
 import AddDeleteUpdate from './Task/AddDeleteUpdate'
 import ChangeColor from './Task/ChangeColor'
+import FullCrud from './Task/FullCrud'
 import ProductTable from './Task/ProductTable'
 import StateProject from './Task/StateProject'
+import UserInputCrud from './Task/UserInputCrud'
 import HomePage from './project/HomePage'
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
       {/* <ChangeColor /> */}
       {/* <StateProject /> */}
       {/* <AddDelete /> */}
-      <AddDeleteUpdate />
+      {/* <AddDeleteUpdate /> */}
+      {/* <FullCrud /> */}
+      <UserInputCrud />
     </div>
   )
 }

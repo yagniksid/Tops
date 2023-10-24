@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import { Pencil, XCircle } from "lucide-react";
+import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import "./index.css"
 
 export default function AddDeleteUpdate() {
@@ -147,6 +147,7 @@ export default function AddDeleteUpdate() {
             </div>
             <div className='d-flex justify-content-center mt-3 ' >
                 <Button color='danger' className='buttoncss' onClick={() => deleteAll()} >Delete all</Button></div>
+
         </>
     )
 }
