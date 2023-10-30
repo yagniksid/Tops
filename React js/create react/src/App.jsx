@@ -17,6 +17,8 @@ import CityTable from "./04_Map-key/CityTable"
 import Useeffect from "./07_UseEffect/Useeffect"
 import InputData from "./09_Input/InputData"
 import DeleteData from "./09_Input/DeleteData"
+import Router from "./10_Router/Router"
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
 
@@ -24,12 +26,13 @@ function App() {
   return (
     <div className="app">
       {/* -------------------------------------------COMPONENT--------------------------------------------- */}
-      {/* <ClassCom />
-      <Funcom /> */}
+      {/* <ClassCom /> */}
+      {/* <Funcom /> */}
       {/* <HomePage /> */}
       {/* -------------------------------------------PROPS--------------------------------------------- */}
       {/* <PropsFunCom name={"Yagnik"} age={25} />
       <PropsFunCom name={"Divyesh"} age={25} /> */}
+      {/* <PropsFunCom/> */}
       {/* <PropsClassCom data={{ name: "Yagnik", age: 25 }} />
       <PropsClassCom /> */}
       {/* <PropsChange name={"Yagnik"} /> */}
@@ -52,7 +55,10 @@ function App() {
       {/* <Useeffect /> */}
       {/* -------------------------------------------INPUT--------------------------------------------- */}
       {/* <InputData /> */}
-      < DeleteData />
+      {/* < DeleteData /> */}
+      {/* -------------------------------------------ROUTER--------------------------------------------- */}
+      <Router />
+
     </div>
 
   )

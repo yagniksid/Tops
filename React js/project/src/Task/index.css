@@ -27,7 +27,8 @@
 
 .tablecss {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     align-items: center;
     text-align: center;
@@ -35,4 +36,11 @@
 
 .subtable {
     width: 70% !important;
+}
+
+.tablecss input {
+    width: 70% !important;
+    height: 40px !important;
+    border-radius: 10px;
+    margin: 20px;
 }

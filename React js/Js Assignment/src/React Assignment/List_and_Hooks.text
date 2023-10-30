@@ -1,0 +1,22 @@
+1.Explain Life cycle in Class Component and functional component with Hooks 
+
+=> REACT LIFECYCLE METHODS IN CLASS COMPONENTS 
+
+1.componentDidMount
+-> A lifecycle method runs or executes after the component is mounted and rendered to the DOM. It is called only once during the component's lifecycle after the component mounting is done.
+
+2.componentDidUpdate
+-> It is a lifecycle method that executes after an update in the component and checks if a specific prop or state has changed.
+
+3.ComponentWillUnmount
+-> It is a lifecycle method that runs or executes when the component is about to be removed or unmounted from the DOM. It is called only once during the lifecycle of a component.
+
+=> REACT LIFECYCLE METHODS IN FUNCTION COMPONENTS 
+
+-> The useEffect Hook allows you to perform side effects in your components.
+
+-> Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+-> useEffect accepts two arguments. The second argument is optional.
+
+-> useEffect(<function>, <dependency>)

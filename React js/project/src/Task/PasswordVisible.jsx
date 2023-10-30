@@ -3,23 +3,21 @@ import { Eye, Pencil, XCircle } from "lucide-react";
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import "./index.css"
 
-export default function UserInputCrud() {
+export default function PasswordVisible() {
     let [userData, setUserdata] = useState({ firstName: "", lastName: "", age: "", email: "", password: "" })
     let [index, setIndex] = useState(null)
     let [updateMode, setUpdateMode] = useState(false)
     let [searchtext, setSearchtext] = useState("")
+    let [showPassword, setShowPassword] = useState(false)
+
     const [userArr, setUserArr] = useState([])
 
     useEffect(() => {
-        let jsonData = localStorage.getItem("userData")
-        let normalData = JSON.parse(jsonData) || []
-        //   setUserArr(normaData)
-        let newData = normalData?.filter((e) => {
-            let searchData = e.firstName.toLowerCase().includes(searchtext.toLowerCase()) || e.age.includes(searchtext)
-            return searchData
-            // return e.firstName.toLowerCase().includes(searchtext.toLowerCase()) || e.age.includes(searchtext)
+        let data = localStorage.getItem("userData")
+        let normaData = JSON.parse(data) || []
+        let newData = normaData.filter((e) => {
+            return e.firstName.toLowerCase().includes(searchtext.toLowerCase()) || e.age.includes(searchtext)
         })
-        console.log("🚀 ~ file: UserInputCrud.jsx:23 ~ newData ~ newData:", newData)
         setUserArr(newData)
     }, [searchtext])
 
@@ -76,6 +74,14 @@ export default function UserInputCrud() {
                 localStorage.removeItem("userData")
             }
         }
+    }
+
+    function passwordVisibility() {
+
+        setShowPassword(true)
+        setTimeout(() => {
+            setShowPassword(false)
+        }, 5000);
     }
 
     return (
@@ -164,7 +170,7 @@ export default function UserInputCrud() {
                     onChange={(e) => setSearchtext(e.target.value)}
                     placeholder='Search Here'
                     type="text" />
-                {userArr?.length === 0 ? ("data not found") :
+                {userArr.length === 0 ? ("data not found") :
                     (<Table hover className='subtable'>
                         <thead>
                             <tr>
@@ -200,7 +206,7 @@ export default function UserInputCrud() {
                         </thead>
                         <tbody>
                             {
-                                userArr?.map((e, i) => {
+                                userArr.map((e, i) => {
                                     return (
                                         <tr key={i}>
                                             <th scope="row">
@@ -220,12 +226,14 @@ export default function UserInputCrud() {
                                                 {e.email}
                                             </td>
                                             <td>
-                                                {e.password}
+                                                {showPassword ? e.password : "*******"}
                                             </td>
 
                                             <td><XCircle color="#f50000" role='button' onClick={() => deleteHandler(i)} />
                                             </td>
                                             <td> <Pencil color="#f50000" role='button' onClick={() => updateHandler(e, i)} />
+                                            </td>
+                                            <td> <Eye color="#f50000" role='button' onClick={() => passwordVisibility()} />
                                             </td>
                                         </tr>
                                     )
@@ -239,6 +247,4 @@ export default function UserInputCrud() {
         </>
     )
 }
-
-
 
