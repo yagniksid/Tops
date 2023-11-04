@@ -1,15 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SubHeader from './SubHeader'
 import Nav from './Nav'
+import Header from './Header'
+import Homepage from './Homepage'
+import Catagory from './Catagory'
 
-export default class
-    extends Component {
-    render() {
-        return (
-            <>
-                <SubHeader />
-                <Nav/>
-            </>
-        )
-    }
+export default function MainHomePage() {
+    return (
+        <>
+            <SubHeader />
+            <Nav />
+            <Header />
+            <Homepage />
+            <Catagory/>
+        </>
+    )
 }

@@ -18,12 +18,9 @@ export default function SubHeader() {
                             1900 - 888</li>
                         <li>English</li>
                         <li>USD</li>
-
                     </ul>
                 </div>
             </div>
         </>
-
-
     )
 }
