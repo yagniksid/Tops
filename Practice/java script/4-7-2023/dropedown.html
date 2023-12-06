@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="drope.css">
+</head>
+<body>
+     <div class="list">
+        <ul>
+            <li><a href="">home</a></li>
+            <li class="dropemenu">
+                <a href="#">service</a>
+                <ul class="showmenu">
+                    <li><a href="">service 1</a></li>
+                    <li><a href="">service 2</a></li>
+                    <li><a href="">service 3</a></li>
+                    <li><a href="">service 4</a></li>
+
+                </ul>
+            </li>
+            <li><a href="">about</a></li>
+        </ul>
+     </div>
+     <script>
+        let drop = document.querySelector(".dropemenu")
+        let showmenu = document.querySelector(".showmenu")
+        drop.addEventListener("click", function(){
+            showmenu.classList.toggle("hidemenu")
+        })
+     </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body{
+            background-color: rgb(145, 236, 252);
+        }
+        .main .value-m{
+            margin: 0px 80px;
+        }
+        .main .value-p{
+            padding: 50px 0px;
+        }
+        h1{
+          text-align: center;  
+        }
+        .main .flex-box{
+            display: flex;
+            width: 70%;
+            height: auto;
+            /* border: 2px solid black; */
+            margin: auto;
+            text-align: center;
+        }
+        .main .flex-box .left-value{
+            flex: 1;
+            background-color: white;
+            border-radius: 10px 0px 0px 10px;
+        }
+        .main .flex-box .left-value h2{
+            font-size: 30px;
+            text-transform: capitalize;
+            padding: 80px 0px 10px 0px;
+            text-shadow: 0px 0px 6px black;
+        }
+        .main .d1{
+            color: gray;
+            padding: 0px 0px 35px 0px;
+        }
+        .main .left-value .inputval{
+            padding: 6px 0px;
+        }
+        input[type="text"], [type="password"]{
+            height: 40px;
+            width: 70%;
+            border: none;
+            /* background-color: rgba(226, 212, 212, 0.767); */
+            background-color: white;
+            border-radius: 20px;
+            /* padding: 0px 10px; */
+            padding: 0px 0px 2px 12px;
+            box-shadow: 0px 0px 6px gray;
+            font-size: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .main button{
+            height: 40px;
+            width: 70%;
+            border-radius: 20px;
+            background-color: rgb(0, 119, 255);
+            border: none;
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+        .main p{
+            padding: 30px 0px 0px 0px;
+            color: gray;
+        }
+        .main .account{
+            padding: 50px 0px 50px 0px;
+            color: gray;
+        }
+        .main .flex-box .account span a{
+            color: orangered;
+        }
+        .main .flex-box .right-value{
+            flex: 1;
+            background: url(image/Web\ capture_24-5-2023_14457_.jpeg) no-repeat center;
+            background-size: cover;
+            border-radius: 0px 10px 10px 0px;
+        }
+        .main .flex-box .right-value img{
+            height: auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="value-m">
+            <div class="value-p">
+                <h1>Login in Form</h1>
+                <div class="flex-box">
+                    <div class="left-value">
+                        <form action="#"></form>
+                            <h2>Log in</h2>
+                            <div class="d1">To your account</div>
+                            <!-- <div class="in"> -->
+                            <div class="inputval">
+                                <input type="text" placeholder="User Name">
+                            </div>
+                            <div class="inputval">
+                                <input type="password" placeholder="Password">
+                            </div>
+                            <!-- </div> -->
+                            <div class="inputval">
+                                <button><a href="">Login In</a></button>
+                            </div>
+                        </form>
+                        <p>Or connect with social media</p>
+                        <div class="account">
+                            Don't have an accont? <span><a href="">Register</a></span>
+                        </div>
+                    </div>
+                    <div class="right-value"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

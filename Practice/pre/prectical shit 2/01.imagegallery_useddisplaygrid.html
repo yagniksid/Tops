@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .imagegallery{
+            display: grid;
+            grid-template-columns: repeat(11, 4fr);
+            gap: 20px;
+            justify-items: center;
+         }
+         .sub1,.sub3,.sub5,.sub7,.sub9,.sub11{
+            height: 200px;
+            width: 200px;
+            background-color: slategrey;
+            justify-content: center;
+         }
+         .sub2,.sub4,.sub6,.sub8,.sub10{
+            height: 200px;
+            width: 200px;
+            background-color: midnightblue;
+
+         }
+         .sub3{
+            grid-column: 3/span2;
+         }
+         .sub5{
+            grid-column: 5/span3;
+         }
+    </style>
+</head>
+<body>
+    <div class="imagegallery">
+       
+            <div class="sub1"><img src="img/falls2.jpg" alt=""></div>
+            <div class="sub2"><img src="img/mountainskies.jpg" alt=""></div>
+            <div class="sub3"><img src="img/nature.jpg" alt=""></div>
+            <div class="sub4"><img src="img/ocean (1).jpg" alt=""></div>
+            <div class="sub5"><img src="img/ocean.jpg" alt=""></div>
+            <div class="sub6"><img src="img/paris.jpg" alt=""></div>
+            <div class="sub7"><img src="img/rocks (1).jpg" alt=""></div>
+            <div class="sub8"><img src="img/rocks.jpg" alt=""></div>
+            <div class="sub9"><img src="img/underwater (1).jpg" alt=""></div>
+            <div class="sub10"><img src="img/underwater.jpg" alt=""></div>
+            <div class="sub11"><img src="img/wedding.jpg" alt=""></div>
+
+    </div>
+</body>
+</html>

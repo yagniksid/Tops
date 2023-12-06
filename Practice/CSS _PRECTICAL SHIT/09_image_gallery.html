@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery Transform Effect</title>
+    <style>
+        img{
+            border: 2px solid green ;
+            border-radius: 10px;
+            box-shadow: 3px 0px 5px black;
+        }
+      .main{
+        height: 500px;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        background-color: #cfdbf0;
+      }
+      .main .main1{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+      }
+      .main .div1 img{
+        height: 160px;
+        width: 220px;
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        transition: 2s all ease;
+      }
+      .div1 img:hover{
+        transform: rotate(45deg);
+      }
+       .main .div2 img{
+        height: 150px;
+        width: 210px;
+        position: absolute;
+        top: 70px;
+        left: 290px;
+        transition: 2s all linear;
+      }
+      .div2 img:hover{
+        transform: rotate(180deg);
+      }
+       .main .div3 img{
+        height: 230px;
+        width: 280px;
+        position: absolute;
+        top: 20px;
+        left: 550px;
+        transition: 2s all linear;
+      }
+      .div3 img:hover{
+        transform: rotate(200deg);
+      }
+       .main .div4 img{
+        height: 180px;
+        width: 220px;
+        position: absolute;
+        top: 219px;
+        left: 20px;  
+        transition: 2s all linear;
+        transform: rotate(-30deg);
+      }
+      .div4 img:hover{
+        transform: rotate(90deg);
+      }
+       .main .div5 img{
+        height: 250px;
+        width: 300px;
+        position: absolute;
+        top: 218px;
+        left: 880px;
+        transition: 2s all linear;
+      }
+      .div5 img:hover{
+        transform: rotate(45deg);
+      }
+       .main .div6 img{
+       height: 190px;
+        width: 220px;
+        position: absolute;
+        top: 258px;
+        left: 550px;
+        transition: 2s all linear;
+      }
+      .div6 img:hover{
+       transform: rotate(180deg);
+      }
+      .main .div7 img{
+        height: 150px;
+        width: 210px;
+        position: absolute;
+        top: 228Px;
+        left: 290px;
+        transition: 2s all linear;
+      }
+      .div7 img:hover{
+        transform: rotate(45deg);
+      }
+      .main .div8 img{
+        height: 190px;
+        width: 220px;
+        position: absolute;
+        top: 20px;
+        left: 880px;
+        transition: 2s all linear;
+      }
+      .div8 img:hover{
+        transform: rotate(90deg);
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+      <div class="main1">
+        <div class="div1">
+            <img src="image/animal1.webp" alt="">
+        </div>
+        <div class="div2">
+            <img src="image/animal2.jpg" alt="">
+        </div>
+        <div class="div3">
+            <img src="image/animal3.webp" alt="">
+        </div>
+        <div class="div4">
+            <img src="image/animal4.jpg" alt="">
+        </div>
+        <div class="div5">
+            <img src="image/animal8.jpg" alt="">
+        </div>
+        <div class="div6">
+            <img src="image/animal6.jpeg" alt="">
+        </div>
+        <div class="div7">
+            <img src="image/animal5.jpg" alt="">
+        </div>
+        <div class="div8">
+            <img src="image/animal7.jpg" alt="">
+        </div>
+      </div>
+    </div>
+</body>
+</html>

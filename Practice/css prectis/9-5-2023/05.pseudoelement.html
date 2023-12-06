@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::before{
+            content:"\1f61c";
+        }
+        h1::after{
+            content:"\1f61c";
+        }
+        .mydiv{
+            height: auto;
+            width: 200px;
+            border: 2px solid black;
+        }
+        .mydiv::first-letter{
+            font-size: 30px;
+        }
+        .mydiv::first-line{
+            color: brown;
+        }
+        .mydiv::selection{
+            background-color: blueviolet;
+            color: white;
+        }
+        li::marker{
+            color: rgb(52, 84, 112)
+            ;
+        }
+        input::placeholder{
+            text-align: center;
+            color: black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;
+        }
+        tr:nth-child(odd){
+            background-color: blueviolet;
+        }
+        tr:nth-child(even){
+            background-color: blue;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div class="mydiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio nostrum atque iure veritatis dignissimos culpa blanditiis ab architecto! Odio nemo tenetur aut illum cumque omnis vero fuga. Voluptatem, sit.</div>
+    <ul>
+        <li>link 1</li>
+        <li>link 2</li>
+    </ul>
+    <br><br>
+    <input type="text" placeholder="enter your name"><hr>
+    <table border="1">
+        <tr>
+            <td>name</td>
+            <td> age</td>
+            <td>address</td>
+        </tr>
+        <tr>
+            <td>xyz</td>
+            <td>43</td>
+            <td>surat</td>
+        </tr>
+        <tr>
+            <td>xyz</td>
+            <td>43</td>
+            <td>surat</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>.
+    <style>
+        .outer{
+            height: 250px;
+            width: 250px;
+            border: 2px solid gray;
+            position: relative;
+            margin: 170px auto;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+        }
+        .main{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            top: -2px;
+            left: -1px;
+            border-top:5px solid rgb(255, 115, 0);
+            border-radius: 50%;
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            animation: loader 2s linear infinite;
+        }
+        .second{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            top: -2px;
+            left: -1px;
+            border-top:5px solid rgb(99, 85, 75);
+            border-radius: 70%;
+            border-top: 2px solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
+            animation: loader 2s linear infinite;
+        }
+        .text{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        @keyframes loader {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(140deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="main"></div>
+        <div class="second"></div>
+        <div class="text">loading.....</div>
+    </div>
+</body>
+</html>

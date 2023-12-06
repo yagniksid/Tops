@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: rgb(37, 194, 37);
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="select"],
+      input[type="date"],
+      input[type="select"],
+      input[type="password"],
+      input[type="tel"],
+      select {
+        width: 70%;
+        padding: 15px;
+        border: 1px solid rgb(168, 166, 166);
+        border-radius: 4px;
+        resize: none;
+      }
+      textarea {
+        width: 70%;
+        padding: 12px;
+        border: 1px solid rgb(168, 166, 166);
+        border-radius: 4px;
+        resize: vertical;
+      }
+      input[type="radio"] {
+        margin-top: 12px;
+        border: 1px solid rgb(168, 166, 166);
+      }
+      h1 {
+        font-family: Arial;
+        font-weight: bold;
+        text-align: center;
+        margin: 30px auto;
+      }
+      label {
+        padding: 12px 48px 12px 0;
+        display: inline-block;
+      }
+      input[type="submit"] {
+        background-color: blue;
+        margin: 30px auto;
+        color: white;
+        padding: 12px 50px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: rgb(0, 0, 170);
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: whitesmoke;
+        height: auto;
+        width: 40%;
+        box-shadow: 0 0 5px black;
+      }
+      .col-40 {
+        float: left;
+        text-align: right;
+        width: 40%;
+        margin-top: 6px;
+      }
+      .col-60 {
+        float: left;
+        width: 60%;
+        margin-top: 6px;
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (max-width: 600px) {
+        .col-10,
+        .col-90,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration For Job</h1>
+      <div class="row">
+        <div class="col-40">
+          <label for="fname">First Name:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Enter First Name"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="mname">Middle Name:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="text"
+            id="mname"
+            name="firstname"
+            placeholder="Enter Middle Name"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="lname">Last Name:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Enter Last Name"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="address">Address:</label>
+        </div>
+        <div class="col-60">
+          <textarea
+            name="address"
+            id="address"
+            cols="30"
+            rows="5"
+            placeholder="Enter Address"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="dob">Date Of Birth:</label>
+        </div>
+        <div class="col-60">
+          <input type="Date" id="dob" name="dob" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="gender" required>Gender:</label>
+        </div>
+        <div class="col-60">
+          <input type="radio" id="male" name="gender" value="male" />Male
+          <input type="radio" id="female" name="gender" value="female" />Female
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="qualification" required>Experience:</label>
+        </div>
+        <div class="col-60">
+          <select name="experience" id="experience">
+            <option value=" ">Select Experience:</option>
+            <option value="1year">1year</option>
+            <option value="2year">2year</option>
+            <option value="3year">3year</option>
+            <option value="4year">4year</option>
+            <option value="5year">5year</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="mobile">Mobile No:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="Enter Mobile No"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="email">Email Id:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="password">Create Password:</label>
+        </div>
+        <div class="col-60">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            maxlength="8"
+            placeholder="Enter Password"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40"></div>
+        <div class="col-60">
+          <input type="checkbox" name="" id="" />Show Password
+        </div>
+      </div>
+      <div class="row center">
+        <input type="submit" value="Register" />
+      </div>
+    </div>
+  </body>
+</html>

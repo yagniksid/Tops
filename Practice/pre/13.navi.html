@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      form {
+        width: 40%;
+        background-color: lightgreen;
+        margin: auto;
+        border: 2px solid black;
+      }
+      .h1 {
+        text-align: center;
+        color: white;
+      }
+      .row {
+        display: flex;
+        padding: 2px;
+      }
+      .col-1 {
+        flex: 1;
+        text-align: right;
+        padding: 5px;
+        font-size: 20px;
+      }
+      .col-2 {
+        flex: 2;
+        padding: 5px;
+      }
+      input [type="radio"],
+      [type="date"],
+      [type="text"],
+      [type="textarea"],
+      [type="select"],
+      [type="number"],
+      [type="email"],
+      [type="password"] {
+        height: 30px;
+        width: 250px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+      }
+      textarea {
+        border-radius: 10px;
+        padding: 10px;
+        border: none;
+      }
+      select {
+        height: 40px;
+        width: 250px;
+        border-radius: 10px;
+        border: none;
+      }
+      input[type="radio"] {
+        height: 20px;
+        width: 20px;
+      }
+      input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+      }
+      button {
+        height: 40px;
+        width: 130px;
+        border: none;
+        border-radius: 10px;
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="row-1">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <h1 class="h1">Registration For Job</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Frist Name</lable>
+        </div>
+        <div class="col-2">
+          <input type="text" placeholder=" Enter Frist Name" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Last Name</lable>
+        </div>
+        <div class="col-2">
+          <input type="text" placeholder="Enter Last Name" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Gender</lable>
+        </div>
+        <div class="col-2">
+          <input type="radio" name="gen" />Male
+          <input type="radio" name="gen" />female
+          <input type="radio" name="gen" />others
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Date Of Birth</lable>
+        </div>
+        <div class="col-2">
+          <input type="date" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Adresss</lable>
+        </div>
+        <div class="col-2">
+          <textarea
+            cols="30"
+            rows="3"
+            placeholder="Enter your Address"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Experience</lable>
+        </div>
+        <div class="col-2">
+          <select>
+            <option>2 years</option>
+            <option>3 years</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Mobile</lable>
+        </div>
+        <div class="col-2">
+          <input type="number" placeholder="Enter Mobile Number" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Email </lable>
+        </div>
+        <div class="col-2">
+          <input type="email" placeholder="Enter your Email" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <lable>Create Password</lable>
+        </div>
+        <div class="col-2">
+          <input type="password" placeholder="Enter your Password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <input type="checkbox" name="c1" />Show Password
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <button>Register</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

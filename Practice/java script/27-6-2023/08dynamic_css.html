@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1" onclick="Dynamic_Css()">Click to change css</button>
+    <h1 class="heading1">Heading 1</h1>
+    <h2 class="heading2">Heading 2</h2>
+
+    <h1 id="head1" onmouseover="changecolor()" onmouseout="Removecolor()">Hello User</h1>
+    <script>
+        function Dynamic_Css() {
+            let head2 = document.querySelector(".heading2")
+            document.body.style.backgroundColor = "pink";
+            document.body.style.color = "blue"
+            head2.style.fontSize = "45px"
+            head2.style.fontFamily = "Verdana"
+        }
+        function changecolor() {
+            let head = document.getElementById("head1")
+            head.style.color = "brown"
+            head.style.cursor = "pointer"
+        }
+        function Removecolor() {
+            let head = document.getElementById("head1")
+            head.style.color = "unset"
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

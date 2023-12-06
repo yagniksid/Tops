@@ -49,7 +49,7 @@ export default function IncDec() {
                     <Button color='dark' onClick={Reset} style={{
                         height: "40px",
                         width: '150px',
-                        marginTop:"20px"
+                        marginTop: "20px"
                     }}>Reset</Button>
                 </div>
             </div>

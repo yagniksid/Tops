@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            height: 100px;
+            width:100px;
+            background-color: blue;
+            animation-name:divmore ;
+            animation-duration: 2s;
+            animation-timing-function:linear ;
+            animation-delay: 2s;
+            animation-iteration-count:infinite ;
+            animation-direction:alternate ;
+            animation-fill-mode: both;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        @keyframes divmore{
+            from{
+                margin: 0;
+            }
+            to{
+                margin-left: 500px;
+                margin-top: 300px;
+                background-color: violet;
+                border-radius: 50%;
+                transform: rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+        <img src="iamge3.jpg" alt="">
+    </div>
+</body>
+</html>

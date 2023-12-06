@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 250px;
+            background-color: brown;
+            color: white;
+            font-size: 70px;
+            display: grid;
+            place-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="counts"></div>
+    <script>
+        let countsupdate = setInterval(updatecounts, 60);
+        let start = 100;
+        function updatecounts() {
+            let div = document.getElementById("counts");
+            div.innerHTML = ++start;
+            if (start == 600) {
+                clearInterval(countsupdate)
+            }
+        }
+
+</script>
+</body>
+</html>

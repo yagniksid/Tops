@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+/* ============ common css ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.orderbtn {
+    width: fit-content;
+    padding: 18px;
+    background-color: #f36c2d;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 40px;
+    font-weight: 700;
+    transition: 0.5s ease all;
+}
+
+.orderbtn:hover {
+    background-color: #05462d;
+}
+
+/* ============= header =============== */
+header {
+    /* background-color: #00d080; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1111;
+    backdrop-filter: blur(10px);
+}
+
+header .header-p {
+    padding: 14px 0px;
+}
+
+header .navigation {
+    display: flex;
+    align-items: center;
+}
+
+header .navigation .logo {
+    flex: 1;
+    padding-top: 10px;
+}
+
+header .navigation .logo h1 {
+    font-size: 40px;
+}
+
+header .navigation .logo span {
+    transform: rotate(315deg);
+    color: #f36c2d;
+    width: 15px;
+    height: 68px;
+}
+
+header .navigation .navbar {
+    flex: 4;
+}
+
+header .navigation .navbar ul {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+header .navigation .navbar li {
+    padding: 10px;
+}
+
+header .navigation .navbar a {
+    color: black;
+    font-weight: 600;
+    transition: 0.3s ease all;
+}
+
+header .navigation .navbar span {
+    font-size: 12px;
+}
+
+header .navigation .navbar a.active {
+    color: #f36c2d;
+}
+
+header .navigation .navbar a:hover {
+    color: #f36c2d;
+}
+
+header .navigation .theme {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    gap: 10px;
+}
+
+header .navigation .theme button{
+    display: none;
+    height: 30px;
+    width: 30px;
+    background-color: #f36c2d;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+/* ================== homepage ================== */
+.homepage {
+    background-color: #3ee47b;
+}
+
+.homepage .homepage-p {
+    padding: 100px 0px;
+}
+
+.homepage .homepage_banner {
+    display: flex;
+}
+
+.homepage .homepage_banner .left-banner {
+    flex: 1;
+    padding: 70px;
+}
+
+.homepage .homepage_banner .left-banner h1 {
+    font-size: 65px;
+}
+
+.homepage .homepage_banner .left-banner h1.title-b {
+    font-weight: 100;
+}
+
+.homepage .homepage_banner .left-banner p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.homepage .homepage_banner .right-banner {
+    flex: 1;
+    text-align: center;
+}
+
+.homepage .homepage_banner .right-banner img {
+    height: auto;
+    max-width: 100%;
+    animation: image_rotate 10s linear infinite;
+}
+
+@keyframes image_rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ /* experiance  */
+
+ .experiance .exp-p{
+    padding: 80px 0px;
+ }
+ .experiance .exp-outer-div{
+    display: flex;
+ }
+ .experiance .exp-outer-div .exp-div-img{
+    flex: 1;
+    display: flex;
+    text-align: center;
+ }
+ .experiance .exp-outer-div .exp-div-img img{
+    border-radius: 10px;
+    border: 5px solid white;
+    height: auto;
+    max-width: 100%;
+ }
+ .experiance .exp-outer-div .exp-div-img .img2{
+    transform: translate(-80px,80px);
+ }
+ .experiance .exp-outer-div .exp-content{
+    flex: 1;
+ }
+ .experiance .exp-outer-div .exp-content .exp-title{
+    font-size: 30px;
+    text-transform: capitalize;
+    padding-bottom: 17px;
+ }
+ .experiance .exp-outer-div .exp-content h1{
+    font-size: 45px;
+    padding-bottom: 30px;
+ }
+ .experiance .exp-outer-div .exp-content span{
+    color: #f36c2d;
+ }
+ .experiance .exp-outer-div .exp-content .para1, .para2{
+    letter-spacing: 0.5px;
+    padding-bottom: 20px;
+ } 
+ /* ==============================populer dishes===================================== */
+
+ .popular-dishes {
+    background-color: antiquewhite;
+}
+
+.popular-dishes .pop-p {
+    padding: 50px 0px;
+}
+
+.popular-dishes .title {
+    text-align: center;
+}
+
+.popular-dishes .title h1 {
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.popular-dishes .title h1 span {
+    color: #f36c2d;
+}
+
+.popular-dishes .gridbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 0px;
+}
+
+.popular-dishes .gridbox .grid1,
+.grid {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.popular-dishes .gridbox .grid1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 170px;
+    width: 170px;
+    background-color: #3ee47b;
+    z-index: -1;
+    border-radius: 0px 50%;
+    transition: 0.4s ease-in-out all;
+}
+
+.popular-dishes .gridbox .grid-img {
+    padding: 20px;
+}
+
+.popular-dishes .gridbox img {
+    border-radius: 50%;
+    border: 7px solid white;
+}
+
+.popular-dishes .gridbox .grid-text {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.popular-dishes .gridbox .grid-text h3 {
+    font-size: 27px;
+    padding-bottom: 10px;
+}
+
+.popular-dishes .gridbox .grid1 .grid-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-right: 50px solid #f36c2d;
+    border-bottom: 50px solid transparent;
+    transform: scale(0) rotate(90deg);
+    /* transition: 0.4s ease-in-out all; */
+}
+
+.popular-dishes .gridbox .grid1:hover::before {
+    background-color: #f36c2d;
+}
+
+.popular-dishes .gridbox .grid1:hover .grid-text::after {
+    transform: scale(1) rotate(90deg);
+}
+
+.popular-dishes .gridbox .grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 170px;
+    width: 170px;
+    background-color: #f36c2d;
+    z-index: -1;
+    border-radius: 0px 50%;
+    transition: 0.4s ease-in-out all;
+}
+
+.popular-dishes .gridbox .grid .grid-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-right: 50px solid #f36c2d;
+    border-bottom: 50px solid transparent;
+    transform: rotate(90deg);
+}
+/* =======================res menu=========================== */
+.Res_menu{
+    background-color: #3ee47b;
+}
+.Res_menu .res_menu_sub{
+    background: url(../img/back.png) no-repeat right;
+}
+.Res_menu .res-p{
+    padding: 80px 0px;
+}
+.Res_menu .tital h1{
+    font-size: 45px;
+}
+.Res_menu .tital h1 span{
+    color: #f36c2d;
+}
+.Res_menu .res_text{
+    padding: 30px 0px;
+    display: flex;
+}
+.Res_menu .res_text p{
+    flex: 1;
+    font-size: 17px;
+    line-height: 25px;
+    padding: 10px;
+}
+.Res_menu .btn button{
+    height: 40px;
+    width: 200px;
+    background-color: #f36c2d;
+    border: 2px solid transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: 0.5s ease all;
+}
+.Res_menu .btn button:hover{
+    background-color: #05462d;
+}
+/* ===============================about food==================================== */
+.about-food .about-f-p {
+    padding: 80px 0px;
+}
+
+.about-food .foodgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-food .foodgrid .foodsubgrid {
+    padding: 20px;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    transition: 0.5s ease-in-out all;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo span {
+    font-size: 35px;
+    color: #f36c2d;
+    transition: 0.5s ease all;
+    text-transform: capitalize;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo h3 {
+    padding-bottom: 10px;
+    font-weight: 700;
+    transition: 0.5s ease all;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo:hover span {
+    color: #3ee47b;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo:hover h3 {
+    color: #3ee47b;
+}
+
+.about-food .foodgrid .foodsubgrid .foodinfo:hover {
+    border: 1px solid rgb(228, 224, 224);
+    border-radius: 10px;
+}
+/* =================================about chef==================================== */
+.about-chef .about-c-p{
+    padding: 50px 0px;
+}
+.about-chef .about-c-flex{
+    display: flex;
+    align-items: center;
+}
+.about-chef .about-c-flex .about-left{
+    flex: 1;
+    padding: 30px;
+}
+.about-chef .about-c-flex .about-left .title h1{
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+.about-chef .about-c-flex .about-left .title h1 span{
+    color: #f36c2d;
+}
+.about-chef .about-c-flex .about-left p{
+    padding-bottom: 20px;
+    font-size: 17px;
+    line-height: 25px;
+}
+.about-chef .about-c-flex .about-right{
+    flex: 1;
+    align-items: center;
+}
+.about-chef .about-c-flex .about-right img {
+    height: auto;
+    max-width: 100%;
+
+}
+/* ==================== review ================= */
+.review {
+    background-color: #3ee47b;
+}
+
+.review .review-p {
+    padding: 50px 0px;
+}
+
+.review .review_flex {
+    display: flex;
+    gap: 30px;
+}
+
+.review .review_flex .both-c-review {
+    flex: 1;
+}
+
+.review .review_flex .client-review {
+    display: flex;
+    gap: 20px;
+}
+
+.review .review_flex .client-review .icon span {
+    color: #f36c2d;
+    font-size: 45px;
+}
+
+.review .review_flex .client-review .c-review h4 {
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.review .review_flex .client-review .c-review p {
+    letter-spacing: 1px;
+    line-height: 25px;
+    padding-bottom: 20px;
+}
+
+.review .review_flex .client-review .reward {
+    padding-bottom: 20px;
+}
+
+.review .review_flex .client-review .reward h4 {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
+.review .review_flex .client-review .reward span {
+    color: #f36c2d;
+}
+
+.review .review_flex .client-review .c-review img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.review .dots {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.review .dots .dots-div {
+    height: 10px;
+    width: 10px;
+    background-color: gainsboro;
+    border-radius: 50%;
+}
+
+.review .dots .dots-div.active {
+    background-color: #f36c2d;
+}
+
+.review .dots .dots-div:hover {
+    background-color: #f36c2d;
+}
+/* ================== news update ============ */
+.newsUpdate .news-p {
+    padding: 80px 0px;
+}
+
+.newsUpdate .title {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.newsUpdate .title h1 {
+    font-size: 50px;
+}
+
+.newsUpdate .forms {
+    margin: auto;
+    width: 52%;
+    /* text-align: center; */
+    position: relative;
+}
+
+.newsUpdate .forms input[type="text"] {
+    height: 50px;
+    width: 500px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 0px 30px;
+    font-size: 17px;
+    border: 1px solid gray;
+}
+
+.newsUpdate .forms input[type="text"]:focus-within {
+    outline: none;
+}
+
+.newsUpdate .forms .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.newsUpdate .forms button {
+    height: 50px;
+    width: 150px;
+    border: 1px solid transparent;
+    background-color: #f36c2d;
+    color: white;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+/* ==================== footer ============ */
+footer .footer-p {
+    padding: 50px 0px;
+}
+
+footer .footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 30px;
+}
+
+footer .footer-main .footer-sub-grid h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 17px;
+}
+
+footer .footer-main .footer-sub-grid p {
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+footer .footer-main .footer-sub-grid .social {
+    display: flex;
+    gap: 15px;
+}
+
+footer .footer-main .footer-sub-grid .social .icons {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(209, 203, 203);
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    transition: 0.5s all ease-in-out;
+}
+
+footer .footer-main .footer-sub-grid .social .icons a {
+    color: black;
+}
+
+footer .footer-main .footer-sub-grid .social .icons:hover {
+    background-color: #f36c2d;
+}
+
+footer .footer-main .footer-sub-grid li {
+    padding: 10px 0px;
+}
+
+footer .footer-main .footer-sub-grid li span {
+    padding-right: 10px;
+}
+
+footer .footer-main .footer-sub-grid li a {
+    color: black;
+    transition: 0.5s ease all;
+}
+
+footer .footer-main .footer-sub-grid li:hover a {
+    color: #3ee47b;
+}
+
+footer .copyright {
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 20px;
+}

@@ -1,93 +1,80 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Eye, Pencil, XCircle } from "lucide-react";
-import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
-import "./index.css"
+import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap';
+import "./index.css";
 
 export default function PasswordVisible() {
-    let [userData, setUserdata] = useState({ firstName: "", lastName: "", age: "", email: "", password: "" })
-    let [index, setIndex] = useState(null)
-    let [updateMode, setUpdateMode] = useState(false)
-    let [searchtext, setSearchtext] = useState("")
-    let [showPassword, setShowPassword] = useState(false)
+    let [userData, setUserdata] = useState({ firstName: "", lastName: "", age: "", email: "", password: "" });
+    let [index, setIndex] = useState(null);
+    let [updateMode, setUpdateMode] = useState(false);
+    let [searchtext, setSearchtext] = useState("");
+    let [showIndex, setShowIndex] = useState(null);
 
-    const [userArr, setUserArr] = useState([])
+    const [userArr, setUserArr] = useState([]);
+    const [showPasswords, setShowPasswords] = useState([]);
 
     useEffect(() => {
-        let data = localStorage.getItem("userData")
-        let normaData = JSON.parse(data) || []
+        let data = localStorage.getItem("userData");
+        let normaData = JSON.parse(data) || [];
         let newData = normaData.filter((e) => {
-            return e.firstName.toLowerCase().includes(searchtext.toLowerCase()) || e.age.includes(searchtext)
-        })
-        setUserArr(newData)
-    }, [searchtext])
-
-    // INPUT
+            return e.firstName.toLowerCase().includes(searchtext.toLowerCase()) || e.age.includes(searchtext);
+        });
+        setUserArr(newData);
+    }, [searchtext]);
 
     let addDataToArr = () => {
-
         if (userData.email === "" || userData.password === "") {
-            alert("Please fill the form first")
+            alert("Please fill the form first");
         } else {
-            setUserArr([...userArr, userData])
-            localStorage.setItem("userData", JSON.stringify([...userArr, userData]))
-            setUserdata({ firstName: "", lastName: "", age: "", email: "", password: "" })
+            setUserArr([...userArr, userData]);
+            localStorage.setItem("userData", JSON.stringify([...userArr, userData]));
+            setUserdata({ firstName: "", lastName: "", age: "", email: "", password: "" });
         }
     }
-
-    // DELETE
 
     let deleteHandler = (index) => {
         const deleteData = window.confirm("Do you want to delete?");
         if (deleteData) {
             let filterData = userArr.filter((e, i) => {
-                return i !== index
-            })
-            setUserArr(filterData)
-            localStorage.setItem("userData", JSON.stringify(filterData))
+                return i !== index;
+            });
+            setUserArr(filterData);
+            localStorage.setItem("userData", JSON.stringify(filterData));
         }
     }
 
-    // UPDATE
-
     function updateHandler(data, index) {
-        setUserdata({ ...data })
-        setIndex(index)
-        setUpdateMode(true)
+        setUserdata({ ...data });
+        setIndex(index);
+        setUpdateMode(true);
     }
 
     function updateDataToArray() {
-        if (index || index === 0)
-            userArr.splice(index, 1, { ...userData })
-        setUserArr([...userArr])
-        localStorage.setItem("userData", JSON.stringify([...userArr]))
-        setIndex(null)
-        setUserdata({ firstName: "", lastName: "", age: "", email: "", password: "" })
-        setUpdateMode(false)
+        if (index || index === 0) {
+            userArr.splice(index, 1, { ...userData });
+        }
+        setUserArr([...userArr]);
+        localStorage.setItem("userData", JSON.stringify([...userArr]));
+        setIndex(null);
+        setUserdata({ firstName: "", lastName: "", age: "", email: "", password: "" });
+        setUpdateMode(false);
     }
 
     function deleteAll() {
         const allDelete = window.confirm("Do you want to delete all data?");
         if (allDelete) {
-            const allDeleteData = window.confirm("Are you sure delete all data?");
+            const allDeleteData = window.confirm("Are you sure to delete all data?");
             if (allDeleteData) {
                 setUserArr([]);
-                localStorage.removeItem("userData")
+                localStorage.removeItem("userData");
             }
         }
-    }
-
-    function passwordVisibility() {
-
-        setShowPassword(true)
-        setTimeout(() => {
-            setShowPassword(false)
-        }, 5000);
     }
 
     return (
         <>
             <div className='formcss'>
-                <Form className='mainclass' >
+                <Form className='mainclass'>
                     <FormGroup>
                         <Label for="firstName">
                             <b>First Name</b>
@@ -154,7 +141,6 @@ export default function PasswordVisible() {
                         />
                     </FormGroup>
                     {
-                        // index || index === 0 ?
                         updateMode ?
                             (<Button color='success' style={{
                                 width: "100%"
@@ -201,7 +187,6 @@ export default function PasswordVisible() {
                                 <th>
                                     Show Password
                                 </th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -221,19 +206,20 @@ export default function PasswordVisible() {
                                             <td>
                                                 {e.age}
                                             </td>
-
                                             <td>
                                                 {e.email}
                                             </td>
                                             <td>
-                                                {showPassword ? e.password : "*******"}
+                                                {showIndex === i || showPasswords.includes(i) ? e.password : "*******"}
                                             </td>
-
-                                            <td><XCircle color="#f50000" role='button' onClick={() => deleteHandler(i)} />
+                                            <td>
+                                                <XCircle color="#f50000" role='button' onClick={() => deleteHandler(i)} />
                                             </td>
-                                            <td> <Pencil color="#f50000" role='button' onClick={() => updateHandler(e, i)} />
+                                            <td>
+                                                <Pencil color="#f50000" role='button' onClick={() => updateHandler(e, i)} />
                                             </td>
-                                            <td> <Eye color="#f50000" role='button' onClick={() => passwordVisibility()} />
+                                            <td>
+                                                <Eye color="#f50000" role='button' onClick={() => setShowIndex(i)} />
                                             </td>
                                         </tr>
                                     )
@@ -243,8 +229,8 @@ export default function PasswordVisible() {
                     </Table>)}
             </div>
             <div className='d-flex justify-content-center mt-3 ' >
-                <Button color='danger' className='buttoncss' onClick={() => deleteAll()} >Delete all</Button></div>
+                <Button color='danger' className='buttoncss' onClick={() => deleteAll()} >Delete all</Button>
+            </div>
         </>
-    )
+    );
 }
-

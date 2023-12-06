@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Variables */
+body {
+  background: #f77462;
+  font-family: Lato, sans-serif;
+}
+
+@font-face {
+  font-family: 'Genericons';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot');
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff') format('woff'),
+     url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="genericon"] 1{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1;
+  font-family: 'Genericons';
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: top;
+}
+
+/* IE7 */
+[class*="genericon"] {
+  *overflow: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+.container {
+  margin: 100px auto;
+}
+
+.accordion {
+  background: #5ab2ca;
+  width: 100%;
+  min-width: 950px;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  height: 200px;
+  font-size: 0;
+}
+
+.tabs {
+  display: inline-block;
+  background-color: #6dc5dd;
+  border-right: #5ab2ca 1px solid;
+  width: 80px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  transition: all 0.4s 0.1s ease-in-out;
+
+  &:hover {
+    width: 450px;
+  }
+
+  .social-links a:before, .social-links a:after {
+    transition: all 0.4s 0.1s ease-in-out;
+    width: 80px;
+    height: 200px;
+    position: absolute;
+    text-indent: 0;
+    padding-top: 90px;
+    padding-left: 25px;
+    display: block;
+    font: normal 30px Genericons;
+    color: #fff;
+  }
+  
+  }
+
+  .social-links a:after {
+    font-size: 48px;
+    padding-left: 20px;
+    padding-top: 80px;
+    margin-left: 85px;
+  }
+
+  .paragraph {
+    position: relative;
+    width: 360px;
+    margin-left: 80px;
+    padding: 50px 0 0 10px;
+    height: 200px;
+    background: #fff;
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    } 
+
+    p {
+      font-size: 0.88em;
+      line-height: 1.5em;
+      padding-right: 30px;
+    }
+  }
+}
+
+.social-links {
+  display: block;
+}
+
+.social-links a {
+  display: block;
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.twitter-icon a:before
+    </style>
+</head>
+<body>
+    <div class="container">
+    <ul class="accordion">
+      <li class="tabs">
+        <div class="social-links twitter-icon">
+          <span class="fa-brands fa-twitter"></span>
+          <a href="">Twitter</a>
+        </div>
+        <div class="paragraph">
+          <h1>Twitter</h1>
+          <p>My thoughts in 140 characters or less. Sometimes, I do not know how to correctly use Twitter.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links facebook-icon">
+        <span  class="fa-brands fa-facebook"></span>
+          <a href="">Facebook</a>
+        </div>
+        <div class="paragraph">
+          <h1>Facebook</h1>
+          <p>Where I get to stalk my friends and let them stalk me. A place to get people to stroke your ego.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links linkedin-icon">
+          <span  class="fa-brands fa-linkedin"></span>
+           <a href="">LinkedIn</a>
+        </div>
+        <div class="paragraph">
+          <h1>LinkedIn</h1>
+          <p>I act totally professional on this one. It is what the recruiters see, you see.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links insta-icon">
+          <span class="fa-brands fa-instagram"></span>
+          <a href="">Instagram</a>
+        </div>
+        <div class="paragraph">
+          <h1>Instagram</h1>
+          <p>Where I post my duckface pictures. Occasionally, I would post pictures of my food and my cats.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links youtube-icon">
+          <span  class="fa-brands fa-youtube"></span>
+          <a href="">Youtube</a>
+        </div>
+        <div class="paragraph">
+          <h1>YouTube</h1>
+          <p>Just kidding! I do not have a YouTube account. I'm not too fond of the camera.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links tumblr-icon">
+          <span class="fa-brands fa-tumblr"></span>
+          <a href="">Tumblr</a>
+        </div>
+        <div class="paragraph">
+          <h1>Tumblr</h1>
+          <p>I have a tumblr but I don't really use it. I still prefer WordPress. I'm quite old-fashioned.</p>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links dribbble-icon">
+          <span class="fa-brands fa-dribbble"></span>
+          <a href="">Dribbble</a>
+        </div>
+        <div class="paragraph">
+          <h1>Dribbble</h1>
+          <p>I do not have a Dribbble account. Would any of you be so kind and send me an invite? </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

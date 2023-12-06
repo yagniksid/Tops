@@ -4,6 +4,7 @@ import AddDeleteUpdate from './Task/AddDeleteUpdate'
 import ChangeColor from './Task/ChangeColor'
 import CrudFull from './Task/CrudFull'
 import FullCrud from './Task/FullCrud'
+import MultipleShow from './Task/MultipleShow'
 import PasswordVisible from './Task/PasswordVisible'
 import ProductTable from './Task/ProductTable'
 import StateProject from './Task/StateProject'
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className='appContainer'>
 
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <ProductTable /> */}
       {/* <ChangeColor /> */}
       {/* <StateProject /> */}
@@ -24,7 +25,7 @@ function App() {
       {/* <UserInputCrud /> */}
       {/* <CrudFull /> */}
       {/* <PasswordVisible /> */}
-      {/* <NonIdiomaticList/> */}
+      <MultipleShow/>
     </div>
   )
 }

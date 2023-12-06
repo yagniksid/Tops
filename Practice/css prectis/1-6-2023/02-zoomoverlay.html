@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"">
+    <style>
+        .imageoverlay{
+            height: 300px;
+            width: 300px;
+            /* border: 1px solid red; */
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        .imageoverlay img{
+            height: 300px;
+            width: 300px;
+        }
+        .imageoverlay .text{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(220, 20,  60, 0.705);
+            height: 100%;
+            width: 100%;
+            display: grid;
+            place-content: center;
+            transform: scale(0);
+            transition: 1s all ease-in-out;
+            color: white;
+        }
+        .imageoverlay:hover .text{
+            transform: scale(1);
+        }
+        .imageoverlay .texroverlay{
+            transform: scale(0);
+            transition: 3s all ease;
+            transition-delay: 2s;
+            /* animation: bouncein 5s ease; */
+        }
+        .imageoverlay:hover .textoverlay{
+            transform: scale(1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="imageoverlay">
+        <img src="img 9.jpg" alt="">
+        <div class="text">
+            <div class="textoverlay">
+            <h1>image overlay</h1>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

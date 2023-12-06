@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     @keyframes sheen {
+	 0% {
+		 transform: skewY(-45deg) translateX(0);
+	}
+	 100% {
+		 transform: skewY(-45deg) translateX(12.5em);
+	}
+}
+ .wrapper {
+	 display: block;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+}
+ .button {
+	 padding: 0.75em 2em;
+	 text-align: center;
+	 text-decoration: none;
+	 color: #2194e0;
+	 border: 2px solid #2194e0;
+	 font-size: 24px;
+	 display: inline-block;
+	 border-radius: 0.3em;
+	 transition: all 0.2s ease-in-out;
+	 position: relative;
+	 overflow: hidden;
+}
+ .button:before {
+	 content: "";
+	 background-color: rgba(255, 255, 255, 0.5);
+	 height: 100%;
+	 width: 3em;
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: -4.5em;
+	 transform: skewX(-45deg) translateX(0);
+	 transition: none;
+}
+ .button:hover {
+	 background-color: #2194e0;
+	 color: #fff;
+	 border-bottom: 4px solid #1977b5;
+}
+ .button:hover:before {
+	 transform: skewX(-45deg) translateX(13.5em);
+	 transition: all 0.5s ease-in-out;
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="#" class="button">Shiney!</a>
+      </div>
+</body>
+</html>

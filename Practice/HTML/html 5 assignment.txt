@@ -1,0 +1,75 @@
+                                                                          MODULE-(HTML-5)
+
+
+1. - What Are The New Tags Added in HTML5?
+
+ ANS:     This is a new tags  HTML5------------
+
+          (MOVED)article, (MOVED)aside, audio, canvas, command, datalist, details,embed, figcaption
+          figure, footer, header, hgroup, keygen, mark, math, meter, nav, output, progress, rp, rt
+          ruby, section, source, summary, svg, time, track, video, wbr . 
+
+=======================================================================================================================================================================
+
+
+2. - How To Embed Audio And Video in A Webpage? 
+
+   ANS:     To embed audio in HTML, we use the <audio> tag. Before HTML5, audio cannot be added to web pages in the Internet Explorer era.
+            To play audio, we used web plugins like Flash. After the release of HTML5, it is possible. This tag supports Chrome, Firefox, Safari, Opera, and 
+            Edge in three audio formats – MP3, WAV, OGG. Only Safari browser doesn’t support OGG audio format.
+
+         syntax--
+                      <audio> 
+                            <source src="file_name" type="audio_file_type">
+                      </audio>
+
+          syntax--     <video width="320" height="240" controls>
+                       <source src="movie.mp4" type="video/mp4">
+                       <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                        </video>
+
+======================================================================================================================================================================
+
+
+3. -  Semantic Element in HTML5? 
+
+ ANS:      Many web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer"> to indicate navigation, header, and footer.
+           In HTML there are some semantic elements that can be used to define different parts of a web page: 
+
+
+
+          <article>, <aside>, <details>, <figcaption>, <figure>, <footer>, <header>, <main>, <mark>, <nav>, <section>, <summary>, <time> .........
+
+======================================================================================================================================================================
+
+4 -  Canvas And SVG Tags? 
+
+  ANS:
+
+            *CANVAS- The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+                     The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+                     Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+                    
+                      syntax- <script>
+                                  var c = document.getElementById("myCanvas");
+                                  var ctx = c.getContext("2d");
+                                           ctx.moveTo(0, 0);
+                                           ctx.lineTo(200, 100);
+                                           ctx.stroke();
+                              </script>
+                    
+
+           
+              *SVG-  SVG stands for Scalable Vector Graphics
+                     SVG is used to define graphics for the Web
+                     is a W3C recommendation 
+
+                    
+                        syntax- <svg width="100" height="100">        
+                                     <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                                </svg>
+
+
+======================================================================================================================================================================

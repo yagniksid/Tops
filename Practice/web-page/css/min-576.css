@@ -1,0 +1,86 @@
+@media (min-width:576px) {
+    .container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    /* ============ header ========== */
+    header .navigation .navbar {
+        display: none;
+    }
+
+    header .navigation .theme {
+        display: flex;
+        justify-content: end;
+    }
+
+    header .navigation .theme button {
+        display: block;
+    }
+    
+    /* =========================experiance=========================== */
+    .experiance .exp-outer-div{
+        display: flex;
+        flex-direction: column;
+    }
+    .experiance .exp-outer-div .exp-content{
+        padding-top: 100px;
+     }
+      /* ================popular dishes=============== */
+      .popular-dishes .gridbox {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);}
+          /* ===============================res menu======================*/
+    .res_menu .res_text{
+        display: flex;
+        flex-direction: column;
+    }
+    .res_menu .res_menu{
+        background-color:rgba(255, 255, 255, 0.588);
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+    /* ===============================res menu======================*/
+    .Res_menu .res_text{
+        display: flex;
+        flex-direction: column;
+    }
+    .Res_menu .res_menu{
+        background-color:rgba(255, 255, 255, 0.588);
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+      /* ===============================about food==================================== */
+      .about-food .foodgrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+     /* ===========================about chef===================== */
+     .about-chef .about-c-flex{
+        display: flex;
+        flex-direction: column;
+    }
+    /* =======================review======================= */
+    .review .review_flex {
+        display: flex;
+        flex-direction: column;
+    }
+     /* ======== news update ========== */
+     .newsUpdate .title h1 {
+        font-size: 30px;
+    }
+
+    .newsUpdate .forms {
+        width: 80%;
+
+    }
+
+    /* footer */
+    footer .footer-main {
+        display: grid;
+        grid-template-columns: 2fr;
+    }
+
+}
