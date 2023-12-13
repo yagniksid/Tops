@@ -1,0 +1,12 @@
+.navdiv {
+    width: 100%;
+}
+
+.tag a {
+    text-decoration: none;
+}
+
+.active {
+    color: purple;
+    font-weight: bold;
+}

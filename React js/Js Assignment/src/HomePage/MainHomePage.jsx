@@ -12,7 +12,7 @@ export default function MainHomePage() {
             <Nav />
             <Header />
             <Homepage />
-            <Catagory/>
+            <Catagory />
         </>
     )
 }

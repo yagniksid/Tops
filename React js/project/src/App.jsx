@@ -1,4 +1,5 @@
 import './App.css'
+import Router from './Router/Router'
 import AddDelete from './Task/AddDelete'
 import AddDeleteUpdate from './Task/AddDeleteUpdate'
 import ChangeColor from './Task/ChangeColor'
@@ -25,7 +26,8 @@ function App() {
       {/* <UserInputCrud /> */}
       {/* <CrudFull /> */}
       {/* <PasswordVisible /> */}
-      <MultipleShow/>
+      {/* <MultipleShow /> */}
+      <Router />
     </div>
   )
 }
