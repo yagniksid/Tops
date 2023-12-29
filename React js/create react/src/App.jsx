@@ -19,6 +19,12 @@ import InputData from "./09_Input/InputData"
 import DeleteData from "./09_Input/DeleteData"
 import Router from "./10_Router/Router"
 import { BrowserRouter } from "react-router-dom"
+import UseContextCom from "./11_UseContext/UseContextCom"
+import { User } from "lucide-react"
+import UseReducerCom from "./12_UseReducer/UseReducerCom"
+import UseReducer from "./12_UseReducer/UseReducer"
+import InputValue from "./12_UseReducer/InputValue"
+import Task from "./12_UseReducer/task"
 
 function App() {
 
@@ -51,13 +57,18 @@ function App() {
       {/* <UseStateClass /> */}
       {/* -------------------------------------------LIFE-CYCLE--------------------------------------------- */}
       {/* <LifeCycle /> */}
-      {/* -------------------------------------------LIFE-CYCLE--------------------------------------------- */}
+      {/* -------------------------------------------HOOKS--------------------------------------------- */}
       {/* <Useeffect /> */}
+      {/* <UseContextCom /> */}
+      {/* <UseReducerCom /> */}
+      <InputValue />
+      {/* <Task /> */}
       {/* -------------------------------------------INPUT--------------------------------------------- */}
       {/* <InputData /> */}
       {/* < DeleteData /> */}
       {/* -------------------------------------------ROUTER--------------------------------------------- */}
-      <Router />
+      {/* <Router /> */}
+      {/* <UseReducer /> */}
     </div>
 
   )

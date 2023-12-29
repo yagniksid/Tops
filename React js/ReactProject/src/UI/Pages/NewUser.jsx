@@ -1,243 +1,133 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Button, Col, Form, FormFeedback, FormGroup, FormText, Input, Label } from 'reactstrap'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Button, Col, Form, FormGroup, Input, Label } from "reactstrap";
+
+let userData = {
+  email: "",
+  password: "",
+  userType: "User",
+};
 
 export default function NewUser() {
-    const navigate = useNavigate()
+  let [data, setData] = useState(userData);
+  const navigate = useNavigate();
 
-    return (
-        <>
-            <div className='d-flex justify-content-center pt-5 pb-4' >
-                <Form style={{
-                    backgroundColor: "#a9dff5 ",
-                    padding: "30px",
-                    border: "2px solid black",
-                    borderRadius: "10px"
-                }}>
-                    <FormGroup row>
-                        <Label
-                            for="exampleEmail"
-                            sm={2}
-                        >
-                            Email
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="exampleEmail"
-                                name="email"
-                                placeholder="with a placeholder"
-                                type="email"
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="examplePassword"
-                            sm={2}
-                        >
-                            Password
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="examplePassword"
-                                name="password"
-                                placeholder="password placeholder"
-                                type="password"
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="exampleSelect"
-                            sm={2}
-                        >
-                            Select
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="exampleSelect"
-                                name="select"
-                                type="select"
-                            >
-                                <option>
-                                    1
-                                </option>
-                                <option>
-                                    2
-                                </option>
-                                <option>
-                                    3
-                                </option>
-                                <option>
-                                    4
-                                </option>
-                                <option>
-                                    5
-                                </option>
-                            </Input>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="exampleSelectMulti"
-                            sm={2}
-                        >
-                            Select Multiple
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="exampleSelectMulti"
-                                multiple
-                                name="selectMulti"
-                                type="select"
-                            >
-                                <option>
+  let submitHandler = (e) => {
+    e.preventDefault();
+    let oldData = localStorage.getItem("newUser");
+    let convertedData = JSON.parse(oldData) || [];
+    let matchUserData = convertedData.find((e) => e.email === data.email);
+    if (matchUserData) {
+      toast.warning("Data is already exist please input another data");
+      setData(userData);
+    } else if (data.email === "" || data.password === "") {
+      toast.error("Please input data");
+    } else {
+      let finalData = [...convertedData, data];
+      localStorage.setItem("newUser", JSON.stringify(finalData));
+      setData(userData);
+    }
+  };
 
-                                </option>
-                                <option>
-
-                                </option>
-                                <option>
-
-                                </option>
-                                <option>
-
-                                </option>
-                                <option>
-
-                                </option>
-                            </Input>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="exampleText"
-                            sm={2}
-                        >
-                            Text Area
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="exampleText"
-                                name="text"
-                                type="textarea"
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="exampleFile"
-                            sm={2}
-                        >
-                            File
-                        </Label>
-                        <Col sm={10}>
-                            <Input
-                                id="exampleFile"
-                                name="file"
-                                type="file"
-                            />
-                            <FormText>
-                                This is some placeholder block-level help text for the above input. It‘s a bit lighter and easily wraps to a new line.
-                            </FormText>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup
-                        row
-                        tag="fieldset"
-                    >
-                        <legend className="col-form-label col-sm-2">
-                            Radio Buttons
-                        </legend>
-                        <Col sm={10}>
-                            <FormGroup check>
-                                <Input
-                                    name="radio2"
-                                    type="radio"
-                                />
-                                {' '}
-                                <Label check>
-                                    Option one is this and that—be sure to include why it‘s great
-                                </Label>
-                            </FormGroup>
-                            <FormGroup check>
-                                <Input
-                                    name="radio2"
-                                    type="radio"
-                                />
-                                {' '}
-                                <Label check>
-                                    Option two can be something else and selecting it will deselect option one
-                                </Label>
-                            </FormGroup>
-                            <FormGroup
-                                check
-                                disabled
-                            >
-                                <Input
-                                    disabled
-                                    name="radio2"
-                                    type="radio"
-                                />
-                                {' '}
-                                <Label check>
-                                    Option three is disabled
-                                </Label>
-                            </FormGroup>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup row>
-                        <Label
-                            for="checkbox2"
-                            sm={2}
-                        >
-                            Checkbox
-                        </Label>
-                        <Col
-                            sm={{
-                                size: 10
-                            }}
-                        >
-                            <FormGroup check>
-                                <Input
-                                    id="checkbox2"
-                                    type="checkbox"
-                                />
-                                {' '}
-                                <Label check>
-                                    Check me out
-                                </Label>
-                            </FormGroup>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup
-                        check
-                        row
-                    >
-                        <Col
-                            sm={{
-                                offset: 2,
-                                size: 10
-                            }}
-                        >
-                            <Button style={{
-                                backgroundColor: "#0970e6"
-                            }}>
-                                Submit
-                            </Button>
-                        </Col>
-                    </FormGroup>
-                </Form>
-            </div>
-            <div className='d-flex justify-content-center'>
-                <Button style={{
-                    display: "flex", justifyContent: "center",
-                    backgroundColor: "#ffb217", marginTop: "20px",
-                    marginBottom: "40px"
-                }} onClick={() => navigate("/header")}> go back</Button>
-            </div>
-        </>
-
-
-    )
+  return (
+    <>
+      <div className="w-100 d-flex justify-content-center pt-5 pb-4">
+        <Form
+          style={{
+            width: "50%",
+            padding: "30px",
+            border: "2px solid black",
+            borderRadius: "10px",
+          }}
+          onSubmit={submitHandler}
+        >
+          <FormGroup row>
+            <Label for="exampleEmail" sm={2}>
+              Email
+            </Label>
+            <Col sm={10}>
+              <Input
+                id="exampleEmail"
+                name="email"
+                placeholder="with a placeholder"
+                type="text"
+                value={data.email}
+                onChange={(e) => setData({ ...data, email: e?.target?.value })}
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="examplePassword" sm={2}>
+              Password
+            </Label>
+            <Col sm={10}>
+              <Input
+                id="examplePassword"
+                name="password"
+                placeholder="password placeholder"
+                type="password"
+                value={data.password}
+                onChange={(e) =>
+                  setData({ ...data, password: e?.target?.value })
+                }
+              />
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="userType" sm={2}>
+              Select User Type
+            </Label>
+            <Col sm={10}>
+              <Input
+                type="select"
+                name="userType"
+                id="user"
+                value={data.userType}
+                onChange={(e) =>
+                  setData({ ...data, userType: e?.target?.value })
+                }
+              >
+                <option>User</option>
+              </Input>
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col>
+              <Button
+                style={{
+                  backgroundColor: "#ffb217",
+                  color: "white",
+                  border: "none",
+                  fontWeight: "bold",
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                }}
+                className="w-100"
+              >
+                Register
+              </Button>
+              <Button color="danger" className="w-100">
+                Cancel
+              </Button>
+            </Col>
+          </FormGroup>
+        </Form>
+      </div>
+      <div className="d-flex justify-content-center">
+        <Button
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#ffb217",
+            marginTop: "20px",
+            marginBottom: "40px",
+          }}
+          onClick={() => navigate(-1)}
+        >
+          Go back
+        </Button>
+      </div>
+    </>
+  );
 }
