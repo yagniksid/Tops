@@ -1,13 +1,17 @@
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Router from './Router/Router'
-import Header from './UI/Component/Header/Header'
-import YourComponent from './YourComponent'
+import 'react-toastify/dist/ReactToastify.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 function App() {
 
   return (
     <>
       {/* <Header /> */}
       <Router />
+      <ToastContainer />
+
       {/* <YourComponent /> */}
     </>
   )

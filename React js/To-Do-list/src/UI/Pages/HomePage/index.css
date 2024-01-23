@@ -4,3 +4,127 @@
     gap: 20px;
     width: 100%;
 }
+
+.tbl-1 {
+    flex: 1;
+}
+
+.tbl-2 {
+    flex: 1;
+}
+
+body {
+    background: paleturquoise;
+    font-family: Courier New, monospace;
+    margin: 20px;
+}
+
+.content {
+    margin: 3em auto;
+    max-width: 500px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.notebook-page {
+    background-color: #fff;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #23239a64;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.input::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.402);
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 96px;
+}
+
+.notebook-page .text-edit {
+    display: none;
+}
+
+textarea#msg {
+    background: none;
+    border: none;
+    color: #111;
+    font-size: 24px;
+    min-height: 450px;
+    resize: none;
+    line-height: 1.25;
+}
+
+aside.context {
+    color: #fff;
+    text-align: center;
+}
+
+aside.context a {
+    color: #fff;
+    text-decoration: none;
+    color: #111;
+    padding: 5px 0;
+    border-bottom: 1px dashed;
+}
+
+aside.context a:visited {
+    color: #fff;
+}
+
+aside.context .explanation {
+    max-width: 700px;
+    margin: 3em auto;
+}
+
+footer {
+    text-align: center;
+    margin: 5em auto;
+}
+
+footer a {
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    margin: 5px;
+}
+
+footer a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+footer a .icons {
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.form-check-input:checked {
+    background-color: #22d76d;
+    border-color: #22d76d;
+}

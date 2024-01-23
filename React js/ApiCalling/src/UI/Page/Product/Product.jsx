@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Button, Table } from 'reactstrap';
 import "./Product.css"
 import ProductModal from '../../Component/Modal/ProductModal';
 import TableData from '../TableData';
+import { toast } from 'react-toastify';
 
 const initialData = {
   title: "",
@@ -23,6 +23,7 @@ export default function Product() {
   let [fetchFlag, setFetchFlag] = useState(true)
   let [data, setData] = useState([])
   let [productData, setProductData] = useState(initialData)
+  console.log("🚀 ~ Product ~ productData:", productData)
 
 
   const toggle = () => setModal(!modal);
@@ -46,27 +47,37 @@ export default function Product() {
   const submitHandler = (data) => {
     console.log("🚀 ~ submitHandler ~ data:", data)
     console.log("========>>>", data)
-    axios({
-      method: "post",
-      url: `http://localhost:9999/product/create`,
-      data: data,
-    })
-      .then((res) => {
-        console.log("-----------  res----------->", res);
-        toast.success("product added");
-        setAddProduct(initialData);
-        reFetchData()
-        toggle();
+    if (Object.values(data).some(value => value === "")) {
+      toast.warn("Please add product first")
+      toggle()
+    }
+    // if (data.title === "") {
+    //   toast.warn("Please add product first")
+    //   toggle()
+    // }
+    else {
+      axios({
+        method: "post",
+        url: `http://localhost:9999/product/create`,
+        data: data,
       })
-      .catch((err) => {
-        console.log(
-          "-----------  err.response.error----------->",
-          err.response.error
-        );
-        toast.error(err.response.error);
-      });
+        .then((res) => {
+          console.log("-----------  res----------->", res);
+          toast.success("Product added");
+          setAddProduct(initialData);
+          reFetchData()
+          toggle();
+        })
+        .catch((err) => {
+          console.log(
+            "-----------  err.response.error----------->",
+            err.response.error
+          );
+          toast.error(err.response.error);
+        });
       reFetchData()
-    toggle()
+      toggle()
+    }
   }
 
   const updateHandler = (newData) => {
@@ -78,8 +89,9 @@ export default function Product() {
     })
       .then((res) => {
         console.log("-----------  res----------->", res);
-        alert("product added");
+        toast.success("product updated");
         reFetchData()
+        setProductData(initialData)
         toggle();
       })
       .catch((err) => {
@@ -98,7 +110,7 @@ export default function Product() {
       url: `http://localhost:9999/product/delete/${id}`
     })
       .then((res) => {
-        alert(" Product Deleted....!")
+        toast.success(" Product Deleted....!")
         reFetchData()
       })
       .catch((err) => {

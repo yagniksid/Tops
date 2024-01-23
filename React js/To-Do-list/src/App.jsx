@@ -6,7 +6,7 @@ import HomePage from './UI/Pages/HomePage/HomePage';
 export default function App() {
   return (
     <>
-    <HomePage/>
+      <HomePage />
     </>
   )
 }

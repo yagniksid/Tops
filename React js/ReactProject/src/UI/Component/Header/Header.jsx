@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Button, NavItem } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
 import RegisterModal from "../Modal/RegisterModal";
 import { toast } from "react-toastify";
@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <>
       <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
-      <RegisterModal toggle={registerToggle} modal={registerModal} loginToggle={loginToggle} />
+      <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
 
       <header className="sticky">
         <b>BY</b>

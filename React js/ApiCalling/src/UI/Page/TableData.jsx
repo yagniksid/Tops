@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Edit, Trash2Icon } from "lucide-react";
 import { Button, Table } from 'reactstrap';
-import axios from 'axios';
 
 export default function TableData({ toggle, productData, editHandler, deleteHandler }) {
 

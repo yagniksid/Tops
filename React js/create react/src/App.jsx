@@ -25,6 +25,7 @@ import UseReducerCom from "./12_UseReducer/UseReducerCom"
 import UseReducer from "./12_UseReducer/UseReducer"
 import InputValue from "./12_UseReducer/InputValue"
 import Task from "./12_UseReducer/task"
+import CheckBox from "./13_CheckBox/CheckBox"
 
 function App() {
 
@@ -61,11 +62,12 @@ function App() {
       {/* <Useeffect /> */}
       {/* <UseContextCom /> */}
       {/* <UseReducerCom /> */}
-      <InputValue />
+      {/* <InputValue /> */}
       {/* <Task /> */}
       {/* -------------------------------------------INPUT--------------------------------------------- */}
       {/* <InputData /> */}
-      {/* < DeleteData /> */}
+      < DeleteData />
+      {/* <CheckBox /> */}
       {/* -------------------------------------------ROUTER--------------------------------------------- */}
       {/* <Router /> */}
       {/* <UseReducer /> */}

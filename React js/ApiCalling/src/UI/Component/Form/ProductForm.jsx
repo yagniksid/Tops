@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
 import Select from "react-select";
-import axios from 'axios';
-import Product from '../../Page/Product/Product';
-
 
 const options = [
     { value: 'formal', label: 'Formal' },
@@ -81,7 +78,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                 <FormGroup>
                     <Label for="exampleSelect">Category</Label>
                     <Select options={options} isMulti
-                        // ["sport","formal"] => 
                         value={addProduct.category.map((e) => ({ label: e.toUpperCase().charAt(0) + e.slice(1), value: e }))}
                         onChange={(selected) => showCategory(selected)}
                     />
@@ -96,6 +92,7 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                         <Input
                                             name="radio1"
                                             type="radio"
+                                            // checked={addProduct?.genderArry?.includes(e)}
                                             onChange={() => { setAddProduct({ ...addProduct, gender: e }) }}
                                             className='ms-2 me-1'
                                         />

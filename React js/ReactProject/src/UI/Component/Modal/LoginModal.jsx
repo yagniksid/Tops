@@ -13,6 +13,8 @@ import {
 } from "reactstrap";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import RegisterModal from "./RegisterModal";
+import "./index.css";
 
 const initialData = {
   email: "",
@@ -21,7 +23,6 @@ const initialData = {
 
 export default function LoginModal({ modal, toggle, registerToggle }) {
   const [user, setUser] = useState(initialData);
-  const [data, setData] = useState(false)
 
   const navigate = useNavigate();
 
@@ -66,9 +67,11 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
     toggle();
   };
 
-  function createAccount() {
+
+  function createAcoount() {
     toggle();
     registerToggle()
+    console.log("========registr======>>>>>>");
   }
 
   return (
@@ -86,7 +89,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 name="email"
                 placeholder="with a placeholder"
                 type="text"
-                onChange={(e) => setUser({ ...user, email: e?.target?.value })}
+                onChange={(e) => setUser({ ...user, email: e?.target?.value.toLowerCase() })}
               />
             </FormGroup>
             <FormGroup>
@@ -101,7 +104,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 }
               />
             </FormGroup>
-            <p role="button" className="text-primary" onClick={createAccount}>
+            <p role="button" className="text-primary" onClick={createAcoount}>
               Create account...!
             </p>
             <Button
@@ -112,7 +115,6 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 fontWeight: "bold",
               }}
               className="w-100 mt-3 mb-3"
-              type="submit"
             >
               Submit
             </Button>

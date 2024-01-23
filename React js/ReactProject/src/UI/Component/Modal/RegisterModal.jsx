@@ -12,7 +12,6 @@ import {
   ModalHeader,
   Row,
 } from "reactstrap";
-import LoginModal from "./LoginModal";
 
 const initialData = {
   email: "",
@@ -20,9 +19,9 @@ const initialData = {
   userType: "User",
 };
 
-export default function RegisterModal({ toggle, modal, loginToggle }) {
+export default function RegisterModal({ toggle, modal, login }) {
   let [newUser, setNewUser] = useState(initialData);
-
+  console.log("🚀 ~ RegisterModal ~ newUser:", newUser)
 
   const handleSubmit = (e) => {
     // console.log("----->", newUser);
@@ -46,13 +45,13 @@ export default function RegisterModal({ toggle, modal, loginToggle }) {
   };
 
   function singIn() {
+    console.log("=========sign in=======>>>");
+    login()
     toggle();
-    loginToggle()
   }
 
   return (
     <>
-
       <div>
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>
@@ -71,7 +70,7 @@ export default function RegisterModal({ toggle, modal, loginToggle }) {
                       type="text"
                       value={newUser.email}
                       onChange={(e) =>
-                        setNewUser({ ...newUser, email: e?.target?.value })
+                        setNewUser({ ...newUser, email: e?.target?.value.toLowerCase() })
                       }
                     />
                   </FormGroup>
