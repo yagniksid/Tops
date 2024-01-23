@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Edit, Trash2Icon } from "lucide-react";
 import { Button, Table } from 'reactstrap';
 
+let sizeArray = ["41", "42", "43", "44", "45"]
 export default function TableData({ toggle, productData, editHandler, deleteHandler }) {
-
     let [data, setData] = useState(productData)
-
     useEffect(() => {
         setData(productData)
     }, [productData])
@@ -27,8 +26,8 @@ export default function TableData({ toggle, productData, editHandler, deleteHand
                             <th>Brand</th>
                             <th>Gender</th>
                             <th>Price</th>
-                            <th>Discount
-                                Percentage</th>
+                            <th>Discount per</th>
+                            <th>Final price</th>
                             <th>Category</th>
                             <th>Color</th>
                             <th>Size</th>
@@ -45,18 +44,71 @@ export default function TableData({ toggle, productData, editHandler, deleteHand
                                 <td><div role='button' className='text'>{e.description}</div></td>
                                 <td>{e.brand}</td>
                                 <td>{e.gender}</td>
+                                {/* <td className='d-flex gap-3' style={{ borderBottomWidth: "0px" }}>
+                                    {e.discountPercentage > 0 ? (
+                                        <>
+                                            <div>{e.price}</div>
+                                            <div>{e.discountPercentage}%</div>
+                                            <div style={{ textAlign: "center", backgroundColor: "green", height: "25px", width: "auto", borderRadius: "30px", padding: "0px 5px" }}>{(e.price * (e.discountPercentage / 100)).toFixed(2)}</div>
+                                        </>
+                                    ) : (
+                                        <div>{e.price} <span style={{ backgroundColor: "red", borderRadius: "20px", padding: "0px 10px" }}>- No Discount</span></div>
+                                    )}
+                                </td> */}
+
                                 <td>{e.price}</td>
-                                <td >{e.discountPercentage}</td>
+                                <td>
+                                    {e.discountPercentage > 0 ? (<div>{e.discountPercentage}%</div>) : ("No Discount")
+                                    }
+                                </td>
+                                <td>
+                                    {e.discountPercentage > 0 ? (
+                                        <div>{(e.price * (e.discountPercentage / 100)).toFixed(2)}</div>
+                                    ) : (
+                                        <div>{e.price}</div>
+                                    )}
+                                </td>
                                 <td>{e.category}</td>
-                                <td>{e.color.join(",")}</td>
-                                <td>{e.size.join(",")}</td>
+                                <td>
+                                    <div className='d-flex align-items-center gap-2'>
+                                        {e.color.map((e, i) => (
+                                            <>
+                                                <div
+                                                    key={i}
+                                                    style={{
+                                                        width: '15px',
+                                                        height: '15px',
+                                                        backgroundColor: e,
+                                                        borderRadius: '50%',
+                                                        border: '1px solid black',
+                                                    }}
+
+                                                ></div>
+                                            </>
+                                        ))}
+                                    </div>
+                                    {e.color.join(",")}
+                                </td>
+                                <td className='d-flex' style={{ borderBottomWidth: "0px" }}>
+                                    {sizeArray.map((ele, i) => (
+                                        <div
+                                            key={i}
+                                            style={{
+                                                padding: "2px 6px",
+                                                color: e.size.find((e) => e === ele) ? "black" : "lightgray",
+                                            }}
+                                        >
+                                            {ele}
+                                        </div>
+                                    ))}
+                                </td>
                                 <th><Edit onClick={() => editHandler(e)} color='red' role='button' /></th>
                                 <th><Trash2Icon role='button' onClick={() => deleteHandler(e._id)} color='red' /></th>
                             </tr>
                         ))}
                     </tbody>
                 </Table>
-            </div>)
+            </div >)
             }
         </>
     )

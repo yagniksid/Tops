@@ -1,7 +1,5 @@
-import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Router from './Router/Router'
-import 'react-toastify/dist/ReactToastify.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
 function App() {
@@ -10,7 +8,6 @@ function App() {
     <>
       {/* <Header /> */}
       <Router />
-      <ToastContainer />
 
       {/* <YourComponent /> */}
     </>

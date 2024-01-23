@@ -3,7 +3,7 @@ import axios from 'axios';
 import "./Product.css"
 import ProductModal from '../../Component/Modal/ProductModal';
 import TableData from '../TableData';
-import { toast } from 'react-toastify';
+import Swal from "sweetalert2"
 
 const initialData = {
   title: "",
@@ -12,7 +12,7 @@ const initialData = {
   category: [],
   price: "",
   gender: "",
-  discountPercentage: "0",
+  discountPercentage: "",
   color: [],
   size: [],
   thumbnail: ""
@@ -73,10 +73,16 @@ export default function Product() {
             "-----------  err.response.error----------->",
             err.response.error
           );
-          toast.error(err.response.error);
         });
       reFetchData()
       toggle()
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Product added successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
   }
 
@@ -89,7 +95,6 @@ export default function Product() {
     })
       .then((res) => {
         console.log("-----------  res----------->", res);
-        toast.success("product updated");
         reFetchData()
         setProductData(initialData)
         toggle();
@@ -101,22 +106,46 @@ export default function Product() {
         );
         toast.error(err.response.error);
       });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Product updated",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   const deleteHandler = (id) => {
     console.log("---->", id)
-    axios({
-      method: 'delete',
-      url: `http://localhost:9999/product/delete/${id}`
-    })
-      .then((res) => {
-        toast.success(" Product Deleted....!")
-        reFetchData()
-      })
-      .catch((err) => {
-        console.log("-------->", err);
-        alert("error")
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You wont to delete.... !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+        axios({
+          method: 'delete',
+          url: `http://localhost:9999/product/delete/${id}`
+        })
+          .then((res) => {
+            reFetchData()
+          })
+          .catch((err) => {
+            console.log("-------->", err);
+            alert("error")
+          });
+      }
+    });
+
   }
 
   const editHandler = (data) => {

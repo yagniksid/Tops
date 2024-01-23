@@ -11,7 +11,7 @@ const options = [
 const colorArry = ["red", "green", "white", "black", "blue"]
 
 const genderArry = ["male", "female", "other"]
-const sizeArry = ["42", "43", "45"]
+const sizeArry = ["41", "42", "43", "44", "45"]
 
 export default function ProductForm({ toggle, productData, updateHandler, submitHandler }) {
     let [addProduct, setAddProduct] = useState(productData)
@@ -144,7 +144,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                                 onChange={() => { selectHandler(e, "color") }}
                                                 className='ms-2 me-1'
                                             />
-
                                             <div style={{
                                                 width: "15px",
                                                 height: "15px",
