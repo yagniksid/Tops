@@ -15,7 +15,6 @@ const sizeArry = ["41", "42", "43", "44", "45"]
 
 export default function ProductForm({ toggle, productData, updateHandler, submitHandler }) {
     let [addProduct, setAddProduct] = useState(productData)
-    let [discountPercentage, setDiscountPercentage] = useState(0);
 
     useEffect(() => {
         setAddProduct(productData)
@@ -36,7 +35,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
         let select = selected.map((e) => {
             return e.label
         })
-        console.log("🚀 ~ select ~ select:", select)
         setAddProduct({ ...addProduct, category: select })
     }
     const submitData = () => {
@@ -46,12 +44,7 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
     const updateData = () => {
         updateHandler(addProduct)
     }
-    console.log("🚀 ~ updateData ~ addProduct:", addProduct)
 
-    const handleDiscountChange = (e) => {
-        setDiscountPercentage(e.target.value);
-        setAddProduct({ ...addProduct, discountPercentage: e.target.value });
-    };
     return (
         <>
             <Form>
@@ -90,9 +83,9 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                 return (
                                     <div key={i}>
                                         <Input
-                                            name="radio1"
+                                            name="gender"
                                             type="radio"
-                                            // checked={addProduct?.genderArry?.includes(e)}
+                                            checked={addProduct.gender === e}
                                             onChange={() => { setAddProduct({ ...addProduct, gender: e }) }}
                                             className='ms-2 me-1'
                                         />
@@ -115,13 +108,15 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                             id="exampleRange"
                             min="0"
                             max="100"
-                            value={discountPercentage}
-                            onChange={handleDiscountChange}
+                            value={addProduct.discountPercentage}
+                            onChange={(e) => {
+                                setAddProduct({ ...addProduct, discountPercentage: e.target.value });
+                            }}
                         />
-                        <span className="ms-2">{discountPercentage}%</span>
+                        <span className="ms-2">{addProduct.discountPercentage}%</span>
                     </div>
-
                 </FormGroup>
+
 
                 <FormGroup>
                     <div>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .content {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 300px;
+      /* Adjust as needed */
+    }
+
+    .show-more {
+      cursor: pointer;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p id="content" class="content " style="width: 50px; text-wrap: wrap">
+    jdhbkjshdkjhsdkfhkjshdfkjdfhvkjdhfvjhdfvjhdjfhvjdhfjvhjkdhvjhdjfvhjkdfhjvhdkjfhvkdhfvkdhfvkjdfhvkjdfhvdhf</p>
+  <span id="show-more" class="show-more" onclick="showMore()">...</span>
+
+  <script>
+    function showMore() {
+      var content = document.getElementById('content');
+      var showMoreBtn = document.getElementById('show-more');
+
+      if (content.classList.contains('content')) {
+        content.classList.remove('content');
+        content.style.whiteSpace = 'normal';
+        showMoreBtn.textContent = 'Less';
+      } else {
+        content.classList.add('content');
+        content.style.whiteSpace = 'nowrap';
+        showMoreBtn.textContent = '...';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

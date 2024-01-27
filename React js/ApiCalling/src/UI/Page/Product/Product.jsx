@@ -23,7 +23,6 @@ export default function Product() {
   let [fetchFlag, setFetchFlag] = useState(true)
   let [data, setData] = useState([])
   let [productData, setProductData] = useState(initialData)
-  console.log("🚀 ~ Product ~ productData:", productData)
 
 
   const toggle = () => setModal(!modal);
@@ -64,7 +63,7 @@ export default function Product() {
         .then((res) => {
           console.log("-----------  res----------->", res);
           toast.success("Product added");
-          setAddProduct(initialData);
+          // setAddProduct(initialData);
           reFetchData()
           toggle();
         })
