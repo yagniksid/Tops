@@ -32,7 +32,7 @@ export default function Header() {
       <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
       <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
 
-      <header className="sticky">
+      <header className="sticky">                                
         <b>BY</b>
         <nav>
           <NavLink to={"/"}>Home</NavLink>

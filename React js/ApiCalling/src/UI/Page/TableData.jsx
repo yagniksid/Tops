@@ -3,23 +3,26 @@ import { Edit, Trash2Icon } from "lucide-react";
 import { Button, Table } from 'reactstrap';
 
 let sizeArray = ["41", "42", "43", "44", "45"]
-export default function TableData({ toggle, productData, editHandler, deleteHandler }) {
+export default function TableData({ toggle, productData, editHandler, deleteHandler, initialData, resetForm }) {
+    console.log("🚀 ~ TableData ~ initialData:", initialData)
     let [data, setData] = useState(productData)
     let [expandedId, setExpandedId] = useState(null)
+    let [titleExpand, setTitleExpand] = useState(null)
 
     useEffect(() => {
         setData(productData)
     }, [productData])
 
-
+    const clearForm = () => {
+        resetForm()
+    }
 
     return (
         <>
             <div className='d-flex justify-content-end pb-3 pe-5'>
-                <Button style={{ backgroundColor: "#6fcdff", color: "black" }} onClick={toggle}>Add Product</Button>
+                <Button style={{ backgroundColor: "#6fcdff", color: "black" }} onClick={clearForm}>Add Product</Button>
             </div>
             {data.length === 0 ? <span style={{ fontWeight: "bold", fontSize: "25px", display: "flex", width: "100%", justifyContent: "center", marginBottom: "20px" }}>Data Not Found</span> : (<div>
-
                 <Table striped size='sm'>
                     <thead>
                         <tr >
@@ -40,11 +43,21 @@ export default function TableData({ toggle, productData, editHandler, deleteHand
                     <tbody >
                         {data.map((e, i) => {
                             const isExpanded = e?._id === expandedId
+                            const titleExpanded = e?._id === titleExpand
                             return (
                                 <tr key={e._id}>
                                     <th scope="row">{i + 1}</th>
                                     <td><img style={{ width: "150px", aspectRatio: "3/2" }} src={e.thumbnail} alt="" /></td>
-                                    <td>{e.title}</td>
+                                    <td>
+                                        <div style={{
+                                            maxWidth: "150px",
+                                            whiteSpace: titleExpanded ? "unset" : "nowrap",
+                                            overflow: "hidden",
+                                            textOverflow: titleExpanded ? "unset" : "ellipsis"
+                                        }}
+                                            role='button'
+                                            onClick={() => setTitleExpand(titleExpand ? null : e?._id)} >{e.title}</div>
+                                    </td>
                                     <td>
                                         <div style={{
                                             maxWidth: "150px", whiteSpace: isExpanded ? "unset" : "nowrap",
@@ -72,7 +85,7 @@ export default function TableData({ toggle, productData, editHandler, deleteHand
                                     </td>
                                     <td>{e.category}</td>
                                     <td>
-                                        <div className='d-flex flex-column align-items-start justify-content-start  mt-0'>
+                                        <div>
                                             {e.color.map((e, i) => (
                                                 <div className='d-flex align-items-center gap-1'>
                                                     <div
@@ -87,7 +100,6 @@ export default function TableData({ toggle, productData, editHandler, deleteHand
 
                                                     >
                                                     </div>
-
                                                     <p className='m-0'>{e}</p>
                                                 </div>
                                             ))}

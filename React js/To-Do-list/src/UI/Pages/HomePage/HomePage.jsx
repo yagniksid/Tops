@@ -35,11 +35,23 @@ export default function HomePage() {
   }, []);
 
 
-  const editHandler = (editedData) => {
-    const index = toDoData.indexOf(editedData);
+  const editHandler = (editedData, index) => {
+    console.log("🚀 ~ editHandler ~ index:", index)
+    console.log("🚀 ~ editHandler ~ editedData:", editedData)
     setData(editedData);
     setEditIndex(index);
-  };
+  }
+
+  const updateData = () => {
+    if (editIndex !== null) {
+      const storeUpdate = [...toDoData]
+      storeUpdate[editIndex] = data
+      setToDoData(storeUpdate)
+      localStorage.setItem("userdata", JSON.stringify(storeUpdate));
+    }
+    setEditIndex(null)
+  }
+
 
 
   return (
@@ -61,16 +73,32 @@ export default function HomePage() {
             </div>
           </div>
           <div className="d-flex justify-content-center mb-4">
-            <Button
-              style={{
-                backgroundColor: "rgb(60 63 121)",
-              }}
-              className="w-50"
-              id="submit"
-              type="submit"
-            >
-              Add Data
-            </Button>
+            {editIndex !== null ? (
+              <Button
+                style={{
+                  backgroundColor: "rgb(60 63 121)",
+                }}
+                className="w-50"
+                id="submit"
+                type="submit"
+                onClick={updateData}
+              >
+                Update
+              </Button>
+            ) : (
+              <Button
+                style={{
+                  backgroundColor: "rgb(60 63 121)",
+                }}
+                className="w-50"
+                id="submit"
+                type="submit"
+              >
+                Add Data
+              </Button>
+
+            )
+            }
           </div>
         </Form>
       </div>

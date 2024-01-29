@@ -2,7 +2,7 @@ import { Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 're
 import ProductForm from '../Form/ProductForm';
 
 
-export default function ProductModal({ modal, toggle, productData, updateHandler, submitHandler }) {
+export default function ProductModal({ modal, toggle, productData, updateHandler, submitHandler, setProductData }) {
     return (
         <div>
             <Modal isOpen={modal} toggle={toggle} fullscreen className='w-50 m-auto'>

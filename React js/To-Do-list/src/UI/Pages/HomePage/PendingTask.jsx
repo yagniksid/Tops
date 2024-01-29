@@ -50,7 +50,7 @@ export default function PendingTask({ toDoData, setToDoData, getData, setGetData
     };
 
     const editData = (data, index) => {
-        editHandler(data)
+        editHandler(data,index)
     }
 
     return (
@@ -84,6 +84,7 @@ export default function PendingTask({ toDoData, setToDoData, getData, setGetData
                                                 border: "none"
                                             }}
                                             onChange={checkAllTodoData}
+                                            checked={selectedToDoData.length==toDoData.length}
                                         />
                                         <Label
                                             role="button"

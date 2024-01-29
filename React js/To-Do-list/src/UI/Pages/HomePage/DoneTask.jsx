@@ -172,6 +172,7 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                                 fontSize: "22px",
                                             }}
                                             onChange={checkAllGetData}
+                                            checked={selectedGetData.length == getData.length}
                                         />
                                         <Label
                                             role="button"

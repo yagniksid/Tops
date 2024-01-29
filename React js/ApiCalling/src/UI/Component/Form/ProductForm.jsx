@@ -9,7 +9,6 @@ const options = [
 ]
 
 const colorArry = ["red", "green", "white", "black", "blue"]
-
 const genderArry = ["male", "female", "other"]
 const sizeArry = ["41", "42", "43", "44", "45"]
 
@@ -98,7 +97,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                         }
                     </div>
                 </FormGroup>
-
                 <FormGroup>
                     <Label for="exampleRange">Discount Percentage</Label>
                     <div className='d-flex'>
@@ -116,8 +114,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                         <span className="ms-2">{addProduct.discountPercentage}%</span>
                     </div>
                 </FormGroup>
-
-
                 <FormGroup>
                     <div>
                         <div>
@@ -155,7 +151,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                         </div>
                     </div>
                 </FormGroup>
-
                 <FormGroup>
                     <div >
                         <Label for="exampleSelect">
@@ -183,7 +178,6 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                         </div>
                     </div>
                 </FormGroup>
-
                 <FormGroup>
                     <Label for="exampleTitle" className='text-capitalize'>
                         Thumbnail

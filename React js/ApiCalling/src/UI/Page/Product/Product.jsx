@@ -12,7 +12,7 @@ const initialData = {
   category: [],
   price: "",
   gender: "",
-  discountPercentage: "",
+  discountPercentage: "0",
   color: [],
   size: [],
   thumbnail: ""
@@ -23,6 +23,11 @@ export default function Product() {
   let [fetchFlag, setFetchFlag] = useState(true)
   let [data, setData] = useState([])
   let [productData, setProductData] = useState(initialData)
+
+  const resetForm = () => {
+    setProductData(initialData)
+    toggle()
+  }
 
 
   const toggle = () => setModal(!modal);
@@ -50,10 +55,6 @@ export default function Product() {
       toast.warn("Please add product first")
       toggle()
     }
-    // if (data.title === "") {
-    //   toast.warn("Please add product first")
-    //   toggle()
-    // }
     else {
       axios({
         method: "post",
@@ -63,8 +64,8 @@ export default function Product() {
         .then((res) => {
           console.log("-----------  res----------->", res);
           toast.success("Product added");
-          // setAddProduct(initialData);
           reFetchData()
+          setProductData(initialData)
           toggle();
         })
         .catch((err) => {
@@ -156,7 +157,7 @@ export default function Product() {
   return (
     <>
       <ProductModal productData={productData} modal={modal} toggle={toggle} updateHandler={updateHandler} submitHandler={submitHandler} />
-      <TableData toggle={toggle} reFetchData={reFetchData} productData={data} editHandler={editHandler} deleteHandler={deleteHandler} />
+      <TableData toggle={toggle} reFetchData={reFetchData} productData={data} editHandler={editHandler} deleteHandler={deleteHandler} resetForm={resetForm} initialData={productData} />
     </>
   );
 }
