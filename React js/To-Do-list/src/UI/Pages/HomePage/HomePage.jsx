@@ -35,24 +35,42 @@ export default function HomePage() {
   }, []);
 
 
+  // const editHandler = (editedData, index) => {
+  //   console.log("🚀 ~ editHandler ~ index:", index)
+  //   console.log("🚀 ~ editHandler ~ editedData:", editedData)
+  //   setData(editedData);
+  //   setEditIndex(index);
+  // }
+
+  // const updateData = () => {
+  //   if (editIndex !== null) {
+  //     const storeUpdate = [...toDoData]
+  //     console.log("🚀 ~ updateData ~ storeUpdate:", storeUpdate)
+  //     storeUpdate[editIndex] = data
+  //     console.log("🚀 ~ updateData ~ storeUpdate[editIndex]:", storeUpdate[editIndex])
+  //     setToDoData(storeUpdate)
+  //     localStorage.setItem("userdata", JSON.stringify(storeUpdate));
+  //   }
+  //   setEditIndex(null)
+  //   setData("")
+  // }
+
   const editHandler = (editedData, index) => {
-    console.log("🚀 ~ editHandler ~ index:", index)
-    console.log("🚀 ~ editHandler ~ editedData:", editedData)
+    console.log("Edit Handler - editedData:", editedData);
+    console.log("Edit Handler - index:", index);
     setData(editedData);
     setEditIndex(index);
-  }
+  };
 
   const updateData = () => {
-    if (editIndex !== null) {
-      const storeUpdate = [...toDoData]
-      storeUpdate[editIndex] = data
-      setToDoData(storeUpdate)
-      localStorage.setItem("userdata", JSON.stringify(storeUpdate));
+    if (editIndex || editIndex === 0) {
+      toDoData.splice(editIndex, 1, data); // Replace the element at editIndex with the new data
+      setToDoData([...toDoData]);
+      localStorage.setItem("userdata", JSON.stringify([...toDoData]));
+      setEditIndex(null);
+      setData("")
     }
-    setEditIndex(null)
-  }
-
-
+  };
 
   return (
     <>

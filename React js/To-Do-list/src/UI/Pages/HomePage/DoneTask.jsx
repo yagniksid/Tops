@@ -250,10 +250,12 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                                 width: "100"
                                             }}
                                         >
-                                            <Button color="danger" className="ms-2 me-3" onClick={deleteSelected}>Selected Delete</Button>
+
                                             <Button color="danger" onClick={selectedRestore}>Remove Selected</Button>
+                                            <Button Button color="danger" className="ms-2 me-3" onClick={deleteSelected}>Selected Delete</Button>
                                         </div>
                                     )}
+
                                     <div style={{
                                         textAlign: "center",
                                         width: "100"
@@ -267,7 +269,7 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
