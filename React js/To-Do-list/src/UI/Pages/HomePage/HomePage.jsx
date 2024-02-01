@@ -11,6 +11,7 @@ export default function HomePage() {
   const [getData, setGetData] = useState([]);
   let [editIndex, setEditIndex] = useState(null)
 
+
   const addData = (e) => {
     e?.preventDefault();
     if (data === "") {
@@ -35,47 +36,36 @@ export default function HomePage() {
   }, []);
 
 
-  // const editHandler = (editedData, index) => {
-  //   console.log("🚀 ~ editHandler ~ index:", index)
-  //   console.log("🚀 ~ editHandler ~ editedData:", editedData)
-  //   setData(editedData);
-  //   setEditIndex(index);
-  // }
-
-  // const updateData = () => {
-  //   if (editIndex !== null) {
-  //     const storeUpdate = [...toDoData]
-  //     console.log("🚀 ~ updateData ~ storeUpdate:", storeUpdate)
-  //     storeUpdate[editIndex] = data
-  //     console.log("🚀 ~ updateData ~ storeUpdate[editIndex]:", storeUpdate[editIndex])
-  //     setToDoData(storeUpdate)
-  //     localStorage.setItem("userdata", JSON.stringify(storeUpdate));
-  //   }
-  //   setEditIndex(null)
-  //   setData("")
-  // }
-
   const editHandler = (editedData, index) => {
-    console.log("Edit Handler - editedData:", editedData);
-    console.log("Edit Handler - index:", index);
     setData(editedData);
     setEditIndex(index);
-  };
+  }
 
-  const updateData = () => {
-    if (editIndex || editIndex === 0) {
-      toDoData.splice(editIndex, 1, data); // Replace the element at editIndex with the new data
-      setToDoData([...toDoData]);
-      localStorage.setItem("userdata", JSON.stringify([...toDoData]));
-      setEditIndex(null);
-      setData("")
+  const updateData = (e) => {
+    e.preventDefault();
+    if (editIndex !== null) {
+      if (data === "") {
+        Swal.fire({
+          text: "Please Update Some Data",
+          icon: "warning",
+          confirmButtonText: "OK",
+        })
+      } else {
+        const storeUpdate = [...toDoData];
+        storeUpdate[editIndex] = data;
+        setToDoData(storeUpdate);
+        localStorage.setItem("userdata", JSON.stringify(storeUpdate));
+        setEditIndex(null);
+        setData("");
+      }
     }
   };
+
 
   return (
     <>
       <div className="mt-5">
-        <Form onSubmit={addData}>
+        <Form >
           <div className="d-flex justify-content-center mb-2">
             <div className="w-50">
               <Input
@@ -92,17 +82,15 @@ export default function HomePage() {
           </div>
           <div className="d-flex justify-content-center mb-4">
             {editIndex !== null ? (
-              <Button
+              (<Button
                 style={{
                   backgroundColor: "rgb(60 63 121)",
                 }}
                 className="w-50"
-                id="submit"
-                type="submit"
                 onClick={updateData}
               >
                 Update
-              </Button>
+              </Button>)
             ) : (
               <Button
                 style={{
@@ -111,6 +99,7 @@ export default function HomePage() {
                 className="w-50"
                 id="submit"
                 type="submit"
+                onClick={addData}
               >
                 Add Data
               </Button>

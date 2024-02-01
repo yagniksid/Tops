@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Input, Label } from "reactstrap";
-import { MinusSquare, Trash } from "lucide-react";
+import { ArrowLeftSquare, Trash } from "lucide-react";
 import Swal from "sweetalert2";
 import "./index.css";
 
@@ -87,25 +87,47 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
     };
 
     const deleteAllHandler = () => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success",
-                });
-                setGetData([])
-                localStorage.removeItem("removedata");
-            }
-        });
+        if (getData.length !== 0) {
+            Swal.fire({
+                title: "Sure?",
+                text: "You want to delete this data..!!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            }).then((result1) => {
+                if (result1.isConfirmed) {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You want to delete this data..!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, delete it!",
+                    }).then((result2) => {
+                        if (result2.isConfirmed) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success",
+                            });
+                            setGetData([])
+                            localStorage.removeItem("removedata");
+                        }
+                    });
+                    setGetData([])
+                    localStorage.removeItem("removedata");
+                }
+            });
+        } else {
+            Swal.fire({
+                title: "No data available",
+                text: "There is no data to delete.",
+                icon: "info",
+            });
+        }
     };
 
     const deleteSelected = () => {
@@ -140,7 +162,6 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
         localStorage.setItem("userdata", JSON.stringify([...toDoData, ...notDone]));
         setSelectedGetData([]);
     }
-
 
     return (
         <>
@@ -184,9 +205,8 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                 )}
                                 <ul style={{ listStyle: "none" }}>
                                     {getData.map((e, i) => (
-                                        <>
+                                        <div key={i} >
                                             <li
-                                                key={i}
                                                 className="w-100 d-flex align-items-center justify-content-between mt-0 mb-0"
                                                 style={{ maxHeight: "10px" }}
                                             >
@@ -212,7 +232,7 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                                         {e}
                                                     </Label>
                                                 </div>
-                                                <div className="d-flex align-items-center gap-3">
+                                                <div className="d-flex align-items-center">
                                                     <Input
                                                         onChange={() => checkedHandlerGetData(i)}
                                                         checked={selectedGetData.includes(i)}
@@ -224,11 +244,12 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                                         }}
                                                     />
 
-                                                    <MinusSquare
-                                                        color="#ec0909"
+                                                    <ArrowLeftSquare
+                                                        color="#22d76d"
                                                         style={{ marginLeft: "10px" }}
                                                         role="button"
                                                         onClick={() => removeHandler(i)}
+                                                        className="me-2"
                                                     />
 
                                                     <Trash
@@ -239,30 +260,38 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                                 </div>
                                             </li>
                                             <hr style={{ width: "100%" }} />
-                                        </>
+                                        </div>
                                     ))}
                                 </ul>
                                 <div className="d-flex justify-content-center gap-3">
-                                    {selectedGetData.length > 1 && (
+                                    {selectedGetData.length === getData.length || selectedGetData.length > 1 && (
                                         <div
                                             style={{
                                                 textAlign: "center",
                                                 width: "100"
                                             }}
                                         >
-
                                             <Button color="danger" onClick={selectedRestore}>Remove Selected</Button>
-                                            <Button Button color="danger" className="ms-2 me-3" onClick={deleteSelected}>Selected Delete</Button>
                                         </div>
                                     )}
+
+                                    {
+                                        selectedGetData.length === getData.length && getData.length > 0 &&
+                                        <Button color="danger" onClick={selectedRestore}>Move All</Button>
+
+                                    }
+
+                                    {selectedGetData.length !== getData.length && selectedGetData.length > 1 &&
+                                        <Button Button color="danger" className="ms-2 me-3" onClick={deleteSelected}>Selected Delete</Button>
+                                    }
 
                                     <div style={{
                                         textAlign: "center",
                                         width: "100"
-                                    }}> <Button color="danger" onClick={deleteAllHandler}>
+                                    }}>
+                                        {getData.length > 0 && <Button color="danger" onClick={deleteAllHandler}>
                                             Delete All
-                                        </Button>
-
+                                        </Button>}
                                     </div>
                                 </div>
                             </div>
