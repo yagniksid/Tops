@@ -26,8 +26,8 @@ function App() {
       {/* <UserInputCrud /> */}
       {/* <CrudFull /> */}
       {/* <PasswordVisible /> */}
-      <MultipleShow />
-      {/* <Router /> */}
+      {/* <MultipleShow /> */}
+      <Router />
     </div>
   )
 }

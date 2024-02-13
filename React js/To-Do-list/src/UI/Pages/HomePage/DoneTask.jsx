@@ -183,7 +183,7 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                         </div>
                         <div className="p-3 d-flex flex-column justify-content-between">
                             <div>
-                                {getData.length > 0 && (
+                                {getData.length > 1 && (
                                     <div className="d-flex justify-content-end pb-2">
                                         <Input
                                             type="checkbox"
@@ -267,31 +267,38 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                     {selectedGetData.length === getData.length || selectedGetData.length > 1 && (
                                         <div
                                             style={{
-                                                textAlign: "center",
-                                                width: "100"
+                                                display: "flex",
+                                                width: "100",
+                                                justifyContent: "center",
+                                                gap: "10px",
+                                                marginLeft: "25px"
                                             }}
                                         >
                                             <Button color="danger" onClick={selectedRestore}>Remove Selected</Button>
+                                            <Button Button color="danger" onClick={deleteSelected}>Selected Delete</Button>
                                         </div>
                                     )}
 
                                     {
                                         selectedGetData.length === getData.length && getData.length > 0 &&
-                                        <Button color="danger" onClick={selectedRestore}>Move All</Button>
-
-                                    }
-
-                                    {selectedGetData.length !== getData.length && selectedGetData.length > 1 &&
-                                        <Button Button color="danger" className="ms-2 me-3" onClick={deleteSelected}>Selected Delete</Button>
+                                        <div style={{
+                                            display: "flex",
+                                            width: "100",
+                                            justifyContent: "center",
+                                            gap: "10px",
+                                            marginLeft: "25px"
+                                        }}>
+                                            <Button color="danger" onClick={selectedRestore}>Move All</Button>
+                                            <Button color="danger" onClick={deleteAllHandler}>
+                                                Delete All
+                                            </Button>
+                                        </div>
                                     }
 
                                     <div style={{
                                         textAlign: "center",
                                         width: "100"
                                     }}>
-                                        {getData.length > 0 && <Button color="danger" onClick={deleteAllHandler}>
-                                            Delete All
-                                        </Button>}
                                     </div>
                                 </div>
                             </div>

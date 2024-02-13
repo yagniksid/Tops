@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../../feature/count/counter"
-import amountReducer from "../../feature/amount/amount";
-import pointReducer from "../../feature/point/point";
+import counterReducer from "../feature/count/counter";
+import amountReducer from "../feature/amount/amount";
+import pointReducer from "../feature/point/point";
+import nameReducer from "../feature/input/input"
 
 export const store = configureStore({
     reducer: {
         counterReducer: counterReducer,
         amountReducer: amountReducer,
-        pointReducer: pointReducer
+        pointReducer: pointReducer,
+        nameReducer: nameReducer
     }
 })

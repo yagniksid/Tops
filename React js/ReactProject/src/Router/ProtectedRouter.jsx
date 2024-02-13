@@ -13,7 +13,6 @@ export const ProtectedRouter = ({ Component }) => {
   return (
     <div>
       {Component}
-
     </div>
   )
 }
