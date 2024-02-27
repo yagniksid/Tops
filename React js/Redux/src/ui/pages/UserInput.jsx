@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Input, Table } from 'reactstrap'
 import { Edit2Icon, Plus, PlusCircle, Trash2Icon } from 'lucide-react'
@@ -7,10 +7,18 @@ import { addUserName, editUserName, removeUserName } from '../../Redux/feature/i
 export default function UserInput() {
     let [name, setName] = useState("")
     let [index, setIndex] = useState(null)
+    let [search, setSearch] = useState("")
+    let [data, setData] = useState([])
 
     let userData = useSelector((store) => {
         return store.nameReducer.name
     })
+
+    useEffect(() => {
+        let searchData = userData.filter((ele) => ele.toLowerCase().includes(search.toLowerCase()))
+        setData(searchData)
+    }, [search, userData])
+
     let dispatch = useDispatch()
 
     let addData = () => {
@@ -52,7 +60,14 @@ export default function UserInput() {
                     }
                 </div>
             </div >
-            <div className='d-flex justify-content-center pt-5'>
+            <div className='d-flex justify-content-end mt-4 me-5' >
+                <Input className='w-25'
+                    type='search'
+                    placeholder='Search text here'
+                    onChange={(e) => setSearch(e?.target?.value)}
+                />
+            </div>
+            <div className='d-flex justify-content-center pt-3'>
                 <div className='w-75 d-flex justify-content-center'>
                     <Table >
                         <thead>
@@ -72,7 +87,7 @@ export default function UserInput() {
                             </tr>
                         </thead>
                         <tbody>
-                            {userData.map((e, i) => {
+                            {data.map((e, i) => {
                                 return <tr key={i}>
                                     <th scope="row">
                                         {i + 1}
