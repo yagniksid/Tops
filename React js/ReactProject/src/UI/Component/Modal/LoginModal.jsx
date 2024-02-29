@@ -89,6 +89,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 name="email"
                 placeholder="with a placeholder"
                 type="text"
+                value={user.email}
                 onChange={(e) => setUser({ ...user, email: e?.target?.value.toLowerCase() })}
               />
             </FormGroup>
@@ -99,6 +100,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 name="password"
                 placeholder="password placeholder"
                 type="password"
+                value={user.password}
                 onChange={(e) =>
                   setUser({ ...user, password: e?.target?.value })
                 }

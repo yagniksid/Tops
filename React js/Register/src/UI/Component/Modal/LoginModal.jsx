@@ -19,19 +19,21 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             toggle()
             setLogData(initialData)
         } else {
-            let matchEmail = storedData.find((e) => e.email !== logData.email)
-            let matchUserType = storedData.find((e) => e.userType !== logData.userType)
+            console.log("🚀 ~ addData ~ storedData:", storedData)
+            let matchData = storedData.find((e) => e.email === logData.email)
+            console.log("🚀 ~ addData ~ matchData:", matchData)
 
-            if (matchEmail) {
-                alert("please enter valid email")
-            } else if (matchUserType) {
-                alert("Please enter valid usertype")
+            if (matchData) {
+                if (matchData.userType !== logData.userType) {
+                    alert("Please enter valid usertype")
+                }
             } else {
-                alert("No matching user found please ,Register first")
+                return alert("please enter valid email")
+
             }
         }
     }
-    
+
     const createAcoount = () => {
         registerToggle()
         toggle()

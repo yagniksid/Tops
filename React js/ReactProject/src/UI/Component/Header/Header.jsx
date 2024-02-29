@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Button, NavItem } from "reactstrap";
+import { Button } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
 import RegisterModal from "../Modal/RegisterModal";
 import { toast } from "react-toastify";
@@ -10,7 +10,6 @@ export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
   const loginData = JSON.parse(localStorage.getItem("loginUser")) || [];
-  const RegData = JSON.parse(localStorage.getItem("newUser")) || [];
   const navigate = useNavigate();
 
   const logoutHandler = () => {
@@ -20,7 +19,7 @@ export default function Header() {
       position: "top-center",
       autoClose: 10000,
       hideProgressBar: false,
-      theme: "light",
+      theme: "light"
     });
   };
 
@@ -32,7 +31,7 @@ export default function Header() {
       <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
       <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
 
-      <header className="sticky">                                
+      <header className="sticky">
         <b>BY</b>
         <nav>
           <NavLink to={"/"}>Home</NavLink>

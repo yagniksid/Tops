@@ -5,7 +5,7 @@ export const ProtectedRouter = ({ Component }) => {
   const navigate = useNavigate()
   useEffect(() => {
     let normaldata = JSON.parse(localStorage.getItem("loginUser")) || []
-
+    console.log("🚀 ~ useEffect ~ normaldata:", normaldata)
     if (Object.keys(normaldata).length === 0) {
       navigate("/unauthorised")
     }

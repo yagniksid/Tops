@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Amount from './ui/pages/Amount';
 import Point from './ui/pages/Point';
 import UserInput from './ui/pages/UserInput';
+import Checklist from './ui/pages/Checklist';
+import User from './ui/pages/User';
+import Router from './Router/Router';
 
 
 export default function App() {
@@ -16,8 +19,10 @@ export default function App() {
         {/* <Counter />
         <Amount /> */}
         {/* <Point /> */}
-        <UserInput />
+        {/* <UserInput /> */}
+        <Router />
       </Provider>
+      {/* <Checklist /> */}
     </div>
   )
 }

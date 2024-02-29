@@ -240,23 +240,17 @@ export default function PendingTask({
                   width: "100",
                 }}
               >
+                {selectedToDoData.length === toDoData.length && toDoData.length > 1 &&
+
+                  (<Button color="danger" onClick={submitHandler}>
+                    Submit All
+                  </Button>)
+                }
                 {
-                  selectedToDoData.length !== toDoData.length ?
-                    (<div
-                      style={{
-                        textAlign: "center",
-                        width: "100",
-                      }}
-                    >
-                      <Button color="danger" onClick={submitHandler}>
-                        Submit
-                      </Button>
-                    </div>
-                    ) : (
-                      <Button color="danger" onClick={submitHandler}>
-                        Submit All
-                      </Button>
-                    )}
+                  selectedToDoData.length === toDoData.length || toDoData.length > 0 && <Button color="danger" onClick={submitHandler}>
+                    Submit
+                  </Button>
+                }
               </div>
             </div>
           </div>

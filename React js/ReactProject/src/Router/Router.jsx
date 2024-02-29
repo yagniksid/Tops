@@ -24,7 +24,7 @@ export default function Router() {
                     <Route path='/admin' element={<AdminProtectedRouter Component={<Admin />} />} />
                 </Routes>
                 <Footer />
-            </BrowserRouter>F
+            </BrowserRouter>
         </>
     )
 }
