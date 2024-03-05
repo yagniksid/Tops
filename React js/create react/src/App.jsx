@@ -26,6 +26,7 @@ import UseReducer from "./12_UseReducer/UseReducer"
 import InputValue from "./12_UseReducer/InputValue"
 import Task from "./12_UseReducer/task"
 import CheckBox from "./13_CheckBox/CheckBox"
+import DisplayInput from "./Task/DisplayInput/DisplayInput"
 
 function App() {
 
@@ -55,13 +56,13 @@ function App() {
       {/* <ConditionFunCom /> */}
       {/* -------------------------------------------USE STATE--------------------------------------------- */}
       {/* <UseStateFun /> */}
-      {/* <UseStateClass /> */}
+      <UseStateClass />
       {/* -------------------------------------------LIFE-CYCLE--------------------------------------------- */}
       {/* <LifeCycle /> */}
       {/* -------------------------------------------HOOKS--------------------------------------------- */}
       {/* <Useeffect /> */}
       {/* <UseContextCom /> */}
-      <UseReducerCom />
+      {/* <UseReducerCom /> */}
       {/* <InputValue /> */}
       {/* <Task /> */}
       {/* -------------------------------------------INPUT--------------------------------------------- */}
@@ -71,6 +72,7 @@ function App() {
       {/* -------------------------------------------ROUTER--------------------------------------------- */}
       {/* <Router /> */}
       {/* <UseReducer /> */}
+      {/* <DisplayInput /> */}
     </div>
 
   )

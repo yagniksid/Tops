@@ -7,7 +7,10 @@ export default class UseStateClass extends Component {
         this.state = {
             count: 10
         }
+        console.log("This", this);
     }
+
+
     Increment() {
         console.log("----------->");
         this.setState({ count: this.state.count + 1 })
