@@ -1,0 +1,27 @@
+.carousel-indicators [data-bs-target] {
+    width: 9px !important;
+    height: 9px !important;
+    top: 100px !important;
+    border-radius: 50% !important;
+    background-color: #f0c888 !important;
+}
+
+
+
+.carousel-indicators .active {
+    background-color: #dda243 !important;
+    opacity: none !important;
+}
+
+.carousel-control-prev-icon {
+    display: none;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    display: none !important;
+}
+
+.carousel-indicators {
+    top: 170px !important;
+}

@@ -1,0 +1,33 @@
+            .carousel-control-prev {
+                display: block !important;
+                width: 50px !important;
+                height: 50px !important;
+                margin-top: 230px !important;
+                margin-left: 55px !important;
+                color: black !important;
+                border-radius: 50% !important;
+                background-color: white !important;
+
+            }
+
+            .carousel-control-prev-icon {
+                padding-top: 50px !important;
+                margin-right: 5px !important;
+            }
+
+            .carousel-control-next-icon {
+                padding-top: 50px !important;
+                margin-left: 5px !important;
+            }
+
+            .carousel-control-next {
+                display: block !important;
+                width: 50px !important;
+                height: 50px !important;
+                margin-top: 230px !important;
+                margin-right: 55px !important;
+                color: black !important;
+                border-radius: 50% !important;
+                background-color: white !important;
+
+            }
