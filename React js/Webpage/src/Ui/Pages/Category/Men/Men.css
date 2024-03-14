@@ -1,0 +1,15 @@
+.strap {
+    background-color: rgb(255 247 237);
+}
+
+.strap .btn {
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid #ededed;
+}
+
+.strap .btn:hover {
+    outline: none;
+    background: #dda2430d;
+    border: 1px solid #dda24380;
+}

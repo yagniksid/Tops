@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],
-      }
+      }, backgroundColor: ['group-hover']
     },
   },
   plugins: [],
