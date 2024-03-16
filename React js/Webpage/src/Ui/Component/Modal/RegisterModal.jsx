@@ -40,7 +40,7 @@ export default function RegisterModal({ toggle, modal, login }) {
       localStorage.setItem("loginUser", JSON.stringify(newUser));
       toggle();
       setNewUser(initialData);
-      window.location.reload()
+      // window.location.reload()
     }
   };
 

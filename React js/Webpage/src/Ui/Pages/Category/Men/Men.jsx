@@ -1,32 +1,32 @@
 import React from 'react';
 import Header from '../../../Component/Header/Header';
 import SubHeader from '../../../Component/Header/SubHeader';
-import { CalendarClock, ChevronRight, Percent } from 'lucide-react';
+import { CalendarClock, ChevronRight, Heart, Percent } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import menImage from "../../../Image/menimg.webp"
 import book from "../../../Image/book.svg"
 import buy from "../../../Image/buywith.svg"
 import store from "../../../Image/store.webp"
-import img1 from "../image/img1.jpg"
-import img2 from "../image/img2.webp"
-import img3 from "../image/img3.webp"
-import img4 from "../image/img4.webp"
-import img5 from "../image/img5.webp"
-import img6 from "../image/img6.webp"
-import img7 from "../image/img7.webp"
-import img8 from "../image/img8.webp"
-import img9 from "../image/img9.webp"
-import img10 from "../image/img10.webp"
-import img12 from "../image/img12.webp"
-import img13 from "../image/img13.webp"
-import img14 from "../image/img14.webp"
-import img15 from "../image/img15.webp"
-import img16 from "../image/img16.webp"
-import img17 from "../image/img17.webp"
-import img18 from "../image/img18.webp"
-import img19 from "../image/img19.webp"
-import img20 from "../image/img20.webp"
-import img21 from "../image/img21.webp"
+import img1 from "../Men/Images/img1.webp"
+import img2 from "../Men/Images/img2.webp"
+import img3 from "../Men/Images/img3.webp"
+import img4 from "../Men/Images/img4.webp"
+import img5 from "../Men/Images/img5.webp"
+import img6 from "../Men/Images/img6.webp"
+import img7 from "../Men/Images/img7.webp"
+import img8 from "../Men/Images/img8.webp"
+import img9 from "../Men/Images/img9.webp"
+import img10 from "../Men/Images/img10.webp"
+import img12 from "../Men/Images/img12.webp"
+import img13 from "../Men/Images/img13.webp"
+import img14 from "../Men/Images/img14.webp"
+import img15 from "../Men/Images/img15.webp"
+import img16 from "../Men/Images/img16.webp"
+import img17 from "../Men/Images/img17.webp"
+import img18 from "../Men/Images/img18.webp"
+import img19 from "../Men/Images/img19.webp"
+import img20 from "../Men/Images/img20.webp"
+import img21 from "../Men/Images/img21.webp"
 import "./Men.css"
 import Footer from '../../../Component/Footer/Footer';
 import Section7 from '../../../Component/Sections/Section7';
@@ -84,7 +84,7 @@ export default function Men() {
                     <h6 className=' opacity-40'>Pickup At The Store</h6>
                 </div>
             </div>
-            <div className='strap pb-4 pt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
+            <div className='strap pb-4 pt-4 mt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
                 <div className='ps-20 z-10'>
                     <h6 className='text-xs pb-0 mb-0 font-normal'>Filter By</h6>
                     <h6>Strap Material</h6>
@@ -103,10 +103,13 @@ export default function Men() {
             <div className="grid grid-cols-4 gap-3 ps-20">
                 {items.map((item, index) => (
                     <div key={index}>
-                        <div className='relative overflow-hidden'>
+                        <div className='relative overflow-hidden '>
                             <img src={item.img} className=" mb-2" />
                             <div className='absolute ps-3 h-full w-full bg-black/0 flex justify-start items-end -bottom-20 hover:-bottom-3  hover:opacity-100 opacity-20 transition-all duration-500'>
-                                <h5 className='pb-4 text-red-700'>{item.price}</h5>
+                                <h5 className='pb-4 text-black'>{item.price}</h5>
+                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                    <span><Heart strokeWidth={1} color='Red' /></span>
+                                </div>
                             </div>
                         </div>
                         <h6 className="line-clamp-2 hover:underline">{item.content}</h6>
@@ -119,10 +122,6 @@ export default function Men() {
             <Section7 />
             <Footer />
 
-
-            {/* <div style={{ paddingBlock: "500px" }}>
-
-            </div> */}
         </>
     );
 }

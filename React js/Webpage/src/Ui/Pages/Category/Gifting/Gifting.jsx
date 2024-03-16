@@ -1,38 +1,38 @@
 import React from 'react';
 import Header from '../../../Component/Header/Header';
 import SubHeader from '../../../Component/Header/SubHeader';
-import { ChevronRight, Heart } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import book from "../../../Image/book.svg"
 import buy from "../../../Image/buywith.svg"
 import store from "../../../Image/store.webp"
-import img1 from "../Women/Images/img1.webp"
-import img2 from "../Women/Images/img2.webp"
-import img3 from "../Women/Images/img3.webp"
-import img4 from "../Women/Images/img4.webp"
-import img5 from "../Women/Images/img5.webp"
-import img6 from "../Women/Images/img6.webp"
-import img7 from "../Women/Images/img7.webp"
-import img8 from "../Women/Images/img8.webp"
-import img9 from "../Women/Images/img9.webp"
-import img10 from "../Women/Images/img10.webp"
-import img11 from "../Women/Images/img11.webp"
-import img12 from "../Women/Images/img12.webp"
-import img13 from "../Women/Images/img13.webp"
-import img14 from "../Women/Images/img14.webp"
-import img15 from "../Women/Images/img15.webp"
-import img16 from "../Women/Images/img16.webp"
-import img17 from "../Women/Images/img17.webp"
-import img18 from "../Women/Images/img18.webp"
-import img19 from "../Women/Images/img19.jpg"
-import img20 from "../Women/Images/img20.webp"
-import img21 from "../Women/Images/img21.webp"
+import img1 from "../Gifting/Images/img1.webp"
+import img2 from "../Gifting/Images/img2.webp"
+import img3 from "../Gifting/Images/img3.webp"
+import img4 from "../Gifting/Images/img4.webp"
+import img5 from "../Gifting/Images/img5.webp"
+import img6 from "../Gifting/Images/img6.jpg"
+import img7 from "../Gifting/Images/img7.webp"
+import img8 from "../Gifting/Images/img8.webp"
+import img9 from "../Gifting/Images/img9.webp"
+import img10 from "../Gifting/Images/img10.webp"
+import img11 from "../Gifting/Images/img11.webp"
+import img12 from "../Gifting/Images/img12.webp"
+import img13 from "../Gifting/Images/img13.webp"
+import img14 from "../Gifting/Images/img14.webp"
+import img15 from "../Gifting/Images/img15.jpg"
+import img16 from "../Gifting/Images/img16.webp"
+import img17 from "../Gifting/Images/img17.webp"
+import img18 from "../Gifting/Images/img18.webp"
+import img19 from "../Gifting/Images/img19.webp"
+import img20 from "../Gifting/Images/img20.webp"
 
 import Footer from '../../../Component/Footer/Footer';
 import Section7 from '../../../Component/Sections/Section7';
 import Section5 from '../../../Component/Sections/Section5';
 
 let items = [
+    { img: img1, content: "Titan Neo Splash Blue Dial Quartz Multifunction Stainless Steel Strap watch for Men ", category: "Women's Watch", price: "₹ 8,255" },
     { img: img2, content: "Titan Neo Splash Blue Dial Quartz Multifunction Stainless Steel Strap watch for Men ", category: "Women's Watch", price: "₹ 6,995" },
     { img: img3, content: "Titan Men's Maritime Pro Lateen Sail Chronograph Watch", category: "Women's Watch", price: "₹ 15,545" },
     { img: img4, content: "Titan Neo Splash Quartz Multifunction Black Dial Stainless Steel Strap Watch for Men", category: "Women's Watch", price: "₹ 6,345" },
@@ -51,11 +51,10 @@ let items = [
     { img: img17, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 7,950" },
     { img: img18, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 6,850" },
     { img: img19, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 9,780" },
-    { img: img20, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 2,995" },
-    { img: img21, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 4,995" }
+    { img: img20, content: "Titan Regalia Premium Green Chrono Stainless Steel Strap Watch For Men", category: "Women's Watch", price: "₹ 2,995" }
 ]
 
-export default function Women() {
+export default function Gifting() {
 
     let navigate = useNavigate()
     return (
@@ -65,10 +64,7 @@ export default function Women() {
             <div className='flex gap-3 items-center ps-16 pb-3 pt-3'>
                 <h6 onClick={() => navigate("/")} role='button' className=' m-0 font-normal text-sm text-gray-400 ' >Home</h6>
                 <span className='p-0 m-0 pt-1'><ChevronRight size={15} strokeWidth={2} /></span>
-                <h6 className='font-normal text-sm m-0'>Women</h6>
-            </div>
-            <div>
-                <img src={img1} alt="" />
+                <h6 className='font-normal text-sm m-0'>Gifting</h6>
             </div>
             <div className='pb-4 pt-4 flex justify-between ps-36 pe-36' style={{ backgroundColor: "#fafafa" }}>
                 <div className='flex items-center gap-3'>
@@ -84,20 +80,19 @@ export default function Women() {
                     <h6 className=' opacity-40'>Pickup At The Store</h6>
                 </div>
             </div>
-            <div className='strap pb-4 mt-4 pt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
+            <div className='strap pb-4 pt-4 mt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
                 <div className='ps-20 z-10'>
                     <h6 className='text-xs pb-0 mb-0 font-normal'>Filter By</h6>
-                    <h6>Strap Material</h6>
+                    <h6>Brands</h6>
                 </div>
                 <div>
-                    <button className='btn me-2'>Bimetal</button>
-                    <button className='btn me-2'>18 Karat Gold</button>
-                    <button className='btn me-2'>Plastic</button>
-                    <button className='btn me-2'>Silicone</button>
+                    <button className='btn me-2'>Titan</button>
+                    <button className='btn me-2'>Anne Klein</button>
+                    <button className='btn me-2'>Sonata</button>
                 </div>
             </div>
             <div className='pt-4 pb-4 ps-20'>
-                <h4>Women's Watches<span className='font-light ps-3'>2,382 items</span></h4>
+                <h4>Gifting Watches<span className='font-light ps-3'>346 items</span></h4>
             </div>
 
             <div className="grid grid-cols-4 gap-3 ps-20">
@@ -122,6 +117,10 @@ export default function Women() {
             <Section7 />
             <Footer />
 
+
+            {/* <div style={{ paddingBlock: "500px" }}>
+
+            </div> */}
         </>
     );
 }

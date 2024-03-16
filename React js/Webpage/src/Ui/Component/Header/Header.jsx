@@ -1,14 +1,31 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Mic, Search } from "lucide-react";
 import logoImage from "../../Image/titan-logo.svg";
 import cart from "../../Image/cart.svg";
 import account from "../../Image/account.svg";
 import track from "../../Image/track.svg";
 import whishlist from "../../Image/Wishlist.webp";
-import { Button, Input } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { Input } from 'reactstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
+import LoginModal from '../Modal/LoginModal';
+import RegisterModal from '../Modal/RegisterModal';
+import "./Header.css"
+import AccountModal from '../../Pages/AccountModal';
+import { toast } from 'react-toastify';
 
 export default function Header() {
+    const [loginModal, setLoginModal] = useState(false);
+    const [registerModal, setRegisterModal] = useState(false);
+    const [accountModal, setAccountModal] = useState(false);
+    const [reFetch, setReFetch] = useState(true)
+
+    const loginData = JSON.parse(localStorage.getItem("loginUser")) || [];
+    const navigate = useNavigate();
+
+    const loginToggle = () => setLoginModal(!loginModal);
+    const registerToggle = () => setRegisterModal(!registerModal);
+    const accountToggle = () => setAccountModal(!accountModal);
+
     const marqueeRef = useRef(null);
 
     const handleMouseEnter = () => {
@@ -21,6 +38,23 @@ export default function Header() {
         if (marqueeRef.current) {
             marqueeRef.current.start();
         }
+    };
+
+    const accountHandler = () => {
+        accountToggle()
+        setReFetch(!reFetch)
+    }
+
+
+    const logoutHandler = () => {
+        localStorage.removeItem("loginUser");
+        navigate("/");
+        toast.warning("Log Out Successfully !", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            theme: "light"
+        });
     };
 
     return (
@@ -59,16 +93,21 @@ export default function Header() {
                         <NavLink className="text-decoration-none  text-sm text-black" to={"/track"} >Track order</NavLink>
                     </div>
                     <div className='flex flex-col'>
-                        <img role='button' src={account} className='h-7' alt="" />
-                        <NavLink className="text-decoration-none text-sm text-black" to={"/account"} >Account</NavLink>
+                        <img role='button' src={account} onClick={accountHandler} className='h-7' alt="" oncli />
+                        <NavLink className="text-decoration-none text-sm text-black" onClick={accountHandler}>Account</NavLink>
                     </div>
                 </div>
                 <div className='flex justify-center'>
-                    <button className="bg-amber-500 hover:bg-yellow-600 h-10 rounded w-20">
-                        Log in
-                    </button>
+                    {Object.keys(loginData).length === 0 && (
+                        <button className="bg-amber-500 hover:bg-yellow-600 h-10 rounded w-20 p-0 " onClick={loginToggle}>
+                            Log in
+                        </button>)
+                    }
                 </div>
             </div>
+            <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
+            <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
+            <AccountModal accountToggle={accountToggle} accountModal={accountModal} logoutHandler={logoutHandler} />
         </>
     );
 }

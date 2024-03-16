@@ -27,7 +27,8 @@ import img17 from "../Premium Watches/Images/img17.webp"
 import img18 from "../Premium Watches/Images/img18.webp"
 import img19 from "../Premium Watches/Images/img19.webp"
 import img20 from "../Premium Watches/Images/img20.webp"
-// import "./Men.css"
+
+
 import Footer from '../../../Component/Footer/Footer';
 import Section7 from '../../../Component/Sections/Section7';
 import Section5 from '../../../Component/Sections/Section5';
@@ -84,7 +85,7 @@ export default function PremiumWatch() {
                     <h6 className=' opacity-40'>Pickup At The Store</h6>
                 </div>
             </div>
-            <div className='strap pb-4 pt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
+            <div className='strap pb-4 mt-4 pt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
                 <div className='ps-20 z-10'>
                     <h6 className='text-xs pb-0 mb-0 font-normal'>Filter By</h6>
                     <h6>Brands</h6>
@@ -106,6 +107,9 @@ export default function PremiumWatch() {
                             <img src={item.img} className=" mb-2" />
                             <div className='absolute ps-3 h-full w-full bg-black/0 flex justify-start items-end -bottom-20 hover:-bottom-3  hover:opacity-100 opacity-20 transition-all duration-500'>
                                 <h5 className='pb-4 text-black'>{item.price}</h5>
+                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                    <span><Heart strokeWidth={1} color='Red' /></span>
+                                </div>
                             </div>
                         </div>
                         <h6 className="line-clamp-2 hover:underline">{item.content}</h6>
@@ -119,9 +123,6 @@ export default function PremiumWatch() {
             <Footer />
 
 
-            {/* <div style={{ paddingBlock: "500px" }}>
-
-            </div> */}
         </>
     );
 }

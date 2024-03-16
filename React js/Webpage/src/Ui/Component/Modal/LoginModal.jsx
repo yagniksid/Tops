@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import RegisterModal from "./RegisterModal";
 import "./index.css";
 
 const initialData = {
@@ -23,6 +22,8 @@ const initialData = {
 
 export default function LoginModal({ modal, toggle, registerToggle }) {
   const [user, setUser] = useState(initialData);
+  const [reFetch, setReFetch] = useState(true);
+  console.log("🚀 ~ LoginModal ~ reFetch:", reFetch)
 
   const navigate = useNavigate();
 
@@ -41,7 +42,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       toast.success("Log in Successfully !", {
         position: "top-center",
         autoClose: 10000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         theme: "light",
       });
       console.log("----log in success--->");
@@ -65,6 +66,8 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
     }
     setUser(initialData);
     toggle();
+    setReFetch(!reFetch)
+    navigate("/")
   };
 
 
@@ -109,17 +112,11 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             <p role="button" className="text-primary" onClick={createAcoount}>
               Create account...!
             </p>
-            <Button
-              style={{
-                backgroundColor: "#ffb217",
-                color: "white",
-                border: "none",
-                fontWeight: "bold",
-              }}
-              className="w-100 mt-3 mb-3"
+            <button
+              className="w-100 mt-3 mb-3 h-10 rounded-md bg-amber-500 text-black"
             >
               Submit
-            </Button>
+            </button>
             <Button color="danger" className="w-100">
               Cancel
             </Button>

@@ -36,6 +36,7 @@ export default function Homepage() {
             <Section6 />
             <Section7 />
             <Footer />
+
         </div>
     )
 }

@@ -116,7 +116,7 @@ export default function Slider1() {
                 {name.map((item, index) => (
                     <h6 key={index} className='relative cursor-pointer group'>
                         {item}
-                        <div className='absolute top-5 left-0 w-full h-1 bg-amber-600 transition-transform transform scale-x-0 group-hover:scale-x-100 rounded'></div>
+                        <div className='absolute top-5 left-0 w-100 h-1 bg-amber-600 transition-transform scale-x-0 group-hover:scale-x-100 duration-300 rounded'></div>
                     </h6>
                 ))}
             </div>
