@@ -103,7 +103,7 @@ export default function Men() {
             <div className="grid grid-cols-4 gap-3 ps-20">
                 {items.map((item, index) => (
                     <div key={index}>
-                        <div className='relative overflow-hidden '>
+                        <div className='relative overflow-hidden'>
                             <img src={item.img} className=" mb-2" />
                             <div className='absolute ps-3 h-full w-full bg-black/0 flex justify-start items-end -bottom-20 hover:-bottom-3  hover:opacity-100 opacity-20 transition-all duration-500'>
                                 <h5 className='pb-4 text-black'>{item.price}</h5>
