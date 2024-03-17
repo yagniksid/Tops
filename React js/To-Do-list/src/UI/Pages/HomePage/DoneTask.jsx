@@ -264,7 +264,7 @@ export default function DoneTask({ getData, setGetData, toDoData, setToDoData })
                                     ))}
                                 </ul>
                                 <div className="d-flex justify-content-center gap-3">
-                                    {selectedGetData.length === getData.length || selectedGetData.length > 1 && (
+                                    {selectedGetData.length === getData.length || selectedGetData.length > 0 && (
                                         <div
                                             style={{
                                                 display: "flex",
