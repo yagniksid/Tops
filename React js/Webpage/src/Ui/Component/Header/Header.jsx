@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Mic, Search } from "lucide-react";
+import { Mic, Search, User } from "lucide-react";
 import logoImage from "../../Image/titan-logo.svg";
 import cart from "../../Image/cart.svg";
 import account from "../../Image/account.svg";
@@ -9,22 +9,22 @@ import { Input } from 'reactstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import LoginModal from '../Modal/LoginModal';
 import RegisterModal from '../Modal/RegisterModal';
-import "./Header.css"
-import AccountModal from '../../Pages/AccountModal';
 import { toast } from 'react-toastify';
+import { useCookies } from 'react-cookie';
 
 export default function Header() {
     const [loginModal, setLoginModal] = useState(false);
     const [registerModal, setRegisterModal] = useState(false);
-    const [accountModal, setAccountModal] = useState(false);
-    const [reFetch, setReFetch] = useState(true)
+    const [cookies, setCookie] = useCookies(["user", "token"])
+    console.log("🚀 ~ Header ~ cookies:", cookies)
 
-    const loginData = JSON.parse(localStorage.getItem("loginUser")) || [];
+    let user = cookies.user || {}
+    let token = cookies.token
+
     const navigate = useNavigate();
 
     const loginToggle = () => setLoginModal(!loginModal);
     const registerToggle = () => setRegisterModal(!registerModal);
-    const accountToggle = () => setAccountModal(!accountModal);
 
     const marqueeRef = useRef(null);
 
@@ -41,21 +41,8 @@ export default function Header() {
     };
 
     const accountHandler = () => {
-        accountToggle()
-        setReFetch(!reFetch)
+        navigate("/profile")
     }
-
-
-    const logoutHandler = () => {
-        localStorage.removeItem("loginUser");
-        navigate("/");
-        toast.warning("Log Out Successfully !", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            theme: "light"
-        });
-    };
 
     return (
         <>
@@ -66,7 +53,7 @@ export default function Header() {
             </div>
             <div style={{ boxShadow: "#00000047 1px 1px 3px 0px" }} className='pl-20 pe-3 flex items-center justify-between w-100 pt-3 pb-3 font-sans sticky-top top-0 bg-white z-10 '>
                 <div className='pe-5'>
-                    <img role='button' src={logoImage} className='h-auto w-32' alt="" />
+                    <img role='button' onClick={() => navigate("/")} src={logoImage} className='h-auto w-32' alt="" />
                 </div>
                 <div className=' flex items-center pe-3 me-3 border border-gray ' style={{ width: "57%" }}>
                     <Search strokeWidth={1} size={20} className='ms-3' role='button' />
@@ -80,34 +67,44 @@ export default function Header() {
                     <Mic strokeWidth={1} size={20} role='button' />
                 </div>
                 <div className='flex gap-4 items-center justify-center'>
-                    <div className='flex flex-col items-center'>
-                        <img role='button' src={whishlist} className='h-7 w-7' alt="" />
-                        <NavLink className="text-decoration-none  text-sm text-black" to={"/whishlist"} >Whishlist</NavLink>
-                    </div>
-                    <div className='flex flex-col'>
-                        <img role='button' src={cart} className='h-7' alt="" />
-                        <NavLink className="text-decoration-none  text-sm text-black" to={"/cart"} >Cart</NavLink>
-                    </div>
-                    <div className='flex flex-col'>
-                        <img role='button' src={track} className='h-5 mt-2' alt="" />
-                        <NavLink className="text-decoration-none  text-sm text-black" to={"/track"} >Track order</NavLink>
-                    </div>
-                    <div className='flex flex-col'>
-                        <img role='button' src={account} onClick={accountHandler} className='h-7' alt="" oncli />
-                        <NavLink className="text-decoration-none text-sm text-black" onClick={accountHandler}>Account</NavLink>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    {Object.keys(loginData).length === 0 && (
-                        <button className="bg-amber-500 hover:bg-yellow-600 h-10 rounded w-20 p-0 " onClick={loginToggle}>
-                            Log in
-                        </button>)
+                    {
+                        user.userType === "admin" ?
+                            <>
+                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-dashboard"} >Dashboard</NavLink>
+                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-product"} >Product</NavLink>
+                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-order"} >Order</NavLink>
+                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-user"} >User</NavLink>
+                            </>
+                            :
+                            <>
+                                <div className='flex flex-col items-center'>
+                                    <img role='button' src={whishlist} className='h-7 w-7' alt="" />
+                                    <NavLink className="text-decoration-none  text-sm text-black" to={"/whishlist"} >Whishlist</NavLink>
+                                </div>
+                                <div className='flex flex-col'>
+                                    <img role='button' src={track} className='h-5 mt-2' alt="" />
+                                    <NavLink className="text-decoration-none  text-sm text-black" to={"/track"} >Track order</NavLink>
+                                </div>
+
+                            </>
+                    }
+                    {
+                        token ?
+                            <div className='flex flex-col'>
+                                <User strokeWidth={1} onClick={() => navigate("/profile")} />
+                                <NavLink className="text-decoration-none  text-sm text-black" to={"/profile"} >Profile</NavLink>
+                            </div>
+                            :
+                            <div className='flex justify-center'>
+                                <button className="bg-amber-500 hover:bg-yellow-600 h-10 rounded w-20 p-0 " onClick={loginToggle}>
+                                    Log in
+                                </button>
+                            </div>
                     }
                 </div>
             </div>
             <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
             <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
-            <AccountModal accountToggle={accountToggle} accountModal={accountModal} logoutHandler={logoutHandler} />
         </>
     );
 }

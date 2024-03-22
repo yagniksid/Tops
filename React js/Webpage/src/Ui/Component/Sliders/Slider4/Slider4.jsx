@@ -74,10 +74,12 @@ export default function Slider4() {
                 <div className="slider-container" style={{ width: "90%" }}>
                     <Slider {...settings} autoplay={true} autoplaySpeed={5000}>
                         {slidesData.map((slide, index) => (
-                            <div key={index} className="slide relative overflow-hidden">
-                                <img role="button" className="pe-3" src={slide.img} alt="" />
-                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
-                                    <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart strokeWidth={1} /></span>
+                            <div key={index}>
+                                <div className="relative overflow-hidden">
+                                    <img role="button" className="pe-3" src={slide.img} alt="" />
+                                    <div className='absolute h-100 w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                        <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart strokeWidth={1} /></span>
+                                    </div>
                                 </div>
                                 <p role="button" className="text-lg font-medium line-clamp-2 pe-3 hover:underline">{slide.title}</p>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../../Component/Header/Header';
 import SubHeader from '../../../Component/Header/SubHeader';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import book from "../../../Image/book.svg"
 import buy from "../../../Image/buywith.svg"
@@ -105,15 +105,14 @@ export default function SmartWatch() {
                     <div key={index}>
                         <div className='relative overflow-hidden'>
                             <img src={item.img} className=" mb-2" />
-                            <div className='absolute ps-3 h-full w-full bg-black/0 flex justify-start items-end -bottom-20 hover:-bottom-3  hover:opacity-100 opacity-20 transition-all duration-500'>
-                                <h5 className='pb-4 text-black'>{item.price}</h5>
-                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
-                                    <span><Heart strokeWidth={1} color='Red' /></span>
-                                </div>
+                            <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart strokeWidth={1} /></span>
                             </div>
                         </div>
                         <h6 className="line-clamp-2 hover:underline">{item.content}</h6>
-                        <p className=" text-gray-500 pb-3">{item.category}</p>
+                        <p className=" text-gray-500 pb-2">{item.category}</p>
+                        <h5 className='pb-4 text-black'>{item.price}</h5>
+
                     </div>
                 ))}
 

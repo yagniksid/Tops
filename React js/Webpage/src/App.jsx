@@ -5,12 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { CookiesProvider } from 'react-cookie';
 
 function App() {
   return (
     <>
-      <Router />
-      <ToastContainer />
+      <CookiesProvider>
+        <Router />
+        <ToastContainer />
+      </CookiesProvider>
     </>
   )
 }

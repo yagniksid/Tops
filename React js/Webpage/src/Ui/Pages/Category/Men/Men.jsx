@@ -105,15 +105,16 @@ export default function Men() {
                     <div key={index}>
                         <div className='relative overflow-hidden'>
                             <img src={item.img} className=" mb-2" />
-                            <div className='absolute ps-3 h-full w-full bg-black/0 flex justify-start items-end -bottom-20 hover:-bottom-3  hover:opacity-100 opacity-20 transition-all duration-500'>
-                                <h5 className='pb-4 text-black'>{item.price}</h5>
-                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
-                                    <span><Heart strokeWidth={1} color='Red' /></span>
-                                </div>
+                            <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-2 pt-4 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart strokeWidth={1} /></span>
                             </div>
                         </div>
                         <h6 className="line-clamp-2 hover:underline">{item.content}</h6>
-                        <p className=" text-gray-500 pb-3">{item.category}</p>
+                        <p className=" text-gray-500">{item.category}</p>
+                        <h5 className='pb-3 text-black'>{item.price}</h5>
+                        <button className="bg-amber-500 text-white hover:bg-yellow-600 hover:w-36 duration-300 h-10 mb-16 rounded w-32 text-base font-medium">
+                            Add to cart
+                        </button>
                     </div>
                 ))}
 

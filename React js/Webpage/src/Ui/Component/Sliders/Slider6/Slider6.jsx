@@ -36,10 +36,12 @@ export default function Slider6() {
                     mouseTracking
                     items={
                         items.map((e, i) => (
-                            <div key={i} className='relative overflow-hidden'>
-                                <img src={e.img} alt="" className='pe-3' />
-                                <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
-                                    <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart role='button' strokeWidth={1} /></span>
+                            <div key={i}>
+                                <div className='relative overflow-hidden'>
+                                    <img src={e.img} alt="" className='pe-3' />
+                                    <div className='absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-8 pt-3 hover:opacity-100 opacity-20 transition-all duration-700'>
+                                        <span className="bg-gray-200 h-10 w-10 rounded-full flex justify-center items-center pt-1"><Heart role='button' strokeWidth={1} /></span>
+                                    </div>
                                 </div>
                                 <p className="text-lg font-medium line-clamp-2 pe-3 hover:underline">{e.title}</p>
                                 <p className="text-gray-400 text-base font-semibold pt-1 pb-1">{e.category}</p>

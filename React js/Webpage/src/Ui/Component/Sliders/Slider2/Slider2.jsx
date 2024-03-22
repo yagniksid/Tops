@@ -7,7 +7,6 @@ import {
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption,
 } from 'reactstrap';
 
 const items = [
@@ -50,10 +49,6 @@ export default function Slider2() {
                 key={item.src}
             >
                 <img src={item.src} alt={item.altText} />
-                <CarouselCaption
-                    captionText={item.caption}
-                    captionHeader={item.caption}
-                />
             </CarouselItem>
         );
     });
