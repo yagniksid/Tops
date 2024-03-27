@@ -13,13 +13,13 @@ import Cart from '../Ui/Pages/user/Cart';
 import Track from '../Ui/Pages/Common/Track';
 import Homepage from '../Ui/Pages/Common/Homepage/Homepage';
 import Order from '../Ui/Pages/admin/Order/Order';
-import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
 import User from '../Ui/Pages/admin/User/User';
 import Dashboard from '../Ui/Pages/admin/Dashboard/Dashboard';
 import Product from '../Ui/Pages/user/Product/Product';
 import SingleProduct from '../Ui/Pages/user/Product/SingleProduct';
 import UserOrder from '../Ui/Pages/user/UserOrder';
 import Profile from '../Ui/Pages/Common/Profile';
+import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
 
 export default function Router() {
     return (

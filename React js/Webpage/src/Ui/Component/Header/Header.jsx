@@ -11,12 +11,13 @@ import LoginModal from '../Modal/LoginModal';
 import RegisterModal from '../Modal/RegisterModal';
 import { toast } from 'react-toastify';
 import { useCookies } from 'react-cookie';
+import "./Header.css"
 
 export default function Header() {
     const [loginModal, setLoginModal] = useState(false);
     const [registerModal, setRegisterModal] = useState(false);
     const [cookies, setCookie] = useCookies(["user", "token"])
-    console.log("🚀 ~ Header ~ cookies:", cookies)
+    // console.log("🚀 ~ Header ~ cookies:", cookies)
 
     let user = cookies.user || {}
     let token = cookies.token
@@ -39,10 +40,6 @@ export default function Header() {
             marqueeRef.current.start();
         }
     };
-
-    const accountHandler = () => {
-        navigate("/profile")
-    }
 
     return (
         <>

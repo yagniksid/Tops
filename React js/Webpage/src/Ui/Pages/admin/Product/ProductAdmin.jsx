@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../../../Component/Header/Header';
-import SubHeader from '../../../Component/Header/SubHeader';
 import ProductModal from '../../../Component/Modal/ProductModal';
 import TableData from '../../TableData';
 import Swal from 'sweetalert2';
+import PreviewModal from '../../../Component/Modal/PreviewModal';
 
 const initialData = {
     title: "",
@@ -21,9 +21,17 @@ const initialData = {
 
 export default function ProductAdmin() {
     const [modal, setModal] = useState(false);
+    const [previewModal, setPreviewModal] = useState(false);
+
     let [fetchFlag, setFetchFlag] = useState(true)
     let [data, setData] = useState([])
     let [productData, setProductData] = useState(initialData)
+    let [updateData, setUpdateData] = useState()
+    let [paginate, setPaginate] = useState({
+        limit: 10,
+        page: 0,
+        totalProduct: 0
+    })
 
     const resetForm = () => {
         setProductData(initialData)
@@ -32,17 +40,25 @@ export default function ProductAdmin() {
 
 
     const toggle = () => setModal(!modal);
+    const previewToggle = () => setPreviewModal(!previewModal);
+
     const reFetchData = () => setFetchFlag(!fetchFlag)
-    console.log("🚀 ~ ProductAdmin ~ reFetchData:", reFetchData)
+
+
 
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'http://localhost:9999/product/getAll',
+            url: 'http://localhost:9999/product/getAllPaginate',
+            params: {
+                limit: paginate.limit,
+                page: paginate.page
+            }
         })
             .then((res) => {
-                console.log("------->", res.data);
+                console.log("----res--->", res.data);
                 setData(res?.data?.data);
+                setPaginate({ ...paginate, totalProduct: res?.data?.count });
             })
             .catch((err) => {
                 console.log("-------->", err);
@@ -51,8 +67,8 @@ export default function ProductAdmin() {
 
 
     const submitHandler = (data) => {
-        console.log("🚀 ~ submitHandler ~ data:", data)
-        console.log("========>>>", data)
+        // console.log("🚀 ~ submitHandler ~ data:", data)
+        // console.log("========>>>", data)
         if (Object.values(data).some(value => value === "")) {
             toast.warn("Please add product first")
             toggle()
@@ -137,31 +153,40 @@ export default function ProductAdmin() {
                 axios({
                     method: 'delete',
                     url: `http://localhost:9999/product/delete/${id}`
-                })
-                    .then((res) => {
-                        reFetchData()
-                    })
-                    .catch((err) => {
-                        console.log("-------->", err);
-                        alert("error")
-                    });
+                }).then((res) => {
+                    if (data.length === 1) {
+                        console.log("🚀 ~ data.length:", data.length)
+                        const newPage = paginate.page - 1;
+                        setPaginate({ ...paginate, page: newPage });
+                        reFetchData();
+                    } else {
+                        reFetchData();
+                    }
+                }).catch((err) => {
+                    console.log("-------->", err);
+                    alert("error")
+                });
             }
-        });
-
+        })
     }
 
+
+
+
     const editHandler = (data) => {
-        console.log("data", data)
+        // console.log("++++++++++++++++++++++++++++++>>>>>>>>>>>>>>>>>>>>>", data)
         setProductData(data)
+        setUpdateData(data)
         toggle()
     }
 
     return (
         <>
             <Header />
-            <SubHeader />
-            <ProductModal productData={productData} modal={modal} toggle={toggle} updateHandler={updateHandler} submitHandler={submitHandler} />
-            <TableData toggle={toggle} reFetchData={reFetchData} productData={data} editHandler={editHandler} deleteHandler={deleteHandler} resetForm={resetForm} initialData={productData} />
+            <ProductModal updatedData={updateData} productData={productData} modal={modal} toggle={toggle} updateHandler={updateHandler} submitHandler={submitHandler} />
+            <TableData toggle={toggle} reFetchData={reFetchData} setPaginate={setPaginate} paginate={paginate} productData={data} editHandler={editHandler} previewToggle={previewToggle} deleteHandler={deleteHandler} resetForm={resetForm} initialData={productData} />
+            <PreviewModal modal={previewModal} toggle={previewToggle} />
         </>
     );
 }
+ 

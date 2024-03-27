@@ -44,6 +44,7 @@ export default function RegisterModal({ toggle, modal, login }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     let mainData = { ...newUser, adress: [adress] }
+    // console.log("🚀 ~ handleSubmit ~ mainData:", mainData)
     axios({
       method: "post",
       url: `${BE_URL}/user/signup`,

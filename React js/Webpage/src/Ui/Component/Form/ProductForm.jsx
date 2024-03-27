@@ -12,8 +12,11 @@ const colorArry = ["red", "green", "white", "black", "blue"]
 const genderArry = ["male", "female", "other"]
 const sizeArry = ["41", "42", "43", "44", "45"]
 
-export default function ProductForm({ toggle, productData, updateHandler, submitHandler }) {
+export default function ProductForm({ toggle, productData, updateHandler, submitHandler, updatedData }) {
+    console.log("🚀 ~ ProductForm ~ updatedData:", updatedData)
     let [addProduct, setAddProduct] = useState(productData)
+    let [updateMode, setUpdateMode] = useState(false)
+
 
     useEffect(() => {
         setAddProduct(productData)
@@ -38,11 +41,13 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
     }
     const submitData = () => {
         submitHandler(addProduct)
+        setUpdateMode(true)
     }
 
     const updateData = () => {
         updateHandler(addProduct)
     }
+    console.log("🚀 ~ updateData ~ addProduct:", addProduct)
 
     return (
         <>
@@ -191,15 +196,30 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                     />
                 </FormGroup>
 
-                <div className='d-flex gap-3 justify-content-end' >
-                    <Button color="success" onClick={submitData}>
-                        Submit
+                {/* <div className='d-flex gap-3 justify-content-end' >
+                    {(Object.keys(updatedData)?.length > 0 || {}) ?
+                        <Button color="success" onClick={submitData}>
+                            Submit
+                        </Button> :
+                        <Button onClick={updateData}>Update</Button>
+                    }
+                    <Button color="danger" onClick={toggle}>
+                        Cancel
                     </Button>
-                    <Button onClick={updateData}>Update</Button>
+                </div> */}
+
+                <div className='d-flex gap-3 justify-content-end' >
+                    {updatedData ?
+                        <Button color="success" onClick={submitData}>
+                            Submit
+                        </Button> :
+                        <Button onClick={updateData}>Update</Button>
+                    }
                     <Button color="danger" onClick={toggle}>
                         Cancel
                     </Button>
                 </div>
+
             </Form>
         </>
     )
