@@ -13,13 +13,13 @@ export default function PreviewModal({ modal, toggle }) {
                         <div>
                             <img src={cookie.previewData?.thumbnail} className='w-full h-full' alt="Product Thumbnail" />
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'>Title</span> : {cookie.previewData.title}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'>Title</span> : {cookie?.previewData?.title}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Description </span> : {cookie.previewData.description}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Description </span> : {cookie?.previewData?.description}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Gender </span> : {cookie.previewData.gender}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Gender </span> : {cookie?.previewData?.gender}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Price </span> : {cookie.previewData.price}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Price </span> : {cookie?.previewData?.price}</p>
                         </div>
                     </ModalBody>
 

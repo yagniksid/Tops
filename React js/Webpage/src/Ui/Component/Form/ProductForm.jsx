@@ -209,12 +209,12 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                 </div> */}
 
                 <div className='d-flex gap-3 justify-content-end' >
-                    {updatedData ?
-                        <Button color="success" onClick={submitData}>
-                            Submit
-                        </Button> :
-                        <Button onClick={updateData}>Update</Button>
-                    }
+
+                    <Button color="success" onClick={submitData}>
+                        Submit
+                    </Button> 
+                    <Button onClick={updateData}>Update</Button>
+
                     <Button color="danger" onClick={toggle}>
                         Cancel
                     </Button>

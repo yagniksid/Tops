@@ -20,6 +20,7 @@ import SingleProduct from '../Ui/Pages/user/Product/SingleProduct';
 import UserOrder from '../Ui/Pages/user/UserOrder';
 import Profile from '../Ui/Pages/Common/Profile';
 import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
+import ReviewPage from '../Ui/Pages/Common/ReviewPage';
 
 export default function Router() {
     return (
@@ -31,6 +32,7 @@ export default function Router() {
                     <Route path='/whishlist' element={<Whishlist />} />
                     <Route path='/track' element={<Track />} />
                     <Route path='/profile' element={<Profile />} />
+                    <Route path='/reviewpage' element={<ReviewPage />} />
 
                     {/* -------------------------ADMIN--------------------- */}
                     <Route path='/admin-product' element={<ProductAdmin />} />
