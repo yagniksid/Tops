@@ -60,8 +60,6 @@ export default function Women() {
     let navigate = useNavigate()
     return (
         <>
-            <Header />
-            <SubHeader />
             <div className='flex gap-3 items-center ps-16 pb-3 pt-3'>
                 <h6 onClick={() => navigate("/")} role='button' className=' m-0 font-normal text-sm text-gray-400 ' >Home</h6>
                 <span className='p-0 m-0 pt-1'><ChevronRight size={15} strokeWidth={2} /></span>
@@ -84,7 +82,7 @@ export default function Women() {
                     <h6 className=' opacity-40'>Pickup At The Store</h6>
                 </div>
             </div>
-            <div className='strap pb-4 mt-4 pt-4 flex gap-5 sticky-top z-10 ' style={{ top: "80px" }}>
+            <div className='strap pb-4 mt-4 pt-4 flex gap-5 sticky-top  z-10 ' style={{ top: "70px" }}>
                 <div className='ps-20 z-10'>
                     <h6 className='text-xs pb-0 mb-0 font-normal'>Filter By</h6>
                     <h6>Strap Material</h6>
@@ -116,10 +114,6 @@ export default function Women() {
                 ))}
 
             </div>
-            <Section5 />
-            <Section7 />
-            <Footer />
-
         </>
     );
 }

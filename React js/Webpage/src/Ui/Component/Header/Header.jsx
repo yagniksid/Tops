@@ -1,15 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Mic, Search, User } from "lucide-react";
 import logoImage from "../../Image/titan-logo.svg";
-import cart from "../../Image/cart.svg";
-import account from "../../Image/account.svg";
 import track from "../../Image/track.svg";
 import whishlist from "../../Image/Wishlist.webp";
 import { Input } from 'reactstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import LoginModal from '../Modal/LoginModal';
 import RegisterModal from '../Modal/RegisterModal';
-import { toast } from 'react-toastify';
 import { useCookies } from 'react-cookie';
 import "./Header.css"
 
@@ -88,12 +85,11 @@ export default function Header() {
                     {
                         token ?
                             <div className='flex flex-col'>
-                                <User strokeWidth={1} onClick={() => navigate("/profile")} />
-                                <NavLink className="text-decoration-none  text-sm text-black" to={"/profile"} >Profile</NavLink>
+                                <User role='button' strokeWidth={1} onClick={() => navigate("/profile")} />
                             </div>
                             :
                             <div className='flex justify-center'>
-                                <button className="bg-amber-500 hover:bg-yellow-600 h-10 rounded w-20 p-0 " onClick={loginToggle}>
+                                <button className="bg-blue-500 text-white hover:bg-blue-600 h-10 rounded w-20 p-0 " onClick={loginToggle}>
                                     Log in
                                 </button>
                             </div>

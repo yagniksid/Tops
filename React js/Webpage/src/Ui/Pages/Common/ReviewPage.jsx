@@ -15,8 +15,6 @@ export default function ReviewPage() {
 
     return (
         <div>
-            <Header />
-            <SubHeader />
             <div className="flex gap-20 py-32 px-32">
                 <div className='flex-1'>
                     <ReviewImage refreshPage={refreshPage} />

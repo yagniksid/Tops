@@ -14,18 +14,24 @@ import Track from '../Ui/Pages/Common/Track';
 import Homepage from '../Ui/Pages/Common/Homepage/Homepage';
 import Order from '../Ui/Pages/admin/Order/Order';
 import User from '../Ui/Pages/admin/User/User';
-import Dashboard from '../Ui/Pages/admin/Dashboard/Dashboard';
 import Product from '../Ui/Pages/user/Product/Product';
 import SingleProduct from '../Ui/Pages/user/Product/SingleProduct';
 import UserOrder from '../Ui/Pages/user/UserOrder';
 import Profile from '../Ui/Pages/Common/Profile';
 import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
 import ReviewPage from '../Ui/Pages/Common/ReviewPage';
+import Header from '../Ui/Component/Header/Header';
+import SubHeader from '../Ui/Component/Header/SubHeader';
+import Footer from '../Ui/Component/Footer/Footer';
+import Dashboard from '../Ui/Pages/admin/Dashboard/Dashboard';
+import { AdminProtected, UserProtected } from './ProtectedRouter';
 
 export default function Router() {
     return (
         <div>
             <BrowserRouter>
+                <Header />
+                <SubHeader />
                 <Routes>
                     <Route path='/' element={<Homepage />} />
                     {/* -------------------------COMMON--------------------- */}
@@ -35,16 +41,16 @@ export default function Router() {
                     <Route path='/reviewpage' element={<ReviewPage />} />
 
                     {/* -------------------------ADMIN--------------------- */}
-                    <Route path='/admin-product' element={<ProductAdmin />} />
-                    <Route path='/admin-dashboard' element={<Dashboard />} />
-                    <Route path='/admin-order' element={<Order />} />
-                    <Route path='/admin-user' element={<User />} />
+                    <Route path='/admin-product' element={<AdminProtected Component={<ProductAdmin />} />} />
+                    <Route path='/admin-dashboard' element={<AdminProtected Component={<Dashboard />} />} />
+                    <Route path='/admin-order' element={<AdminProtected Component={<Order />} />} />
+                    <Route path='/admin-user' element={<AdminProtected Component={<User />} />} />
 
                     {/* -------------------------USER--------------------- */}
-                    <Route path='/product' element={<Product />} />
-                    <Route path='/product:id' element={<SingleProduct />} />
-                    <Route path='/cart' element={<Cart />} />
-                    <Route path='/userOrder' element={<UserOrder />} />
+                    <Route path='/user-product' element={<UserProtected Component={<Product />} />} />
+                    <Route path='/user-product:id' element={<UserProtected Component={<SingleProduct />} />} />
+                    <Route path='/user-cart' element={<UserProtected Component={<Cart />} />} />
+                    <Route path='/user-Order' element={<UserProtected Component={<UserOrder />} />} />
 
                     {/* -------------------------CATAGORY--------------------- */}
                     <Route path='/men' element={<Men />} />
@@ -55,6 +61,7 @@ export default function Router() {
                     <Route path='/gifting' element={<Gifting />} />
                     <Route path='/sale' element={<Sale />} />
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </div >
     )

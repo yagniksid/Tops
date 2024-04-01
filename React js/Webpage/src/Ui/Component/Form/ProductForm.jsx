@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import {
+    Button, Form, FormGroup, Input, Label
+} from 'reactstrap'
 import Select from "react-select";
 
 const options = [
@@ -12,10 +14,8 @@ const colorArry = ["red", "green", "white", "black", "blue"]
 const genderArry = ["male", "female", "other"]
 const sizeArry = ["41", "42", "43", "44", "45"]
 
-export default function ProductForm({ toggle, productData, updateHandler, submitHandler, updatedData }) {
-    console.log("🚀 ~ ProductForm ~ updatedData:", updatedData)
+export default function ProductForm({ toggle, productData, updateHandler, submitHandler, updateMode, setUpdateMode }) {
     let [addProduct, setAddProduct] = useState(productData)
-    let [updateMode, setUpdateMode] = useState(false)
 
 
     useEffect(() => {
@@ -41,13 +41,12 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
     }
     const submitData = () => {
         submitHandler(addProduct)
-        setUpdateMode(true)
+        setUpdateMode(false);
     }
 
     const updateData = () => {
         updateHandler(addProduct)
     }
-    console.log("🚀 ~ updateData ~ addProduct:", addProduct)
 
     return (
         <>
@@ -61,6 +60,7 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                     {key}
                                 </Label>
                                 <Input
+                                    className='shadow-none'
                                     id="exampleTitle"
                                     value={addProduct[key]}
                                     placeholder={`Enter your ${key}`}
@@ -87,11 +87,11 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                 return (
                                     <div key={i}>
                                         <Input
+                                            className='shadow-none ms-2 me-1'
                                             name="gender"
                                             type="radio"
                                             checked={addProduct.gender === e}
                                             onChange={() => { setAddProduct({ ...addProduct, gender: e }) }}
-                                            className='ms-2 me-1'
                                         />
                                         <Label className='pe-2'>
                                             {e}
@@ -106,6 +106,7 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                     <Label for="exampleRange">Discount Percentage</Label>
                     <div className='d-flex'>
                         <Input
+                            className='shadow-none'
                             type="range"
                             name="range"
                             id="exampleRange"
@@ -133,12 +134,12 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                         <div key={i} style={{ display: "flex", gap: "5px", alignItems: 'center', flexDirection: "row" }}>
 
                                             <Input
+                                                className='shadow-none ms-2 me-1'
                                                 id="exampleSelect"
                                                 name="select"
                                                 type="checkbox"
                                                 checked={addProduct?.color?.includes(e)}
                                                 onChange={() => { selectHandler(e, "color") }}
-                                                className='ms-2 me-1'
                                             />
                                             <div style={{
                                                 width: "15px",
@@ -167,13 +168,13 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                                     return (
                                         <div key={i}>
                                             <Input
+                                                className='shadow-none ms-2 me-1'
                                                 id="exampleSelect"
                                                 name="select"
                                                 type="checkbox"
                                                 value="42"
                                                 checked={addProduct.size.includes(e)}
                                                 onChange={() => selectHandler(e, "size")}
-                                                className='ms-2 me-1'
                                             />
                                             <Label className='pe-2'>{e}</Label>
                                         </div>
@@ -188,6 +189,7 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                         Thumbnail
                     </Label>
                     <Input
+                        className='shadow-none'
                         id="exampleTitle"
                         value={addProduct.thumbnail}
                         placeholder="Enter Url"
@@ -196,25 +198,13 @@ export default function ProductForm({ toggle, productData, updateHandler, submit
                     />
                 </FormGroup>
 
-                {/* <div className='d-flex gap-3 justify-content-end' >
-                    {(Object.keys(updatedData)?.length > 0 || {}) ?
+                <div className='d-flex gap-3 justify-content-end' >
+                    {updateMode ?
                         <Button color="success" onClick={submitData}>
                             Submit
                         </Button> :
                         <Button onClick={updateData}>Update</Button>
                     }
-                    <Button color="danger" onClick={toggle}>
-                        Cancel
-                    </Button>
-                </div> */}
-
-                <div className='d-flex gap-3 justify-content-end' >
-
-                    <Button color="success" onClick={submitData}>
-                        Submit
-                    </Button> 
-                    <Button onClick={updateData}>Update</Button>
-
                     <Button color="danger" onClick={toggle}>
                         Cancel
                     </Button>

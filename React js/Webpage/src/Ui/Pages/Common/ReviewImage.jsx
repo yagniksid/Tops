@@ -45,7 +45,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { Button } from 'reactstrap';
-import { FaStar } from 'react-icons/fa';
 
 export default function ReviewImage({ refreshPage }) {
     const [cookie, setCookie] = useCookies(["items"]);

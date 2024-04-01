@@ -1,4 +1,7 @@
 a.active {
     font-weight: bolder;
-    
+}
+
+.modal-open {
+    padding-right: 0px !important;
 }

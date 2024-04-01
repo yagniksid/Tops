@@ -22,11 +22,10 @@ const initialData = {
 export default function ProductAdmin() {
     const [modal, setModal] = useState(false);
     const [previewModal, setPreviewModal] = useState(false);
-
     let [fetchFlag, setFetchFlag] = useState(true)
     let [data, setData] = useState([])
     let [productData, setProductData] = useState(initialData)
-    let [updateData, setUpdateData] = useState()
+    let [updateMode, setUpdateMode] = useState(false)
     let [paginate, setPaginate] = useState({
         limit: 10,
         page: 0,
@@ -56,7 +55,7 @@ export default function ProductAdmin() {
             }
         })
             .then((res) => {
-                console.log("----res--->", res.data);
+                // console.log("----res--->", res.data);
                 setData(res?.data?.data);
                 setPaginate({ ...paginate, totalProduct: res?.data?.count });
             })
@@ -176,17 +175,14 @@ export default function ProductAdmin() {
     const editHandler = (data) => {
         // console.log("++++++++++++++++++++++++++++++>>>>>>>>>>>>>>>>>>>>>", data)
         setProductData(data)
-        setUpdateData(data)
         toggle()
     }
 
     return (
         <>
-            <Header />
-            <ProductModal updatedData={updateData} productData={productData} modal={modal} toggle={toggle} updateHandler={updateHandler} submitHandler={submitHandler} />
-            <TableData toggle={toggle} reFetchData={reFetchData} setPaginate={setPaginate} paginate={paginate} productData={data} editHandler={editHandler} previewToggle={previewToggle} deleteHandler={deleteHandler} resetForm={resetForm} initialData={productData} />
+            <ProductModal setUpdateMode={setUpdateMode} updateMode={updateMode} productData={productData} modal={modal} toggle={toggle} updateHandler={updateHandler} submitHandler={submitHandler} />
+            <TableData updateMode={updateMode} setUpdateMode={setUpdateMode} toggle={toggle} reFetchData={reFetchData} setPaginate={setPaginate} paginate={paginate} productData={data} editHandler={editHandler} previewToggle={previewToggle} deleteHandler={deleteHandler} resetForm={resetForm} initialData={productData} />
             <PreviewModal modal={previewModal} toggle={previewToggle} />
         </>
     );
 }
- 

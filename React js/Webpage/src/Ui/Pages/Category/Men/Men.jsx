@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../../Component/Header/Header";
 import SubHeader from "../../../Component/Header/SubHeader";
 import { CalendarClock, ChevronRight, Heart, Percent } from "lucide-react";
@@ -32,6 +32,8 @@ import Footer from "../../../Component/Footer/Footer";
 import Section7 from "../../../Component/Sections/Section7";
 import Section5 from "../../../Component/Sections/Section5";
 import { useCookies } from "react-cookie";
+import axios from "axios";
+import { BE_URL } from "../../../../../config";
 
 let items = [
     {
@@ -177,6 +179,23 @@ let items = [
 
 export default function Men() {
     let [cookie, setCookie] = useCookies();
+    let [data, setData] = useState([])
+    useEffect(() => {
+        axios({
+            method: "get",
+            url: `${BE_URL}/product/getAll`,
+            params: {
+                gender: "male"
+            }
+        }).then((res) => {
+            console.log("🚀 ~ useEffect ~ res:", res.data)
+
+        }).catch((err) => {
+            console.log("🚀 ~ useEffect ~ err:", err)
+            toast.error("Error occured while fetching data")
+        })
+    })
+
 
     let navigate = useNavigate();
 
@@ -188,8 +207,6 @@ export default function Men() {
 
     return (
         <>
-            <Header />
-            <SubHeader />
             <div className="flex gap-3 items-center ps-16 pb-3 pt-3">
                 <h6
                     onClick={() => navigate("/")}
@@ -229,7 +246,7 @@ export default function Men() {
             </div>
             <div
                 className="strap pb-4 pt-4 mt-4 flex gap-5 sticky-top z-10 "
-                style={{ top: "80px" }}
+                style={{ top: "70px" }}
             >
                 <div className="ps-20 z-10">
                     <h6 className="text-xs pb-0 mb-0 font-normal">Filter By</h6>
@@ -274,9 +291,6 @@ export default function Men() {
                     </div>
                 ))}
             </div>
-            <Section5 />
-            <Section7 />
-            <Footer />
         </>
     );
 }

@@ -14,8 +14,8 @@ import {
 import { BE_URL } from "../../../../config";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { Eye } from "lucide-react";
-
+import { Eye, EyeOff } from "lucide-react";
+import { InputGroup, InputGroupText } from "reactstrap";
 let initialData = {
   name: "",
   email: "",
@@ -37,35 +37,50 @@ export default function RegisterModal({ toggle, modal, login }) {
   let [newUser, setNewUser] = useState(initialData);
   let [adress, setAddress] = useState(initialAdress);
   let [showPassword, setShowPassword] = useState(false)
+
   const [cookies, setCookie] = useCookies();
 
   let navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    let mainData = { ...newUser, adress: [adress] }
-    // console.log("🚀 ~ handleSubmit ~ mainData:", mainData)
-    axios({
-      method: "post",
-      url: `${BE_URL}/user/signup`,
-      data: mainData
-    }).then((res) => {
-      setCookie("user", res.data.data)
-      setCookie("token", res.data.token)
-      if (res.data.data.userType === "admin") navigate("/track")
-      else navigate("/")
-    }).catch((err) => {
-    })
-
-    if (newUser.password !== newUser.confirmPass) {
-      toast.warn("Password does match")
+    e.preventDefault();
+    if (
+      !newUser.name ||
+      !newUser.email ||
+      !newUser.number ||
+      !newUser.age ||
+      !newUser.gender ||
+      !newUser.password ||
+      !newUser.confirmPass ||
+      !adress.add ||
+      !adress.city ||
+      !adress.state ||
+      !adress.pinCode
+    ) {
+      toast.error("Please fill out all fields");
+    } else if (newUser.password !== newUser.confirmPass) {
+      toast.warn("Passwords do not match");
     } else {
-      toast.success("Password match")
+      let mainData = { ...newUser, adress: [adress] };
+      axios({
+        method: "post",
+        url: `${BE_URL}/user/signup`,
+        data: mainData
+      })
+        .then((res) => {
+          setCookie("user", res.data.data);
+          setCookie("token", res.data.token);
+          if (res.data.data.userType === "admin") navigate("/track");
+          else navigate("/");
+        })
+        .catch((err) => { });
+      toast.success("Registration successful!");
+      setAddress(initialAdress);
+      setNewUser(initialData);
+      toggle();
     }
-    setAddress(initialAdress)
-    setNewUser(initialData)
-    toggle()
-  }
+  };
+
 
   function singIn() {
     console.log("=========sign in=======>>>");
@@ -89,10 +104,6 @@ export default function RegisterModal({ toggle, modal, login }) {
       toast.warning("Age cannot be greater than 100")
     }
     setNewUser({ ...newUser, age: inputAge });
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
   };
 
 
@@ -254,33 +265,39 @@ export default function RegisterModal({ toggle, modal, login }) {
               </FormGroup>
               <FormGroup>
                 <Label for="password">Confirm Password</Label>
-                <Input
-                  type="password"
-                  name="password"
-                  className="shadow-none"
-                  id="password"
-                  value={newUser.confirmPass}
-                  onChange={(e) =>
-                    setNewUser({ ...newUser, confirmPass: e.target.value })
-                  }
-                >
-                </Input>
+                <InputGroup>
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    value={newUser.confirmPass}
+                    onChange={(e) =>
+                      setNewUser({ ...newUser, confirmPass: e.target.value })
+                    }
+                  />
+                  <InputGroupText>
+                    {showPassword ?
+                      <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> :
+                      <EyeOff role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} />
+                    }
+                  </InputGroupText>
+                </InputGroup>
               </FormGroup>
               <p>
                 Already have an account ?
                 <span
                   role="button"
-                  style={{ color: "#ffb217" }}
+                  className="text-red-500 ps-2 font-semibold"
                   onClick={singIn}
                 >
                   Sign in ...!
                 </span>
               </p>
-              <button className="bg-amber-500 text-white hover:bg-yellow-600 duration-300 h-10 mb-3 rounded w-full text-base font-medium">
+              <Button color="primary" className="mb-3 w-full">
                 Register
-              </button>
-              <Button color="danger" className="w-100" onClick={toggle}>
-                Cancle
+              </Button>
+              <Button color="secondary" className="w-full" onClick={toggle}>
+                Cancel
               </Button>
             </Form>
           </ModalBody>

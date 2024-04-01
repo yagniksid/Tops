@@ -15,9 +15,9 @@ export default function PendingTask({
   let [search, setSearch] = useState("");
 
   const searchData = () => {
-    const normalData = localStorage.getItem("userdata");
-    const jsonData = JSON.parse(normalData) || [];
-    const newData = jsonData?.filter((store) =>
+    const normalData = JSON.parse(localStorage.getItem("userdata"))|| []
+    console.log("🚀 ~ searchData ~ normalData:", normalData)
+    const newData = normalData?.filter((store) =>
       store.toLowerCase().includes(search.toLowerCase())
     );
     setToDoData(newData);

@@ -1,0 +1,657 @@
+[
+    {
+        "title": "Titan Men's Chronograph Watch - Black Dial",
+        "description": "Stylish chronograph watch for men by Titan with a black dial.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3500,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 15,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Casual"
+        ],
+        "color": [
+            "black",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 50
+    },
+    {
+        "title": "Titan Men's Leather Strap Watch - Brown",
+        "description": "Classic leather strap watch for men by Titan in brown color.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2800,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Casual"
+        ],
+        "color": [
+            "brown",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    },
+    {
+        "title": "Titan Men's Stainless Steel Watch - Blue Dial",
+        "description": "Sleek stainless steel watch for men by Titan with a blue dial.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3200,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 20,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "blue",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Casual Watch - Stainless Steel",
+        "description": "Casual watch for men by Titan made of stainless steel.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3000,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Modern"
+        ],
+        "color": [
+            "silver",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Pilot Watch - Black Leather",
+        "description": "Classic pilot watch for men by Titan with a black leather strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3000,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Vintage"
+        ],
+        "color": [
+            "black",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Sports Watch - Digital Display",
+        "description": "Robust sports watch for men by Titan with a digital display.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2700,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "black",
+            "red"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Dress Watch - Gold Tone",
+        "description": "Elegant dress watch for men by Titan with a gold tone finish.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3800,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 18,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "gold",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 55
+    },
+    {
+        "title": "Titan Men's Field Watch - Canvas Strap",
+        "description": "Rugged field watch for men by Titan with a canvas strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2900,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 8,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Outdoor"
+        ],
+        "color": [
+            "green",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 75
+    },
+    {
+        "title": "Titan Men's Luxury Watch - Sapphire Crystal",
+        "description": "Luxurious watch for men by Titan featuring sapphire crystal.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 5000,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 20,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    },
+    {
+        "title": "Titan Men's Skeleton Watch - Mechanical Movement",
+        "description": "Elegant skeleton watch for men by Titan with mechanical movement.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 4100,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 15,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "gold",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 48
+    },
+    {
+        "title": "Titan Men's Military Watch - Camouflage Strap",
+        "description": "Tough military watch for men by Titan with a camouflage strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3200,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Outdoor"
+        ],
+        "color": [
+            "green",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 55
+    },
+    {
+        "title": "Titan Men's Casual Watch - Silicone Strap",
+        "description": "Comfortable casual watch for men by Titan with a silicone strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2300,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual"
+        ],
+        "color": [
+            "blue",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Classic Watch - White Dial",
+        "description": "Timeless classic watch for men by Titan with a white dial.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3400,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 8,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Classic"
+        ],
+        "color": [
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Fitness Watch - Heart Rate Monitor",
+        "description": "Functional fitness watch for men by Titan with a heart rate monitor.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2800,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 15,
+        "mainCategory": "Accessories",
+        "category": [
+            "Sport",
+            "Tech Gadgets"
+        ],
+        "color": [
+            "black",
+            "red"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 75
+    },
+    {
+        "title": "Titan Men's Vintage Watch - Brown Leather Strap",
+        "description": "Vintage-inspired watch for men by Titan with a brown leather strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3700,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Vintage"
+        ],
+        "color": [
+            "brown",
+            "gold"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    },
+    {
+        "title": "Titan Men's Smart Watch - Touchscreen",
+        "description": "Smart watch for men by Titan with a touchscreen interface.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 4500,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 20,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Tech Gadgets"
+        ],
+        "color": [
+            "black",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 80
+    },
+    {
+        "title": "Titan Men's Business Watch - Gold Plated",
+        "description": "Professional business watch for men by Titan with gold plated finish.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3900,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 15,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "gold",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 55
+    },
+    {
+        "title": "Titan Men's Modern Watch - Stainless Steel",
+        "description": "Modern watch for men by Titan made of stainless steel.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3200,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Modern"
+        ],
+        "color": [
+            "silver",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Luxury Sports Watch - Sapphire Crystal",
+        "description": "Luxury sports watch for men by Titan featuring sapphire crystal.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 5200,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 18,
+        "mainCategory": "Accessories",
+        "category": [
+            "Sport",
+            "Luxury"
+        ],
+        "color": [
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 45
+    },
+    {
+        "title": "Titan Men's Casual Sports Watch - Rubber Strap",
+        "description": "Casual sports watch for men by Titan with a comfortable rubber strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2600,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "blue",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Elegant Watch - Rose Gold",
+        "description": "Elegant watch for men by Titan with rose gold finish.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3600,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "rose gold",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    },
+    {
+        "title": "Titan Men's Classic Chronograph - Brown Strap",
+        "description": "Classic chronograph watch for men by Titan with a brown strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3300,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 15,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Classic"
+        ],
+        "color": [
+            "brown",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Stainless Steel Sports Watch - Blue Dial",
+        "description": "Stylish sports watch for men by Titan with a blue dial and stainless steel build.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3100,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "blue",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Vintage Mechanical Watch - Leather Strap",
+        "description": "Vintage mechanical watch for men by Titan with a leather strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 4000,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 20,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Vintage"
+        ],
+        "color": [
+            "brown",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 55
+    },
+    {
+        "title": "Titan Men's Casual Field Watch - Green Strap",
+        "description": "Casual field watch for men by Titan with a green strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2900,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Outdoor"
+        ],
+        "color": [
+            "green",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    },
+    {
+        "title": "Titan Men's Sports Watch - Black Dial",
+        "description": "Durable sports watch for men by Titan with a black dial.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2700,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 8,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "black",
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 65
+    },
+    {
+        "title": "Titan Men's Formal Watch - Stainless Steel",
+        "description": "Formal watch for men by Titan made of stainless steel.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3300,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Classic"
+        ],
+        "color": [
+            "silver",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Luxury Chronograph - Sapphire Crystal",
+        "description": "Luxury chronograph watch for men by Titan featuring sapphire crystal.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 5300,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 18,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "silver"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 45
+    },
+    {
+        "title": "Titan Men's Digital Sports Watch - Rubber Strap",
+        "description": "Digital sports watch for men by Titan with a comfortable rubber strap.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 2600,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 10,
+        "mainCategory": "Accessories",
+        "category": [
+            "Casual",
+            "Sport"
+        ],
+        "color": [
+            "blue",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 70
+    },
+    {
+        "title": "Titan Men's Luxury Dress Watch - Rose Gold",
+        "description": "Luxurious dress watch for men by Titan with rose gold finish.",
+        "brand": "Titan",
+        "gender": "male",
+        "price": 3600,
+        "thumbnail": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1888ad40/images/Titan/Catalog/1805QM01_1.jpg?sw=360&sh=360",
+        "discountPercentage": 12,
+        "mainCategory": "Accessories",
+        "category": [
+            "Formal",
+            "Luxury"
+        ],
+        "color": [
+            "rose gold",
+            "black"
+        ],
+        "size": [
+            "One Size"
+        ],
+        "availableStock": 60
+    }
+]

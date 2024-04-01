@@ -16,11 +16,13 @@ import "./index.css";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { BE_URL } from "../../../../config";
-
+import { Eye, EyeOff } from "lucide-react";
+import { InputGroup, InputGroupText } from "reactstrap";
 
 export default function LoginModal({ modal, toggle, registerToggle }) {
   const [user, setUser] = useState({ email: "", password: "", });
   const [cookies, setCookie] = useCookies();
+  const [showPassword, setShowPassword] = useState(false)
 
   let navigate = useNavigate()
   const handleSubmit = (e) => {
@@ -33,8 +35,8 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       console.log("🚀 ~ handleSubmit ~ res:", res)
       setCookie("user", res.data.data)
       setCookie("token", res.data.token)
-      // if (res.data.data.userType === "admin") navigate("/track")
-      // else navigate("/")
+      if (res.data.data.userType === "admin") navigate("/track")
+      else navigate("/")
     }).catch((err) => {
     })
     setUser({ email: "", password: "", })
@@ -58,6 +60,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             <FormGroup>
               <Label for="email">Email</Label>
               <Input
+                className="shadow-none"
                 type="email"
                 name="email"
                 id="email"
@@ -65,34 +68,38 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 onChange={(e) =>
                   setUser({ ...user, email: e.target.value.toLowerCase() })
                 }
-              >
-              </Input>
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="password">Password</Label>
-              <Input
-                type="text"
-                name="password"
-                id="password"
-                value={user.password}
-                onChange={(e) =>
-                  setUser({ ...user, password: e.target.value })
-                }
-              >
-              </Input>
+              <InputGroup>
+                <Input
+                  className="shadow-none"
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  value={user.password}
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
+                />
+                <InputGroupText>
+                  {
+                    showPassword ? <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> : <EyeOff strokeWidth={1.5} role="button" color="Gray" onClick={() => setShowPassword(!showPassword)} />
+                  }
+                </InputGroupText>
+              </InputGroup>
             </FormGroup>
 
-            <p role="button" className="text-primary" onClick={createAcoount}>
-              Create account...!
+            <p role="button" onClick={createAcoount}>
+              Don't have an account? <span className="font-semibold text-red-500">Create account...!</span>
             </p>
-            <button
-              className="w-100 mt-3 mb-3 h-10 rounded-md bg-amber-500 text-black"
-            >
+            <Button color="primary" className="mb-3 w-full">
               Log in
-            </button>
-            <Button color="danger" className="w-100" onClick={toggle}>
-              Cancle
+            </Button>
+            <Button color="secondary" className="w-full" onClick={toggle}>
+              Cancel
             </Button>
           </Form>
         </ModalBody>
