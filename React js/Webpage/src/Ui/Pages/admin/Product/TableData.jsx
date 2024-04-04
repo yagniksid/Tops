@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, Edit, Eye, Minus, Plus, Trash2Icon } from "lucide-react";
+import { Edit, Eye, Minus, Plus, Trash2Icon } from "lucide-react";
 import { Button, Input, Table } from "reactstrap";
 import { useCookies } from "react-cookie";
 import ReactPaginate from "react-paginate";
-
+import { useSelector } from "react-redux";
 let sizeArray = ["41", "42", "43", "44", "45"];
 
 export default function TableData({
-  toggle,
   productData,
   editHandler,
   deleteHandler,
@@ -16,14 +15,14 @@ export default function TableData({
   paginate,
   setPaginate,
   reFetchData,
-  updateMode,
   setUpdateMode
 }) {
   let [data, setData] = useState(productData);
+  console.log("🚀 ~ productData:", productData)
   let [expandedId, setExpandedId] = useState(null);
   let [titleExpand, setTitleExpand] = useState(null);
   let [cookie, setCookie] = useCookies()
-  let [search, setSearch] = useState("")
+
 
 
   useEffect(() => {
@@ -45,10 +44,8 @@ export default function TableData({
     reFetchData()
   }
 
-  useEffect(() => {
-    let searchedData = productData.filter((ele) => ele.title.toLowerCase().includes(search.toLowerCase()))
-    setData(searchedData)
-  }, [search])
+
+
 
 
   return (
@@ -65,14 +62,6 @@ export default function TableData({
         <div className="border rounded-md shadow-2xl" style={{ width: "98%" }}>
           <div className="flex justify-between items-center bg-yellow-50 ">
             <h1 className=" m-0 py-3 ps-3">Product Table</h1>
-            <div className="w-25 pe-5">
-              <Input
-                className="shadow-none"
-                value={search}
-                onChange={(e) => setSearch(e?.target?.value)}
-                placeholder="Search Product Here"
-              />
-            </div>
           </div>
           <hr className="text-black font-bold p-0 m-0 pb-3"></hr>
           <Table size="sm">
@@ -162,10 +151,10 @@ export default function TableData({
                       )}
                     </td>
                     <td className="text-center">{e.category}</td>
-                    <td className="text-center">
-                      <div className="flex gap-2">
+                    <td className="text-center pt-2">
+                      <div className="flex items-center justify-center gap-2">
                         {e.color.map((e, i) => (
-                          <div key={i} className="d-flex align-items-center gap-1">
+                          <div key={i} className="flex items-center gap-1">
                             <div
                               style={{
                                 width: "15px",
@@ -227,10 +216,10 @@ export default function TableData({
           <div className="flex justify-center">
             <ReactPaginate
               containerClassName="flex justify-center rounded-5 items-center mt-4 w-auto"
-              pageClassName="px-4 py-1 mx-1 rounded cursor-pointer font-semibold"
-              previousLabel={<div className="border border-black px-3 mx-3 py-1 rounded text-blue-500" ><Minus /></div>}
+              pageClassName="px-4 py-1 mx-1 rounded cursor-pointer text-gray-500 font-semibold"
+              previousLabel={<div className="border border-gray-400 px-3 mx-3 py-1 rounded text-blue-500" ><Minus /></div>}
               previousLinkClassName="px-3 py-1 rounded mr-2 cursor-pointer no-underline  font-semibold"
-              nextLabel={<div className="border border-black px-3 py-1 rounded text-blue-500" ><Plus /></div>}
+              nextLabel={<div className="border border-gray-400 px-3 mx-3 py-1 rounded text-blue-500" ><Plus /></div>}
               nextLinkClassName="px-3 py-1 rounded ml-2 cursor-pointer no-underline  font-semibold"
               breakClassName="px-3 py-1 mx-1  font-semibold"
               breakLabel="..."

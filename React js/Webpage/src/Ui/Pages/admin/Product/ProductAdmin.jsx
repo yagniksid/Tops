@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../../../Component/Header/Header';
 import ProductModal from '../../../Component/Modal/ProductModal';
-import TableData from '../../TableData';
 import Swal from 'sweetalert2';
 import PreviewModal from '../../../Component/Modal/PreviewModal';
+import { useSelector } from 'react-redux';
+import TableData from './TableData';
 
 const initialData = {
     title: "",
@@ -37,21 +38,24 @@ export default function ProductAdmin() {
         toggle()
     }
 
-
     const toggle = () => setModal(!modal);
     const previewToggle = () => setPreviewModal(!previewModal);
 
     const reFetchData = () => setFetchFlag(!fetchFlag)
 
 
-
+    let searchData = useSelector((store) => {
+        return store.searchReducer.search
+    })
     useEffect(() => {
+        console.log("🚀 ~ searchData ~ searchData:", searchData)
         axios({
             method: 'get',
             url: 'http://localhost:9999/product/getAllPaginate',
             params: {
                 limit: paginate.limit,
-                page: paginate.page
+                page: paginate.page,
+                search: searchData
             }
         })
             .then((res) => {
@@ -62,12 +66,10 @@ export default function ProductAdmin() {
             .catch((err) => {
                 console.log("-------->", err);
             });
-    }, [fetchFlag]);
+    }, [fetchFlag, searchData]);
 
 
     const submitHandler = (data) => {
-        // console.log("🚀 ~ submitHandler ~ data:", data)
-        // console.log("========>>>", data)
         if (Object.values(data).some(value => value === "")) {
             toast.warn("Please add product first")
             toggle()
@@ -86,10 +88,7 @@ export default function ProductAdmin() {
                     toggle();
                 })
                 .catch((err) => {
-                    console.log(
-                        "-----------  err.response.error----------->",
-                        err.response.error
-                    );
+                    console.log("-------err.response.error------>", err.response);
                 });
             reFetchData()
             toggle()
@@ -111,16 +110,11 @@ export default function ProductAdmin() {
             data: newData,
         })
             .then((res) => {
-                console.log("-----------  res----------->", res);
                 reFetchData()
                 setProductData(initialData)
                 toggle();
             })
             .catch((err) => {
-                console.log(
-                    "-----------  err.response.error----------->",
-                    err.response.error
-                );
                 toast.error(err.response.error);
             });
         Swal.fire({

@@ -106,17 +106,15 @@ export default function RegisterModal({ toggle, modal, login }) {
     setNewUser({ ...newUser, age: inputAge });
   };
 
-
   return (
     <>
       <div>
-        <Modal isOpen={modal} toggle={toggle} size="lg">
+        <Modal isOpen={modal} toggle={toggle} >
           <ModalHeader toggle={toggle}>
             <b>Registeration Form</b>
           </ModalHeader>
           <ModalBody>
             <Form onSubmit={handleSubmit}>
-
               <FormGroup>
                 <Label for="name">Name</Label>
                 <Input
@@ -293,12 +291,9 @@ export default function RegisterModal({ toggle, modal, login }) {
                   Sign in ...!
                 </span>
               </p>
-              <Button color="primary" className="mb-3 w-full">
+              <button  className="border-2 border-black rounded-md hover:bg-black hover:text-white p-1 w-full">
                 Register
-              </Button>
-              <Button color="secondary" className="w-full" onClick={toggle}>
-                Cancel
-              </Button>
+              </button>
             </Form>
           </ModalBody>
         </Modal>

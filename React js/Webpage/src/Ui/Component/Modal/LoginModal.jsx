@@ -32,15 +32,15 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       url: `${BE_URL}/user/signin`,
       data: user
     }).then((res) => {
-      console.log("🚀 ~ handleSubmit ~ res:", res)
       setCookie("user", res.data.data)
       setCookie("token", res.data.token)
+      toggle()
+      setUser({ email: "", password: "", })
       if (res.data.data.userType === "admin") navigate("/track")
       else navigate("/")
     }).catch((err) => {
+      toast.error(err.response.data)
     })
-    setUser({ email: "", password: "", })
-    toggle()
   }
 
   function createAcoount() {
@@ -50,7 +50,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
 
   return (
     <div>
-      <Modal isOpen={modal} toggle={toggle} size="lg" onSubmit={(e) => handleSubmit(e)}>
+      <Modal isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
         <ModalHeader toggle={toggle}>
           <b>Log in Form </b>
         </ModalHeader>
@@ -95,12 +95,10 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             <p role="button" onClick={createAcoount}>
               Don't have an account? <span className="font-semibold text-red-500">Create account...!</span>
             </p>
-            <Button color="primary" className="mb-3 w-full">
-              Log in
-            </Button>
-            <Button color="secondary" className="w-full" onClick={toggle}>
-              Cancel
-            </Button>
+            <button className="border-2 border-black rounded-md hover:bg-black hover:text-white p-1 w-full">
+              Login
+            </button>
+
           </Form>
         </ModalBody>
       </Modal>

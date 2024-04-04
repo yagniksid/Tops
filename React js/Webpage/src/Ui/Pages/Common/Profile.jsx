@@ -1,5 +1,4 @@
 import React from 'react'
-import { Table } from "reactstrap";
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import Avatar from "./Images/avatar.png"
@@ -8,7 +7,6 @@ import { LogOut } from 'lucide-react';
 export default function Profile() {
     const [cookies, setCookie, removeCookie] = useCookies(["user", "token"]);
     // console.log("🚀 ~ Profile ~ cookies:", cookies.user)
-
     let navigate = useNavigate()
 
     const logOut = () => {

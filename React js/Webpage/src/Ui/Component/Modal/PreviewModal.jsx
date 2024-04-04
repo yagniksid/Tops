@@ -11,7 +11,9 @@ export default function PreviewModal({ modal, toggle }) {
                     <ModalHeader toggle={toggle}>Product Preview</ModalHeader>
                     <ModalBody>
                         <div>
-                            <img src={cookie.previewData?.thumbnail} className='w-full h-full' alt="Product Thumbnail" />
+                            <div className='flex justify-center items-center'>
+                                <img src={cookie.previewData?.thumbnail} className='w-96 h-96 m-7' alt="Product Thumbnail" />
+                            </div>
                             <hr />
                             <p className='text-lg'> <span className='font-medium text-xl'>Title</span> : {cookie?.previewData?.title}</p>
                             <hr />
@@ -22,7 +24,6 @@ export default function PreviewModal({ modal, toggle }) {
                             <p className='text-lg'> <span className='font-medium text-xl'> Price </span> : {cookie?.previewData?.price}</p>
                         </div>
                     </ModalBody>
-
                 </Modal>
             </div>
         </>
