@@ -3,27 +3,26 @@ import { Edit, Eye, Minus, Plus, Trash2Icon } from "lucide-react";
 import { Button, Input, Table } from "reactstrap";
 import { useCookies } from "react-cookie";
 import ReactPaginate from "react-paginate";
-import { useSelector } from "react-redux";
-let sizeArray = ["41", "42", "43", "44", "45"];
+import PreviewModal from "../../../Component/Modal/PreviewModal";
+let sizeArray = ["25mm", "26mm", "37mm", "38mm", "39mm"];
 
 export default function TableData({
   productData,
   editHandler,
   deleteHandler,
   resetForm,
-  previewToggle,
   paginate,
   setPaginate,
   reFetchData,
   setUpdateMode
 }) {
   let [data, setData] = useState(productData);
+  let [previewData, setPreviewData] = useState([])
   console.log("🚀 ~ productData:", productData)
   let [expandedId, setExpandedId] = useState(null);
   let [titleExpand, setTitleExpand] = useState(null);
-  let [cookie, setCookie] = useCookies()
-
-
+  const [previewModal, setPreviewModal] = useState(false);
+  const previewToggle = () => setPreviewModal(!previewModal);
 
   useEffect(() => {
     setData(productData);
@@ -34,9 +33,9 @@ export default function TableData({
     setUpdateMode(true)
   };
 
-  const previewHandler = (e) => {
+  const previewHandler = (prevData) => {
+    setPreviewData(prevData)
     previewToggle()
-    setCookie("previewData", e)
   }
 
   const handlePageClick = (e) => {
@@ -44,38 +43,26 @@ export default function TableData({
     reFetchData()
   }
 
-
-
-
-
   return (
     <>
-      <div className="d-flex justify-content-end py-5 pe-5">
-        <Button
-          style={{ backgroundColor: "#6fcdff", color: "black" }}
-          onClick={clearForm}
-        >
-          Add Product
-        </Button>
-      </div>
-      <div className="flex justify-center">
-        <div className="border rounded-md shadow-2xl" style={{ width: "98%" }}>
+      <div className="flex justify-center py-5">
+        <div className="border rounded-md" style={{ width: "98%" }}>
           <div className="flex justify-between items-center bg-yellow-50 ">
-            <h1 className=" m-0 py-3 ps-3">Product Table</h1>
+            <h2 className=" m-0 py-3 ps-3">ALL PRODUCTS</h2>
           </div>
           <hr className="text-black font-bold p-0 m-0 pb-3"></hr>
           <Table size="sm">
             <thead>
               <tr>
-                <th className="pb-3 text-center ">Sr No.</th>
+                {/* <th className="pb-3 text-center ">Sr No.</th> */}
                 <th className="pb-3 text-center " >Image</th>
                 <th className="pb-3 text-center " >Title</th>
-                <th className="pb-3 text-center " >Description</th>
-                <th className="pb-3 text-center " >Brand</th>
+                {/* <th className="pb-3 text-center " >Description</th> */}
+                {/* <th className="pb-3 text-center " >Brand</th> */}
                 <th className="pb-3 text-center " >Gender</th>
                 <th className="pb-3 text-center " >Price</th>
-                <th className="pb-3 text-center " >Discount</th>
-                <th className="pb-3 text-center " >Discounted Price</th>
+                {/* <th className="pb-3 text-center " >Discount</th> */}
+                {/* <th className="pb-3 text-center " >Discounted Price</th> */}
                 <th className="pb-3 text-center " >Category</th>
                 <th className="pb-3 text-center " >Color</th>
                 <th className="pb-3 text-center " >Size</th>
@@ -90,22 +77,22 @@ export default function TableData({
                 const titleExpanded = e?._id === titleExpand;
                 return (
                   <tr key={e._id}>
-                    <th scope="row">{i + 1}</th>
-                    <td>
+                    {/* <th scope="row">{i + 1}</th> */}
+                    <td className="text-center">
                       <img
-                        style={{ width: "150px", aspectRatio: "3/2" }}
+                        style={{ width: "150px", aspectRatio: "3/2", margin: "auto" }}
                         src={e.thumbnail}
                         alt=""
                       />
                     </td>
-                    <td>
+                    <td className="text-center">
                       <div
-                        className="text-center"
                         style={{
                           maxWidth: "150px",
                           whiteSpace: titleExpanded ? "unset" : "nowrap",
                           overflow: "hidden",
                           textOverflow: titleExpanded ? "unset" : "ellipsis",
+                          margin: "auto"
                         }}
                         role="button"
                         onClick={() =>
@@ -115,7 +102,7 @@ export default function TableData({
                         {e.title}
                       </div>
                     </td>
-                    <td className="text-center">
+                    {/* <td className="text-center">
                       <div
                         style={{
                           maxWidth: "150px",
@@ -130,11 +117,11 @@ export default function TableData({
                       >
                         {e.description}
                       </div>
-                    </td>
-                    <td className="text-center" >{e.brand}</td>
+                    </td> */}
+                    {/* <td className="text-center" >{e.brand}</td> */}
                     <td className="text-center" >{e.gender}</td>
                     <td className="text-center" >{e.price}</td>
-                    <td className="text-center" >
+                    {/* <td className="text-center" >
                       {e.discountPercentage > 0 ? (
                         <div className="text-red-500">
                           {e.discountPercentage}%
@@ -149,8 +136,8 @@ export default function TableData({
                       ) : (
                         <div>{e.price}</div>
                       )}
-                    </td>
-                    <td className="text-center">{e.category}</td>
+                    </td> */}
+                    <td className="text-center">{e.category.join(" , ")}</td>
                     <td className="text-center pt-2">
                       <div className="flex items-center justify-center gap-2">
                         {e.color.map((e, i) => (
@@ -169,7 +156,7 @@ export default function TableData({
                       </div>
                     </td>
                     <td className="text-center">
-                      <div className="d-flex">
+                      <div className="d-flex justify-center">
                         {sizeArray.map((ele, i) => (
                           <div
                             key={i}
@@ -185,27 +172,33 @@ export default function TableData({
                         ))}
                       </div>
                     </td>
-                    <th className="text-center ps-4" >
-                      <Eye
-                        onClick={() => previewHandler(e)}
-                        color="red"
-                        role="button"
-                      />
-                    </th>
-                    <th className="text-center" >
-                      <Edit
-                        onClick={() => editHandler(e)}
-                        color="red"
-                        role="button"
-                      />
-                    </th>
-                    <th className="text-center">
-                      <Trash2Icon
-                        role="button"
-                        onClick={() => deleteHandler(e._id)}
-                        color="red"
-                      />
-                    </th>
+                    <td className="text-center" >
+                      <div className="flex justify-center">
+                        <Eye
+                          onClick={() => previewHandler(e)}
+                          color="red"
+                          role="button"
+                        />
+                      </div>
+                    </td>
+                    <td className="text-center" >
+                      <div className="flex justify-center">
+                        <Edit
+                          onClick={() => editHandler(e)}
+                          color="red"
+                          role="button"
+                        />
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <div className="flex justify-center">
+                        <Trash2Icon
+                          role="button"
+                          onClick={() => deleteHandler(e._id)}
+                          color="red"
+                        />
+                      </div>
+                    </td>
                   </tr>
                 );
               })}
@@ -227,10 +220,19 @@ export default function TableData({
               onPageChange={handlePageClick}
               pageCount={paginate.totalProduct / paginate.limit}
             />
+          </div>
 
+          <div className="d-flex justify-content-center pb-5 pe-5">
+            <Button
+              style={{ backgroundColor: "#6fcdff", color: "black" }}
+              onClick={clearForm}
+            >
+              Add Product
+            </Button>
           </div>
         </div>
       </div>
+      <PreviewModal modal={previewModal} toggle={previewToggle} previewData={previewData} />
     </>
   );
 }

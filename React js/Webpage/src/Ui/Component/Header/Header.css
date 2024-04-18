@@ -1,5 +1,12 @@
-a.active {
-    font-weight: bolder;
+ .active  {
+    font-weight: 500 !important;
+    color: black  !important;
+}
+
+.userHeader a {
+    /* font-weight: bolder !important; */
+    text-decoration: none;
+    color: rgb(116, 116, 116) !important;
 }
 
 .modal-open {

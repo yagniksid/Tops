@@ -1,9 +1,13 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
 import { useCookies } from 'react-cookie'
+import { useDispatch, useSelector } from 'react-redux'
 import { Modal, ModalBody, ModalHeader } from 'reactstrap'
+import { BE_URL } from '../../../../config'
+import { toggleReFetch } from '../../../Redux/feature/preview'
 
-export default function PreviewModal({ modal, toggle }) {
-    let [cookie, setCookie] = useCookies(["previewData"])
+export default function PreviewModal({ modal, toggle, previewData }) {
+
     return (
         <>
             <div>
@@ -12,16 +16,16 @@ export default function PreviewModal({ modal, toggle }) {
                     <ModalBody>
                         <div>
                             <div className='flex justify-center items-center'>
-                                <img src={cookie.previewData?.thumbnail} className='w-96 h-96 m-7' alt="Product Thumbnail" />
+                                <img src={previewData?.thumbnail} className='w-96 h-96 m-7' alt="Product Thumbnail" />
                             </div>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'>Title</span> : {cookie?.previewData?.title}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'>Title</span> : {previewData?.title}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Description </span> : {cookie?.previewData?.description}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Description </span> : {previewData?.description}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Gender </span> : {cookie?.previewData?.gender}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Gender </span> : {previewData?.gender}</p>
                             <hr />
-                            <p className='text-lg'> <span className='font-medium text-xl'> Price </span> : {cookie?.previewData?.price}</p>
+                            <p className='text-lg'> <span className='font-medium text-xl'> Price </span> : {previewData?.price}</p>
                         </div>
                     </ModalBody>
                 </Modal>

@@ -12,7 +12,7 @@ export default function Section7() {
 
     return (
         <>
-            <div style={{ backgroundColor: "rgba(221, 162, 67, .05)" }} className='mt-10'>
+            <div style={{ backgroundColor: "rgba(221, 162, 67, .05)" }} className='mb-14 mt-7'>
                 <h2 className="font-normal text-center pt-20 pb-4">LOGIN FOR THE BEST EXPERIENCE
                 </h2>
                 <div className='flex justify-center pb-4'>

@@ -17,7 +17,7 @@ export default function Profile() {
     }
 
     return (
-        <div className="flex justify-center pb-44 pt-5 bg-yellow-50">
+        <div className="flex justify-center pb-44 pt-5">
             <div className="rounded shadow-lg bg-white border-black w-50">
                 <h1 className="py-7 text-center m-0 font-normal text-blue-950">User Details</h1>
                 <div className="border-top  border-start-0  border-gray-700">
@@ -46,7 +46,7 @@ export default function Profile() {
                 </div>
                 <div className='py-4 flex justify-center items-center'>
                     <button className="bg-blue-500 text-white hover:bg-blue-600 h-11 rounded w-28 p-0 " onClick={logOut}>
-                        <p className='flex items-center mt-2 gap-2 justify-center'>Log out<LogOut /></p>
+                        <span className='flex items-center  gap-2 justify-center'>Log out<LogOut /></span>
                     </button>
                 </div>
             </div>

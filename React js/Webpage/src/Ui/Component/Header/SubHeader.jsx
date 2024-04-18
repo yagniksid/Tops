@@ -1,48 +1,63 @@
-import { MapPin } from 'lucide-react';
+import { Cookie, MapPin } from 'lucide-react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+// import inter from "../International Watchs/Images/inter.jpg"
+// import menImg from "../../Pages/Category/"
+
 
 export default function SubHeader() {
-    const navigate = useNavigate();
-
-    function goToMenPage() {
-        navigate("/men");
-    }
-    function goToWomenPage() {
-        navigate("/women");
-    }
-    function goToSmartWactchPage() {
-        navigate("/smartWatch");
-    }
-    function goToPremiumWactchPage() {
-        navigate("/premiumWatch");
-    }
-    function goToInternationalBrandsPage() {
-        navigate("/internationalBrands");
-    }
-    function goToGiftingPage() {
-        navigate("/gifting");
-    }
-    function goToSalePage() {
-        navigate("/sale");
-    }
+    const [{ user }] = useCookies([])
 
     return (
         <>
-            <div className='flex gap-10 justify-center pt-2 pb-2 relative cursor-pointer group'>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4 ' onClick={goToMenPage}>MEN</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToWomenPage}>WOMEN</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToSmartWactchPage}>SMART WATCHES</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToPremiumWactchPage}>PREMIUM WATCHES</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToInternationalBrandsPage}>INTERNATIONAL BRANDS</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToGiftingPage}>GIFTING</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4' onClick={goToSalePage}>SALE</h6>
-                <h6 role='button' className='text-sm font-normal hover:underline underline-offset-4'>MORE</h6>
-            </div>
-            <div className='flex text-xs bg-orange-50 p-2 items-center'>
-                <span role='button' className='ps-16'><MapPin strokeWidth={1} size={20} /></span>
-                <span role='button' className='ps-2'>Select a location to see product availability</span>
-            </div>
+            {
+                user?.userType === "admin" ?
+                    <div className='flex justify-center flex-col items-center'>
+                        <div className='flex gap-10 justify-around w-50 py-3 relative cursor-pointer group'>
+                            <div className='flex flex-col justify-center items-center'>
+
+                                <NavLink className="text-decoration-none text-black" to={"/admin-dashboard"}>Dashboard</NavLink>
+                            </div>
+                            <div className='flex flex-col justify-center items-center'>
+
+                                <NavLink className="text-decoration-none text-black" to={"/admin-product"}>Product</NavLink>
+                            </div>
+                            <div className='flex flex-col justify-center items-center'>
+                                <NavLink className="text-decoration-none text-black" to={"/admin-order"}>Order</NavLink>
+                            </div>
+                            <div className='flex flex-col justify-center items-center'>
+                                <NavLink className="text-decoration-none text-black" to={"/admin-user"}>User</NavLink>
+                            </div>
+                        </div>
+                    </div>
+                    :
+
+                    <>
+
+                        <div className='userHeader flex gap-10 justify-center pt-3 pb-2 relative cursor-pointer group'>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Men's Watches"} >
+                                MEN
+                            </NavLink>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Women's Watches"}>
+                                WOMEN
+                            </NavLink>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Smartwatches"}>
+                                SMART WATCHES
+                            </NavLink>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Premium Watches"}>PREMIUM WATCHES
+                            </NavLink>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/International Brands"}>
+                                INTERNATIONAL BRANDS
+                            </NavLink>
+                        </div>
+                        <div className='flex text-xs bg-orange-50 p-2 items-center'>
+                            <span role='button' className='ps-16'><MapPin strokeWidth={1} size={20} /></span>
+                            <span role='button' className='ps-2'>Select a location to see product availability</span>
+                        </div>
+
+                    </>
+            }
         </>
     );
 }

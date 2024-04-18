@@ -11,8 +11,6 @@ import Section3 from '../../../Component/Sections/Section3'
 import Section4 from '../../../Component/Sections/Section4'
 import Section5 from '../../../Component/Sections/Section5'
 import Section6 from '../../../Component/Sections/Section6'
-import Section7 from '../../../Component/Sections/Section7'
-
 
 export default function Homepage() {
     return (
@@ -29,7 +27,6 @@ export default function Homepage() {
             <Section4 />
             <Section5 />
             <Section6 />
-            <Section7 />
         </div>
     )
 }

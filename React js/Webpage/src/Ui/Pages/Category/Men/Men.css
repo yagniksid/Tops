@@ -5,11 +5,24 @@
 .strap .btn {
     background-color: white;
     border-radius: 0;
-    border: 1px solid #ededed; 
+    border: 1px solid #ededed;
+}
+
+.strap .clbtn {
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid #ededed;
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
 }
 
 .strap .btn:hover {
     outline: none;
     background: #dda2430d;
     border: 1px solid #dda24380;
+}
+
+button:hover,.btn:hover {
+    box-shadow: none !important;
 }

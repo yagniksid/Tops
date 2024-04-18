@@ -4,7 +4,7 @@ import ProductModal from '../../../Component/Modal/ProductModal';
 import Swal from 'sweetalert2';
 import PreviewModal from '../../../Component/Modal/PreviewModal';
 import { useSelector } from 'react-redux';
-import TableData from './TableData';
+import TableData from '../../admin/Product/TableData';
 
 const initialData = {
     title: "",
@@ -19,7 +19,7 @@ const initialData = {
     thumbnail: ""
 }
 
-export default function ProductAdmin() {
+export default function UserProduct() {
     const [modal, setModal] = useState(false);
 
     let [fetchFlag, setFetchFlag] = useState(true)

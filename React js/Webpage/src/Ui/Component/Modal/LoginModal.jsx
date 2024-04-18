@@ -36,7 +36,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       setCookie("token", res.data.token)
       toggle()
       setUser({ email: "", password: "", })
-      if (res.data.data.userType === "admin") navigate("/track")
+      if (res?.data?.data?.userType === "admin") navigate("/admin-dashboard")
       else navigate("/")
     }).catch((err) => {
       toast.error(err.response.data)
@@ -52,7 +52,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
     <div>
       <Modal isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
         <ModalHeader toggle={toggle}>
-          <b>Log in Form </b>
+          <h4 className="tracking-wider">Log in </h4>
         </ModalHeader>
         <ModalBody>
           <Form onSubmit={handleSubmit}>
@@ -77,6 +77,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                 <Input
                   className="shadow-none"
                   type={showPassword ? "text" : "password"}
+                  style={{ borderRight: "none" }}
                   name="password"
                   id="password"
                   value={user.password}
@@ -84,7 +85,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                     setUser({ ...user, password: e.target.value })
                   }
                 />
-                <InputGroupText>
+                <InputGroupText className=' bg-white'>
                   {
                     showPassword ? <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> : <EyeOff strokeWidth={1.5} role="button" color="Gray" onClick={() => setShowPassword(!showPassword)} />
                   }
@@ -93,9 +94,9 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             </FormGroup>
 
             <p role="button" onClick={createAcoount}>
-              Don't have an account? <span className="font-semibold text-red-500">Create account...!</span>
+              Don't have an account ? <span className="font-semibold text-black-500">Create account...!</span>
             </p>
-            <button className="border-2 border-black rounded-md hover:bg-black hover:text-white p-1 w-full">
+            <button className="bg-[#dda243] hover:bg-[#c48d35] rounded-lg p-2 w-full">
               Login
             </button>
 

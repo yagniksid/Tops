@@ -27,12 +27,12 @@ export const AdminProtected = ({ Component }) => {
 export const UserProtected = ({ Component }) => {
 
     let [cookie, setCookie] = useCookies(["user"])
-    console.log("🚀 ~ AdminProtected ~ cookie:", cookie.user)
+    // console.log("🚀 ~ AdminProtected ~ cookie:", cookie.user)
     let userData = cookie.user
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!userData || userData.userType !== "admin") {
+        if (!userData || userData.userType !== "customer") {
             navigate("/")
             toast.error("Please log in first....")
         }

@@ -111,7 +111,7 @@ export default function RegisterModal({ toggle, modal, login }) {
       <div>
         <Modal isOpen={modal} toggle={toggle} >
           <ModalHeader toggle={toggle}>
-            <b>Registeration Form</b>
+            <h4 className="tracking-wider">Register</h4>
           </ModalHeader>
           <ModalBody>
             <Form onSubmit={handleSubmit}>
@@ -249,31 +249,19 @@ export default function RegisterModal({ toggle, modal, login }) {
               </FormGroup>
               <FormGroup>
                 <Label for="password">Password</Label>
-                <Input
-                  type="password"
-                  name="password"
-                  className="shadow-none"
-                  id="password"
-                  value={newUser.password}
-                  onChange={(e) =>
-                    setNewUser({ ...newUser, password: e.target.value })
-                  }
-                >
-                </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label for="password">Confirm Password</Label>
                 <InputGroup>
                   <Input
                     type={showPassword ? "text" : "password"}
-                    name="confirmPassword"
-                    id="confirmPassword"
-                    value={newUser.confirmPass}
+                    name="password"
+                    style={{ borderRight: "none" }}
+                    id="password"
+                    value={newUser.password}
                     onChange={(e) =>
-                      setNewUser({ ...newUser, confirmPass: e.target.value })
+                      setNewUser({ ...newUser, password: e.target.value })
                     }
-                  />
-                  <InputGroupText>
+                  >
+                  </Input>
+                  <InputGroupText className=' bg-white'>
                     {showPassword ?
                       <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> :
                       <EyeOff role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} />
@@ -281,17 +269,30 @@ export default function RegisterModal({ toggle, modal, login }) {
                   </InputGroupText>
                 </InputGroup>
               </FormGroup>
+              <FormGroup>
+                <Label for="password">Confirm Password</Label>
+                <Input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  className="shadow-none"
+                  value={newUser.confirmPass}
+                  onChange={(e) =>
+                    setNewUser({ ...newUser, confirmPass: e.target.value })
+                  }
+                />
+              </FormGroup>
               <p>
                 Already have an account ?
                 <span
                   role="button"
-                  className="text-red-500 ps-2 font-semibold"
+                  className="text-black-500 ps-2 font-semibold"
                   onClick={singIn}
                 >
                   Sign in ...!
                 </span>
               </p>
-              <button  className="border-2 border-black rounded-md hover:bg-black hover:text-white p-1 w-full">
+              <button className="bg-[#dda243] hover:bg-[#c48d35] rounded-lg p-2 w-full">
                 Register
               </button>
             </Form>

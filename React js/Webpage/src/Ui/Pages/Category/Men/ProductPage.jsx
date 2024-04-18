@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ChevronRight, ListFilter, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import smartWatch from "../Smart Watch/Images/smartwatch.webp"
+import { useNavigate, useParams } from "react-router-dom";
+import menImage from "../../../Image/menimg.webp";
 import book from "../../../Image/book.svg";
 import buy from "../../../Image/buywith.svg";
 import store from "../../../Image/store.webp";
+import "./Men.css"
 import Filter from "../../../Component/FilterData/Filter";
 import { BE_URL } from "../../../../../config";
 import axios from 'axios';
@@ -12,7 +13,7 @@ import Card from "../../../Component/Card/Card";
 
 const initialData = {
     brand: "Titan",
-    mainCategory: "Smartwatches",
+    mainCategory: "",
     price: { lt: "5500", gt: "500" },
     discountPercentage: {},
     category: [],
@@ -21,15 +22,25 @@ const initialData = {
     availableStock: ""
 };
 
-export default function Smartwatch() {
+export default function ProductPage() {
     let [data, setData] = useState([])
     let [count, setCount] = useState([])
     const [filter, setFilter] = useState(initialData);
+    // console.log("🚀 ~ Men ~ filter:", filter)
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const slideBarToggle = () => {
         setIsOpen(!isOpen);
     };
+
+    const paramsData = useParams()
+    useEffect(() => {
+        if (["male", "female"].includes(paramsData.type)) {
+            setFilter({ ...initialData, gender: paramsData.type })
+        } else {
+            setFilter({ ...initialData, mainCategory: paramsData.type })
+        }
+    }, [paramsData])
 
     useEffect(() => {
         axios({
@@ -42,7 +53,7 @@ export default function Smartwatch() {
         }).catch((err) => {
             toast.error("Error occurred while fetching data")
         })
-    }, [filter])
+    }, [filter, paramsData])
 
     const addCategoryToFilter = (category) => {
         setFilter({ ...filter, category: [...filter.category, category] })
@@ -69,10 +80,10 @@ export default function Smartwatch() {
                     <span className="p-0 m-0 pt-1">
                         <ChevronRight size={15} strokeWidth={2} />
                     </span>
-                    <h6 className="font-normal text-sm m-0">SmartWatch</h6>
+                    <h6 className="font-normal text-sm m-0">Men</h6>
                 </div>
                 <div>
-                    <img src={smartWatch} alt="" />
+                    <img src={menImage} alt="" />
                 </div>
                 <div
                     className={`pb-4 pt-4 flex justify-between ps-36 pe-36 ${isOpen ? 'bg-white transition-all duration-500' : ''}`}
@@ -97,7 +108,7 @@ export default function Smartwatch() {
                 </div>
                 <div
                     className="strap py-4 mt-4 flex items-center gap-5 sticky-top "
-                    style={{ top: "70px", zIndex: "2" }}
+                    style={{ top: "79px", zIndex: "2" }}
                 >
                     <div className="ps-20">
                         <h6 className="text-xs pb-0 mb-0 font-normal">Filter By</h6>
@@ -185,7 +196,7 @@ export default function Smartwatch() {
                 </div>
                 <div className="pt-4 pb-4 ps-20">
                     <h4 className="text-start">
-                        SmartWatches <span className="font-light ps-3">{count.count}</span>
+                        Men's Watches <span className="font-light ps-3">{count.count}</span>
                     </h4>
                 </div>
                 <div className="flex">

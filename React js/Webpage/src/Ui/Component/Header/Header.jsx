@@ -1,16 +1,19 @@
-import React, { useRef, useState } from 'react';
-import { Mic, Search, User } from "lucide-react";
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, CircleUser, GaugeCircle, Mic, PackageCheck, Search, ShoppingCart, User } from "lucide-react";
 import logoImage from "../../Image/titan-logo.svg";
 import track from "../../Image/track.svg";
 import whishlist from "../../Image/Wishlist.webp";
 import { Form, Input, InputGroup, InputGroupText } from 'reactstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
+
+import { useCookies } from 'react-cookie';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchData } from '../../../Redux/feature/search';
+import { fetchCart } from '../../../Redux/feature/cartSlice';
+import "./Header.css"
 import LoginModal from '../Modal/LoginModal';
 import RegisterModal from '../Modal/RegisterModal';
-import { useCookies } from 'react-cookie';
-import "./Header.css"
-import { useDispatch } from 'react-redux';
-import { setSearchData } from '../../../Redux/feature/search';
+
 export default function Header() {
     const [loginModal, setLoginModal] = useState(false);
     const [registerModal, setRegisterModal] = useState(false);
@@ -45,17 +48,24 @@ export default function Header() {
         console.log("---test", value)
         if (value === "") dispatch(setSearchData(""))
         else setSearch(value)
-
     }
+
+    let count = useSelector((store) => {
+        return store.cartReducer
+    })
+    useEffect(() => {
+        dispatch(fetchCart(token))
+    }, [count.reFetch])
 
     return (
         <>
+
             <div className='w-100 h-9 bg-zinc-800 text-white text-xs flex items-center ps-20 pe-20 '>
                 <marquee behavior="scroll" scrollamount="10" direction="left" ref={marqueeRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                     <span className='me-80'>SALE is Live!</span> Get 10% cashback on payment via Mobikwik wallet over Rs. 2999. T&C Apply.
                 </marquee>
             </div>
-            <div style={{ boxShadow: "#00000047 1px 1px 3px 0px" }} className='pl-20 pe-3 flex items-center justify-between w-100 pt-3 pb-3 font-sans sticky-top top-0 bg-white -z-1'>
+            <div style={{ boxShadow: "#00000047 1px 1px 3px 0px", zIndex: "3" }} className='pl-20 pe-3 flex items-center justify-between w-100 pt-3 pb-3 font-sans sticky-top top-0 bg-white '>
                 <div className='pe-5'>
                     <img role='button' onClick={() => navigate("/")} src={logoImage} className='h-auto w-32' alt="" />
                 </div>
@@ -87,46 +97,58 @@ export default function Header() {
                     </Form>
                 </div>
 
-                <div className='flex gap-4 items-center justify-center'>
+                <div className='flex gap-10 items-center justify-center'>
                     {
-                        user.userType === "admin" ?
-                            <>
-                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-dashboard"} >Dashboard</NavLink>
-                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-product"} >Product</NavLink>
-                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-order"} >Order</NavLink>
-                                <NavLink className="text-decoration-none  text-sm text-black" to={"/admin-user"} >User</NavLink>
-                            </>
-                            :
-                            <>
-                                <div className='flex flex-col items-center'>
-                                    <img role='button' src={whishlist} className='h-7 w-7' alt="" />
-                                    <NavLink className="text-decoration-none  text-sm text-black" to={"/whishlist"} >Whishlist</NavLink>
-                                </div>
-                                <div className='flex flex-col'>
-                                    <img role='button' src={track} className='h-5 mt-2' alt="" />
-                                    <NavLink className="text-decoration-none  text-sm text-black" to={"/track"} >Track order</NavLink>
-                                </div>
-
-                            </>
+                        cookies?.user?.userType === "customer" &&
+                        <>
+                            <div className='flex flex-col gap-1 justify-center items-center'>
+                                <Box role="button" onClick={() => { navigate("/user-product") }} strokeWidth={1} />
+                                <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-product"}>Product</NavLink>
+                            </div>
+                            <div className='flex flex-col gap-1 justify-center items-center'>
+                                <PackageCheck role="button" onClick={() => { navigate("/user-order") }} strokeWidth={1} />
+                                <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-order"}>Order</NavLink>
+                            </div>
+                            <div className='flex flex-col gap-1 justify-center items-center'>
+                                <ShoppingCart role='button' onClick={() => { navigate("/user-cart") }} strokeWidth={1} />
+                                <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-cart"}>Cart</NavLink>
+                            </div>
+                        </>
                     }
                     {
-                        token ?
-                            <div className='flex flex-col'>
-                                <User role='button' strokeWidth={1} onClick={() => navigate("/profile")} />
+                        cookies?.user?.userType !== "admin" && cookies?.user?.userType !== "customer" &&
+                        <>
+                            <div className='flex flex-col justify-center items-center userHeader'>
+                                <img role='button' onClick={() => { navigate("/wishlist") }} src={whishlist} className='h-7 w-7' alt="" />
+                                <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/wishlist"}>Wishlist</NavLink>
+                            </div>
+                            <div className='flex flex-col justify-center gap-1 items-center userHeader'>
+                                <img role='button' onClick={() => { navigate("/track") }} src={track} className='h-5 mt-2' alt="" />
+                                <NavLink className="text-decoration-none text-black tracking-wider text-[13px]" to={"/track"}>Track order</NavLink>
+                            </div>
+                        </>
+                    }
+
+
+                    {
+                        cookies?.token ?
+
+                            <div className='flex flex-col justify-center gap-1 items-center'>
+                                <CircleUser role='button' strokeWidth={1} onClick={() => navigate("/profile")} />
+                                <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/profile"}>Profile</NavLink>
                             </div>
                             :
-                            <div className='flex justify-center'>
-                                <button className="border-2 font-bold px-4  border-black rounded-md hover:bg-black hover:text-white p-1 w-full" onClick={loginToggle}>
-                                    Login
-                                </button>
-
+                            <div className='flex flex-col justify-center gap-1 items-center mt-1'>
+                                <User role='button' strokeWidth={1} onClick={loginToggle} />
+                                <span role='button' className="tracking-widest text-[13px] text-decoration-none text-sm text-black" onClick={loginToggle} >Account</span>
 
                             </div>
                     }
                 </div>
+
             </div>
-            <LoginModal toggle={loginToggle} modal={loginModal} registerToggle={registerToggle} />
-            <RegisterModal toggle={registerToggle} modal={registerModal} login={loginToggle} />
+            <LoginModal modal={loginModal} toggle={loginToggle} registerToggle={registerToggle} />
+            <RegisterModal modal={registerModal} toggle={registerToggle} login={loginToggle} />
         </>
     );
 }

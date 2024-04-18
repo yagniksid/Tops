@@ -52,14 +52,14 @@ const footerLinksData = [
 export default function Footer() {
     return (
         <>
-            <div className='ps-16 pe-16 bg-black text-white pt-5'>
+            <div className='px-16 bg-black text-white pt-5 mt-7'>
                 <div className='flex justify-between'>
                     <div className='grid grid-cols-4 gap-24'>
                         {footerLinksData.map((section, index) => (
                             <div key={index}>
                                 <h6 role='button' className='pb-3'>{section.title}</h6>
                                 {section.links.map((link, linkIndex) => (
-                                    <p key={linkIndex} role='button' className='text-sm font-normal hover:underline underline-offset-4'>{link}</p>
+                                    <p key={linkIndex} role='button' className='text-sm text-white font-normal hover:underline underline-offset-4'>{link}</p>
                                 ))}
                             </div>
                         ))}
@@ -99,10 +99,10 @@ export default function Footer() {
                         <img className="opacity-40" src={axis} alt="" />
                     </div>
                     <div className='flex'>
-                        <p className='text-xs  border-r border-gray-300 px-2'>© 2023 Titan Company Limited. All Rights Reserved.</p>
-                        <p className='text-xs hover:underline underline-offset-4 border-r border-gray-300 px-2'>Terms & Conditions</p>
-                        <p className='text-xs hover:underline underline-offset-4 border-r border-gray-300 px-2'>Privacy Policy</p>
-                        <p className='text-xs hover:underline underline-offset-4 border-r border-gray-300 px-2'>Wearable Privacy Policy</p>
+                        <p className='text-xs text-white border-r  border-gray-300 px-2'>© 2023 Titan Company Limited. All Rights Reserved.</p>
+                        <p role='button' className='text-xs text-white hover:underline underline-offset-4 border-r border-gray-300 px-2'>Terms & Conditions</p>
+                        <p role='button' className='text-xs text-white hover:underline underline-offset-4 border-r border-gray-300 px-2'>Privacy Policy</p>
+                        <p role='button' className='text-xs text-white hover:underline underline-offset-4 border-r border-gray-300 px-2'>Wearable Privacy Policy</p>
                     </div>
                 </div>
             </div>
