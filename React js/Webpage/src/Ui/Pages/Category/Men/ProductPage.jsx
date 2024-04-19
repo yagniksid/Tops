@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ChevronRight, ListFilter, X } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
-import menImage from "../../../Image/menimg.webp";
+import menImage from "../../Category/Men/Images/menImage.webp";
+import wmnImg from "../../Category/Men/Images/wmnImg.webp";
+import preWatch from "../../Category/Men/Images/preWatch.webp";
+import inter from "../../Category/Men/Images/inter.jpg";
+import smartwatch from "../../Category/Men/Images/smartwatch.webp";
 import book from "../../../Image/book.svg";
 import buy from "../../../Image/buywith.svg";
 import store from "../../../Image/store.webp";
@@ -14,13 +18,30 @@ import Card from "../../../Component/Card/Card";
 const initialData = {
     brand: "Titan",
     mainCategory: "",
-    price: { lt: "5500", gt: "500" },
+    price: { lt: "5500", gt: "0" },
     discountPercentage: {},
     category: [],
     color: [],
     size: [],
     availableStock: ""
 };
+
+const image = {
+    "Men's Watches": menImage,
+    "Women's Watches": wmnImg,
+    "Smartwatches": smartwatch,
+    "Premium Watches": preWatch,
+    "International Brands": inter
+}
+
+const page = {
+    "Men's Watches": menImage,
+    "Women's Watches": wmnImg,
+    "Smartwatches": smartwatch,
+    "Premium Watches": preWatch,
+    "International Brands": inter
+}
+
 
 export default function ProductPage() {
     let [data, setData] = useState([])
@@ -35,14 +56,11 @@ export default function ProductPage() {
 
     const paramsData = useParams()
     useEffect(() => {
-        if (["male", "female"].includes(paramsData.type)) {
-            setFilter({ ...initialData, gender: paramsData.type })
-        } else {
-            setFilter({ ...initialData, mainCategory: paramsData.type })
-        }
+        setFilter({ ...initialData, mainCategory: paramsData.type })
     }, [paramsData])
 
     useEffect(() => {
+        console.log("fileter", filter)
         axios({
             method: "get",
             url: `${BE_URL}/product/getAll`,
@@ -80,10 +98,10 @@ export default function ProductPage() {
                     <span className="p-0 m-0 pt-1">
                         <ChevronRight size={15} strokeWidth={2} />
                     </span>
-                    <h6 className="font-normal text-sm m-0">Men</h6>
+                    <h6 className="font-normal text-sm m-0 capitalize">{paramsData.type}</h6>
                 </div>
                 <div>
-                    <img src={menImage} alt="" />
+                    <img src={image[paramsData.type]} alt="" />
                 </div>
                 <div
                     className={`pb-4 pt-4 flex justify-between ps-36 pe-36 ${isOpen ? 'bg-white transition-all duration-500' : ''}`}
@@ -107,15 +125,15 @@ export default function ProductPage() {
                     </div>
                 </div>
                 <div
-                    className="strap py-4 mt-4 flex items-center gap-5 sticky-top "
+                    className="strap py-4 px-5 mt-4 flex items-center gap-5 sticky-top "
                     style={{ top: "79px", zIndex: "2" }}
                 >
                     <div className="ps-20">
                         <h6 className="text-xs pb-0 mb-0 font-normal">Filter By</h6>
-                        <h6>Category</h6>
+                        <h6 className="m-0">Category</h6>
                     </div>
-                    <div className="flex justify-between w-75">
-                        <div className="flex flex-col gap-2">
+                    <div className="flex justify-between w-100">
+                        <div className="flex flex-col ">
                             <div>
                                 <button
                                     className={`btn me-2 ${selectedCategories.includes("Casual") ? "selected" : ""}`}
@@ -169,10 +187,10 @@ export default function ProductPage() {
                                     >
 
                                         <button
-                                            className="clbtn me-2"
+                                            className="clbtn"
                                         >
-                                            <div className=" flex items-center gap-1">
-                                                <span className="ps-2">{category}</span>
+                                            <div className=" flex items-center px-1 gap-1">
+                                                <span className="text-[13px]">{category}</span>
                                                 <span><X size={15} strokeWidth={1} /></span>
                                             </div>
                                         </button>
@@ -184,10 +202,10 @@ export default function ProductPage() {
                         <div>
                             {
                                 !isOpen ?
-                                    <button onClick={slideBarToggle} role="button" className="!text-xs !font-semibold py-2 w-[170px] px-4 tracking-wider bg-white ">
+                                    <button onClick={slideBarToggle} role="button" className="!text-xs !font-semibold py-2 me-5 w-[170px] px-4 tracking-wider bg-white ">
                                         <div className="flex gap-2 items-center"><ListFilter strokeWidth={1} size={20} /> SHOW FILTER </div>
                                     </button> :
-                                    <button onClick={slideBarToggle} role="button" className="!text-xs !font-semibold py-2  w-[170px] px-4 tracking-wider bg-white">
+                                    <button onClick={slideBarToggle} role="button" className="!text-xs !font-semibold py-2 me-5  w-[170px] px-4 tracking-wider bg-white">
                                         <div className="flex gap-2 items-center"><ListFilter strokeWidth={1} size={20} /> HIDE FILTER </div>
                                     </button>
                             }
@@ -196,7 +214,7 @@ export default function ProductPage() {
                 </div>
                 <div className="pt-4 pb-4 ps-20">
                     <h4 className="text-start">
-                        Men's Watches <span className="font-light ps-3">{count.count}</span>
+                        {paramsData.type} <span className="font-light ps-3">{count.count}</span>
                     </h4>
                 </div>
                 <div className="flex">

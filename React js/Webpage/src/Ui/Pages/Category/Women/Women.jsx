@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronRight, ListFilter, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import womenImage from "../../Category/Women/Images/img1.webp";
+// import womenImage from "../../Category/Women/Images/img1.webp";
 import book from "../../../Image/book.svg";
 import buy from "../../../Image/buywith.svg";
 import store from "../../../Image/store.webp";
@@ -73,7 +73,7 @@ export default function Women() {
                     <h6 className="font-normal text-sm m-0">Women</h6>
                 </div>
                 <div>
-                    <img src={womenImage} alt="" />
+                    {/* <img src={womenImage} alt="" /> */}
                 </div>
                 <div
                     className={`pb-4 pt-4 flex justify-between ps-36 pe-36 ${isOpen ? 'bg-white transition-all duration-500' : ''}`}

@@ -12,8 +12,8 @@
     background-color: white;
     border-radius: 0;
     border: 1px solid #ededed;
-    width: 70px;
-    height: 30px;
+    width: auto;
+    height: 25px;
     font-size: 15px;
 }
 

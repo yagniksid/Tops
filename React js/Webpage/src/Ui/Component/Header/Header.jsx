@@ -57,6 +57,7 @@ export default function Header() {
         dispatch(fetchCart(token))
     }, [count.reFetch])
 
+
     return (
         <>
 
@@ -99,7 +100,7 @@ export default function Header() {
 
                 <div className='flex gap-10 items-center justify-center'>
                     {
-                        cookies?.user?.userType === "customer" &&
+                        user?.userType === "customer" &&
                         <>
                             <div className='flex flex-col gap-1 justify-center items-center'>
                                 <Box role="button" onClick={() => { navigate("/user-product") }} strokeWidth={1} />
@@ -110,13 +111,18 @@ export default function Header() {
                                 <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-order"}>Order</NavLink>
                             </div>
                             <div className='flex flex-col gap-1 justify-center items-center'>
-                                <ShoppingCart role='button' onClick={() => { navigate("/user-cart") }} strokeWidth={1} />
+                                <div>
+                                    <ShoppingCart role='button' className='relative' onClick={() => { navigate("/user-cart") }} strokeWidth={1} />
+                                    <div className='absolute top-[10px] right-[108px] bg-pink-400 border border-black rounded-3xl h-4 w-4 '>
+                                        <span className='flex justify-center items-center text-sm'>{count.cart.length}</span>
+                                    </div>
+                                </div>
                                 <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-cart"}>Cart</NavLink>
                             </div>
                         </>
                     }
                     {
-                        cookies?.user?.userType !== "admin" && cookies?.user?.userType !== "customer" &&
+                        user?.userType !== "admin" && cookies?.user?.userType !== "customer" &&
                         <>
                             <div className='flex flex-col justify-center items-center userHeader'>
                                 <img role='button' onClick={() => { navigate("/wishlist") }} src={whishlist} className='h-7 w-7' alt="" />
@@ -128,10 +134,8 @@ export default function Header() {
                             </div>
                         </>
                     }
-
-
                     {
-                        cookies?.token ?
+                        token ?
 
                             <div className='flex flex-col justify-center gap-1 items-center'>
                                 <CircleUser role='button' strokeWidth={1} onClick={() => navigate("/profile")} />
