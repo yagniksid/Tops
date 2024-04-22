@@ -6,7 +6,7 @@ import { LogOut } from 'lucide-react';
 
 export default function Profile() {
     const [cookies, setCookie, removeCookie] = useCookies(["user", "token"]);
-    // console.log("🚀 ~ Profile ~ cookies:", cookies.user)
+    console.log("🚀 ~ Profile ~ cookies:", cookies.user)
     let navigate = useNavigate()
 
     const logOut = () => {

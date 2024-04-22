@@ -71,13 +71,23 @@ export default function RegisterModal({ toggle, modal, login }) {
           setCookie("user", res.data.data);
           setCookie("token", res.data.token);
           if (res.data.data.userType === "admin") navigate("/track");
-          else navigate("/");
+          let match = cookies?.user?.find((e) => e.email === res.data.data.email)
+          console.log("🚀 ~ .then ~ match:", match)
+          if (!match) {
+            toast.error("Registerd ata is already exist")
+            toast.error("Registerd ith another email")
+          }
+          else {
+            navigate("/");
+            toast.success("Registration successful!");
+            setAddress(initialAdress);
+            setNewUser(initialData);
+            toggle();
+          }
         })
-        .catch((err) => { });
-      toast.success("Registration successful!");
-      setAddress(initialAdress);
-      setNewUser(initialData);
-      toggle();
+        .catch((err) => {
+          console.log("🚀 ~ handleSubmit ~ err:", err)
+        });
     }
   };
 

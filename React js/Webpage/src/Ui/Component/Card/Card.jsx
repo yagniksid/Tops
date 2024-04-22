@@ -16,6 +16,7 @@ export default function Card({ cardData }) {
     axios({
       method: "post",
       url: `${BE_URL}/cart/create/${productId}`,
+      // data: { productId, _id: reduc.cartId, isRemove: true },
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -59,3 +60,16 @@ export default function Card({ cardData }) {
     </div>
   );
 }
+
+
+/*
+
+
+upadte -> cart/update
+data => {_id:cartId,prductId:productId,isRemove:boolean}
+
+
+delete cart => cart/delete/:id => id = cartId remove whole cart
+
+
+*/

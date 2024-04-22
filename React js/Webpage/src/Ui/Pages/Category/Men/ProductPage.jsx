@@ -35,11 +35,11 @@ const image = {
 }
 
 const page = {
-    "Men's Watches": menImage,
-    "Women's Watches": wmnImg,
-    "Smartwatches": smartwatch,
-    "Premium Watches": preWatch,
-    "International Brands": inter
+    "Men's Watches": "Men",
+    "Women's Watches": "Women",
+    "Smartwatches": "Smartwatch",
+    "Premium Watches": "Premium Watches",
+    "International Brands": "International Brands"
 }
 
 
@@ -47,7 +47,6 @@ export default function ProductPage() {
     let [data, setData] = useState([])
     let [count, setCount] = useState([])
     const [filter, setFilter] = useState(initialData);
-    // console.log("🚀 ~ Men ~ filter:", filter)
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const slideBarToggle = () => {
@@ -98,7 +97,7 @@ export default function ProductPage() {
                     <span className="p-0 m-0 pt-1">
                         <ChevronRight size={15} strokeWidth={2} />
                     </span>
-                    <h6 className="font-normal text-sm m-0 capitalize">{paramsData.type}</h6>
+                    <h6 className="font-normal text-sm m-0 capitalize">{page[paramsData.type]}</h6>
                 </div>
                 <div>
                     <img src={image[paramsData.type]} alt="" />

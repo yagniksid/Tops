@@ -7,14 +7,14 @@ import { useCookies } from 'react-cookie';
 
 
 export default function SubHeader() {
-    const [{ user }] = useCookies([])
+    const [{ user }] = useCookies(["user"])
 
     return (
         <>
             {
                 user?.userType === "admin" ?
-                    <div className='flex justify-center flex-col items-center'>
-                        <div className='flex gap-10 justify-around w-50 py-3 relative cursor-pointer group'>
+                    <div className='bg-white flex justify-center flex-col items-center sticky-top ' style={{ top: "79px", zIndex: "2" }}>
+                        <div className='flex gap-10 justify-around w-50 py-3 relative cursor-pointer group '>
                             <div className='flex flex-col justify-center items-center'>
 
                                 <NavLink className="text-decoration-none text-black" to={"/admin-dashboard"}>Dashboard</NavLink>
@@ -32,7 +32,6 @@ export default function SubHeader() {
                         </div>
                     </div>
                     :
-
                     <>
 
                         <div className='userHeader flex gap-10 justify-center pt-3 pb-2 relative cursor-pointer group'>

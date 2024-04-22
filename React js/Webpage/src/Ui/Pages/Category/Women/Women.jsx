@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronRight, ListFilter, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-// import womenImage from "../../Category/Women/Images/img1.webp";
 import book from "../../../Image/book.svg";
 import buy from "../../../Image/buywith.svg";
 import store from "../../../Image/store.webp";

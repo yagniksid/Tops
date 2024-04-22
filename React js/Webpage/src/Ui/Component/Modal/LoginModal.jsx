@@ -32,6 +32,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       url: `${BE_URL}/user/signin`,
       data: user
     }).then((res) => {
+      console.log("🚀 ~ handleSubmit ~ res:", res)
       setCookie("user", res.data.data)
       setCookie("token", res.data.token)
       toggle()

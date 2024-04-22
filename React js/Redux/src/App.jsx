@@ -19,8 +19,8 @@ export default function App() {
         {/* <Counter />
         <Amount /> */}
         {/* <Point /> */}
-        {/* <UserInput /> */}
-        <Router />
+        <UserInput />
+        {/* <Router /> */}
       </Provider>
       {/* <Checklist /> */}
     </div>

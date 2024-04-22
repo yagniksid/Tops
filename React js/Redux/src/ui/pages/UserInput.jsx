@@ -9,11 +9,13 @@ export default function UserInput() {
     let [index, setIndex] = useState(null)
     let [search, setSearch] = useState("")
     let [data, setData] = useState([])
+    console.log("🚀 ~ UserInput ~ data:", data)
 
     let userData = useSelector((store) => {
         return store.nameReducer.name
     })
-
+    console.log("🚀 ~ userData ~ userData:", userData)
+    
     useEffect(() => {
         let searchData = userData.filter((ele) => ele.toLowerCase().includes(search.toLowerCase()))
         setData(searchData)

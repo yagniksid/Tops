@@ -98,6 +98,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
                     </Form>
                 </ModalBody>
                 <ModalFooter>
+
                     <Button color="primary" onClick={addData}>
                         Submit
                     </Button>

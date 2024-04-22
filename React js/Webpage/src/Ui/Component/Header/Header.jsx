@@ -3,6 +3,7 @@ import { Box, CircleUser, GaugeCircle, Mic, PackageCheck, Search, ShoppingCart, 
 import logoImage from "../../Image/titan-logo.svg";
 import track from "../../Image/track.svg";
 import whishlist from "../../Image/Wishlist.webp";
+import cart from "../../Image/cart.svg";
 import { Form, Input, InputGroup, InputGroupText } from 'reactstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ export default function Header() {
     const [loginModal, setLoginModal] = useState(false);
     const [registerModal, setRegisterModal] = useState(false);
     const [cookies, setCookie] = useCookies(["user", "token"])
+    console.log("🚀 ~ Header ~ cookies:", cookies)
     let [search, setSearch] = useState("")
 
     let user = cookies.user || {}
@@ -110,11 +112,11 @@ export default function Header() {
                                 <PackageCheck role="button" onClick={() => { navigate("/user-order") }} strokeWidth={1} />
                                 <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-order"}>Order</NavLink>
                             </div>
-                            <div className='flex flex-col gap-1 justify-center items-center'>
+                            <div className='flex flex-col z-10 gap-1 justify-center items-center'>
                                 <div>
-                                    <ShoppingCart role='button' className='relative' onClick={() => { navigate("/user-cart") }} strokeWidth={1} />
-                                    <div className='absolute top-[10px] right-[108px] bg-pink-400 border border-black rounded-3xl h-4 w-4 '>
-                                        <span className='flex justify-center items-center text-sm'>{count.cart.length}</span>
+                                    <img role='button' className='relative' onClick={() => { navigate("/user-cart") }} src={cart} alt="" />
+                                    <div className='absolute top-[10px] right-[100px] bg-[#bf4815] rounded-3xl z-20 h-4 w-4 '>
+                                        <span className='flex justify-center items-center text-[11px] text-white'>{!count?.cart?.length ? "0" : count?.cart?.length}</span>
                                     </div>
                                 </div>
                                 <NavLink className="text-decoration-none text-[13px] tracking-widest text-black" to={"/user-cart"}>Cart</NavLink>
