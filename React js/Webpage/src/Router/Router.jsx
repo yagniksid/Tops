@@ -2,12 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ProductPage from '../Ui/Pages/Category/Men/ProductPage';
-import Women from '../Ui/Pages/Category/Women/Women';
-import SmartWatch from '../Ui/Pages/Category/Smart Watch/SmartWatch';
-import PremiumWatch from '../Ui/Pages/Category/Premium Watches/PremiumWatch';
-import InternationalBrands from '../Ui/Pages/Category/International Watchs/InternationalBrands';
 import Whishlist from '../Ui/Pages/Common/Whishlist';
-import Cart from '../Ui/Pages/user/Cart';
 import Track from '../Ui/Pages/Common/Track';
 import Homepage from '../Ui/Pages/Common/Homepage/Homepage';
 import Order from '../Ui/Pages/admin/Order/Order';
@@ -25,6 +20,8 @@ import { useCookies } from 'react-cookie';
 import Section7 from '../Ui/Component/Sections/Section7';
 import UserProduct from '../Ui/Pages/user/Product/UserProduct';
 import SubHeader from '../Ui/Component/Header/SubHeader';
+import Cart from '../Ui/Pages/user/Cart';
+import ForgotPassword from '../Ui/Pages/Common/ForgotPassword';
 
 export default function Router() {
     let [cookie, setCookie] = useCookies(["user", "token"])
@@ -43,6 +40,7 @@ export default function Router() {
                     <Route path='/track' element={<Track />} />
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/reviewpage' element={<ReviewPage />} />
+                    <Route path='/forgetPassword' element={<ForgotPassword />} />
 
                     {/* -------------------------ADMIN--------------------- */}
                     <Route path='/admin-product' element={<AdminProtected Component={<ProductAdmin />} />} />
@@ -58,10 +56,6 @@ export default function Router() {
 
                     {/* -------------------------CATAGORY--------------------- */}
                     <Route path='/product/:type' element={<ProductPage />} />
-                    <Route path='/women' element={<Women />} />
-                    <Route path='/smartWatch' element={<SmartWatch />} />
-                    <Route path='/premiumWatch' element={<PremiumWatch />} />
-                    <Route path='/internationalBrands' element={<InternationalBrands />} />
                 </Routes>
                 {
                     !cookie.token &&

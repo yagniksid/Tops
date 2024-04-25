@@ -35,6 +35,7 @@ const image = {
 }
 
 const page = {
+    "Titan": "All Watches",
     "Men's Watches": "Men",
     "Women's Watches": "Women",
     "Smartwatches": "Smartwatch",
@@ -55,7 +56,11 @@ export default function ProductPage() {
 
     const paramsData = useParams()
     useEffect(() => {
-        setFilter({ ...initialData, mainCategory: paramsData.type })
+        if (paramsData.type === "Titan") {
+            setFilter(initialData);
+        } else {
+            setFilter({ ...initialData, mainCategory: paramsData.type });
+        }
     }, [paramsData])
 
     useEffect(() => {

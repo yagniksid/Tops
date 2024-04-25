@@ -2,9 +2,6 @@ import { Cookie, MapPin } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-// import inter from "../International Watchs/Images/inter.jpg"
-// import menImg from "../../Pages/Category/"
-
 
 export default function SubHeader() {
     const [{ user }] = useCookies(["user"])
@@ -35,6 +32,9 @@ export default function SubHeader() {
                     <>
 
                         <div className='userHeader flex gap-10 justify-center pt-3 pb-2 relative cursor-pointer group'>
+                            <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Titan"} >
+                                All Watches
+                            </NavLink>
                             <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Men's Watches"} >
                                 MEN
                             </NavLink>

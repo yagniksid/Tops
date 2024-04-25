@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { BE_URL } from "../../../../config";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { reFetch } from "../../../Redux/feature/cartSlice";
 
 export default function Card({ cardData }) {
@@ -12,24 +12,29 @@ export default function Card({ cardData }) {
 
   const dispatch = useDispatch()
 
+
+  const redux = useSelector((store) => store.cartReducer);
+  // console.log("🚀 ~ Card ~ redux:", redux)
+
   const addToCart = (productId) => {
+    // console.log("🚀 ~ addToCart ~ productId:", productId)
     axios({
       method: "post",
       url: `${BE_URL}/cart/create/${productId}`,
-      // data: { productId, _id: reduc.cartId, isRemove: true },
+      // data: { productId, _id: redux.cartId, isRemove: true },
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     })
       .then((res) => {
-        console.log("🚀 ~ useEffect ~ res:", res);
+        // console.log("🚀 ~ useEffect ~ res:", res);
         dispatch(reFetch())
       })
       .catch((err) => {
-        console.log("🚀 ~ useEffect ~ err:", err);
+        // console.log("🚀 ~ useEffect ~ err:", err);
       });
-    console.log(">>>>>>>>>>>>>>");
+    // console.log(">>>>>>>>>>>>>>");
   };
   return (
     <div className="mb-5 border-2 p-4 rounded-md pb-4">

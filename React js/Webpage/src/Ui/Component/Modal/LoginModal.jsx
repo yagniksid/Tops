@@ -49,6 +49,11 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
     registerToggle()
   }
 
+  function forgetPassword() {
+    toggle()
+    navigate("/forgetPassword")
+  }
+
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
@@ -97,6 +102,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
             <p role="button" onClick={createAcoount}>
               Don't have an account ? <span className="font-semibold text-black-500">Create account...!</span>
             </p>
+            <p role="button" onClick={() => forgetPassword()}>Forgot Password</p>
             <button className="bg-[#dda243] hover:bg-[#c48d35] rounded-lg p-2 w-full">
               Login
             </button>

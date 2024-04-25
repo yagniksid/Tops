@@ -19,7 +19,7 @@ export default function Header() {
     const [loginModal, setLoginModal] = useState(false);
     const [registerModal, setRegisterModal] = useState(false);
     const [cookies, setCookie] = useCookies(["user", "token"])
-    console.log("🚀 ~ Header ~ cookies:", cookies)
+    // console.log("🚀 ~ Header ~ cookies:", cookies)
     let [search, setSearch] = useState("")
 
     let user = cookies.user || {}

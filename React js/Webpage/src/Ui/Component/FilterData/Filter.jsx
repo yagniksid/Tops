@@ -182,7 +182,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                                                 const value = parseInt(e.target.value);
                                                                 setFilter({
                                                                     ...filter,
-                                                                    price: { ...filter?.price, gt: isNaN(value) ? 500 : value }, // Set gt to null if value is NaN
+                                                                    price: { ...filter?.price, gt: isNaN(value) ? "0" : value }
                                                                 });
                                                             }}
                                                             className="shadow-none !border-none"
@@ -204,7 +204,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                                                 const value = parseInt(e.target.value);
                                                                 setFilter({
                                                                     ...filter,
-                                                                    price: { ...filter?.price, lt: isNaN(value) ? 5500 : value } // Set lt to null if value is NaN
+                                                                    price: { ...filter?.price, lt: isNaN(value) ? "0" : value }
                                                                 });
                                                             }}
                                                             className="shadow-none !border-none"
