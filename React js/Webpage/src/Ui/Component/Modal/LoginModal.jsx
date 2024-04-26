@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
-  Button,
   Modal,
   ModalHeader,
   ModalBody,
@@ -18,11 +17,15 @@ import axios from "axios";
 import { BE_URL } from "../../../../config";
 import { Eye, EyeOff } from "lucide-react";
 import { InputGroup, InputGroupText } from "reactstrap";
+import { useDispatch } from "react-redux";
+import { fetchCart } from "../../../Redux/feature/cartSlice";
 
 export default function LoginModal({ modal, toggle, registerToggle }) {
   const [user, setUser] = useState({ email: "", password: "", });
   const [cookies, setCookie] = useCookies();
   const [showPassword, setShowPassword] = useState(false)
+
+  const dispatch = useDispatch()
 
   let navigate = useNavigate()
   const handleSubmit = (e) => {
@@ -37,6 +40,7 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       setCookie("token", res.data.token)
       toggle()
       setUser({ email: "", password: "", })
+      dispatch(fetchCart(res.data.token))
       if (res?.data?.data?.userType === "admin") navigate("/admin-dashboard")
       else navigate("/")
     }).catch((err) => {

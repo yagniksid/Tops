@@ -68,6 +68,7 @@ export default function Cart() {
 
 
     const removeProduct = (id, isRemove) => {
+        console.log("🚀 ~ removeProduct ~ id, isRemove:", id, isRemove)
         axios({
             method: "put",
             url: `${BE_URL}/cart/update`,
@@ -86,11 +87,30 @@ export default function Cart() {
             });
         console.log(">>>>>>>>>>>>>>");
     };
+
+    const deleteAllProduct = (id) => {
+        axios({
+            method: "delete",
+            url: `${BE_URL}/cart/delete/${cartId}`,
+            headers: {
+                authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        })
+            .then((res) => {
+                console.log("🚀 ~ .then ~ res:", res)
+                dispatch(reFetch())
+            })
+            .catch((err) => {
+                console.log("🚀 ~ addMoreProduct ~ err:", err)
+            });
+        console.log(">>>>>>>>>>>>>>");
+    };
     console.log("🚀 ~ removeProduct ~ cartId:", cartId)
 
     return (
         <>
-            {cart.length > 0 ?
+            {cart?.length > 0 ?
                 <div className='px-20'>
                     <div className='text-sm flex justify-center py-4 font-semibold text-[#00000099]'>
                         <span><span className='text-[#dda243]'>CART</span> ---------- DELIVERY INFORMATION ---------- PAYMENT</span>
@@ -138,7 +158,7 @@ export default function Cart() {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <button className='w-[73px] h-[33px] border border-gray-100 text-xs font-semibold'>DELETE</button>
+                                                            <button onClick={() => removeProduct(ele?.productId?._id, true)} className='w-[73px] h-[33px] border border-gray-100 text-xs font-semibold'>DELETE</button>
                                                         </div>
                                                     </li>
                                                 </div>
@@ -176,6 +196,7 @@ export default function Cart() {
                                 </div>
                             </div>
                         </div >
+                        <button onClick={deleteAllProduct} >Clear cart</button>
                     </div >
                 </div > :
                 <EmptyCart />
