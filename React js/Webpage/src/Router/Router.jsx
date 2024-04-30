@@ -11,7 +11,6 @@ import SingleProduct from '../Ui/Pages/user/Product/SingleProduct';
 import UserOrder from '../Ui/Pages/user/UserOrder';
 import Profile from '../Ui/Pages/Common/Profile';
 import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
-import ReviewPage from '../Ui/Pages/Common/ReviewPage';
 import Header from '../Ui/Component/Header/Header';
 import Footer from '../Ui/Component/Footer/Footer';
 import Dashboard from '../Ui/Pages/admin/Dashboard/Dashboard';
@@ -22,6 +21,8 @@ import UserProduct from '../Ui/Pages/user/Product/UserProduct';
 import SubHeader from '../Ui/Component/Header/SubHeader';
 import Cart from '../Ui/Pages/user/Cart';
 import ForgotPassword from '../Ui/Pages/Common/ForgotPassword';
+import Card from '../Ui/Component/Card/Card';
+import ProductPreview from '../Ui/Pages/Review/ProductPreview';
 
 export default function Router() {
     let [cookie, setCookie] = useCookies(["user", "token"])
@@ -39,7 +40,6 @@ export default function Router() {
                     <Route path='/whishlist' element={<Whishlist />} />
                     <Route path='/track' element={<Track />} />
                     <Route path='/profile' element={<Profile />} />
-                    <Route path='/reviewpage' element={<ReviewPage />} />
                     <Route path='/forgetPassword' element={<ForgotPassword />} />
 
                     {/* -------------------------ADMIN--------------------- */}
@@ -52,7 +52,9 @@ export default function Router() {
                     <Route path='/user-product' element={<UserProtected Component={<UserProduct />} />} />
                     <Route path='/user-product:id' element={<UserProtected Component={<SingleProduct />} />} />
                     <Route path='/user-cart' element={<UserProtected Component={<Cart />} />} />
+                    <Route path='/user-card' element={<UserProtected Component={<Card />} />} />
                     <Route path='/user-Order' element={<UserProtected Component={<UserOrder />} />} />
+                    <Route path='/user-card/:id' element={<UserProtected Component={<ProductPreview />} />} />
 
                     {/* -------------------------CATAGORY--------------------- */}
                     <Route path='/product/:type' element={<ProductPage />} />

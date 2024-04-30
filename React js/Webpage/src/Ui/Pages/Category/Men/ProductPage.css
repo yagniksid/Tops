@@ -23,6 +23,7 @@
     border: 1px solid #dda24380;
 }
 
-button:hover,.btn:hover {
+button:hover,
+.btn:hover {
     box-shadow: none !important;
 }

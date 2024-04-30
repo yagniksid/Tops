@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "./Cart.css";
-import { Button, Table } from 'reactstrap';
 import { Minus, Plus } from 'lucide-react';
 import EmptyCart from './EmptyCart';
 import axios from 'axios';

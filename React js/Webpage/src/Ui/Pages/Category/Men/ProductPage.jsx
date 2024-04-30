@@ -9,7 +9,7 @@ import smartwatch from "../../Category/Men/Images/smartwatch.webp";
 import book from "../../../Image/book.svg";
 import buy from "../../../Image/buywith.svg";
 import store from "../../../Image/store.webp";
-import "./Men.css"
+import "./ProductPage.css"
 import Filter from "../../../Component/FilterData/Filter";
 import { BE_URL } from "../../../../../config";
 import axios from 'axios';
