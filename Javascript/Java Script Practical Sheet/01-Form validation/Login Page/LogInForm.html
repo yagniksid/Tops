@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="LogInForm.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            Heading
+            <h1>Login page</h1>
+            Email
+            <div class="row">
+                <div class="col1"><label for="Email">Email id</label></div>
+                <div class="col"><input type="text" name="Email" id="email" placeholder="Enter email"
+                        onblur="return check_blank_value(this, 'msg1')" onkeyup="return email_ex()"></div>
+                <div class="col"><span id="msg1"></span></div>
+            </div>
+            Password
+            <div class="row">
+                <div class="col1"><label for="Password">Create Password</label></div>
+                <div class="col"><input type="password" name="Password" id="pass" placeholder="Enter Password"
+                        onblur="return check_blank_value(this, 'msg2')" onkeyup="return pass_ex()"></div>
+                <div class="col"><span id="msg2"></span></div>
+            </div>
+            Show Password
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"><input type="checkbox" name="Spass" onclick="showpass()"><label for="Spass">Show
+                        Password</label></div>
+                <div class="col"></div>
+            </div>
+            Button
+            <div class="row">
+                <div class="col2"><button type="submit" onclick="return check_form()">Register</button></div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script src="LogInForm.js"></script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="LogInForm.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Login Page</h1>
+            <div class="row">
+                <div class="col1"><label for="email">Email</label></div>
+                <div class="col"><input type="email" name="email" id="email" placeholder="Enter email" onblur="check_blank_value(this, 'msg1')" onkeyup="email_ex()"></div>
+                <div class="col"><span id="msg1"></span></div>
+            </div>
+            <div class="row">
+                <div class="col1"><label for="pass">Password</label></div>
+                <div class="col"><input type="password" name="pass" id="pass" placeholder="Enter Password" onblur="check_blank_value(this, 'msg2')" onkeyup="pass_ex()"></div>
+                <div class="col"><span id="msg2"></span></div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"><input type="checkbox" id="showPass" onclick="showpass()"><label for="showPass">Show Password</label></div>
+                <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col2"><button type="submit" onclick="return check_form()">Login</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="LogInForm.js"></script>
+</body>
+</html>

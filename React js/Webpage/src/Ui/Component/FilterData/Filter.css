@@ -1,15 +1,34 @@
 .rc-slider-handle {
-    /* Your custom styles for the slider handle (pointer) */
     width: 20px;
-    /* Example: Width of the handle */
     height: 20px;
-    /* Example: Height of the handle */
     border: 4px solid white !important;
-    /* Example: Border color and width */
     border-radius: 50%;
-    /* Example: Make it a circle */
     background-color: #dda243 !important;
     opacity: 100 !important;
     box-shadow: 0px 0px 3px gray;
-    /* Example: Background color of the handle */
+}
+
+.accordion-button {
+    background-color: white !important;
+    font-weight: 700;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.form-check-input:checked {
+    background-color: #dda243 !important;
+    border: 1px solid #dda243 !important;
+    color: black;
+}
+
+.form-check-input {
+    color: black;
+}
+
+.form-check-input:checked[type=checkbox] {
+    --bs-form-check-bg-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e);
+
+
 }

@@ -27,10 +27,10 @@ let initialData = {
 };
 
 let initialAdress = {
-  add: "varachha",
-  city: "surat",
-  state: "gujarat",
-  pinCode: "395007"
+  add: "",
+  city: "",
+  state: "",
+  pinCode: ""
 }
 
 export default function RegisterModal({ toggle, modal, login }) {
@@ -119,16 +119,16 @@ export default function RegisterModal({ toggle, modal, login }) {
   return (
     <>
       <div>
-        <Modal isOpen={modal} toggle={toggle} >
+        <Modal size="lg" isOpen={modal} toggle={toggle} >
           <ModalHeader toggle={toggle}>
-            <h4 className="tracking-wider">Register</h4>
           </ModalHeader>
-          <ModalBody>
+          <h4 className="tracking-wider pt-5 pb-3">Register</h4>
+          <ModalBody className="mb-28 mx-36">
             <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <Label for="name">Name</Label>
                 <Input
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
                   id="name"
                   name="text"
                   placeholder="Enter your name"
@@ -145,7 +145,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="email"
                   name="email"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your email"
                   id="email"
                   value={newUser.email}
                   onChange={(e) =>
@@ -159,7 +160,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="number"
                   name="number"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your number"
                   id="number"
                   value={newUser.number}
                   onChange={handleNumberInput}
@@ -171,17 +173,18 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="number"
                   name="age"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your age"
                   id="age"
                   value={newUser.age}
                   onChange={handleAgeInput}
                 >
                 </Input>
               </FormGroup>
-              <FormGroup>
+              <FormGroup className="!mb-0">
                 <Label for="age">Gender</Label>
-                <div className="flex gap-3">
-                  <FormGroup className="flex gap-2">
+                <div className="flex ga!p-[9px]3 m-0">
+                  <FormGroup className="flex ga!p-[9px]2 mb-0">
                     <Input
                       checked={newUser.gender === "male"}
                       type="radio"
@@ -190,7 +193,7 @@ export default function RegisterModal({ toggle, modal, login }) {
                     />
                     <Label>Male</Label>
                   </FormGroup>
-                  <FormGroup className="flex gap-2">
+                  <FormGroup className="flex ga!p-[9px]2 mb-0">
                     <Input
                       checked={newUser.gender === "female"}
                       type="radio"
@@ -206,7 +209,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="text"
                   name="adress"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your address"
                   id="adress"
                   value={adress.add}
                   onChange={(e) =>
@@ -220,7 +224,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="text"
                   name="city"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your city"
                   id="city"
                   value={adress.city}
                   onChange={(e) =>
@@ -234,7 +239,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="text"
                   name="state"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your state"
                   id="state"
                   value={adress.state}
                   onChange={(e) =>
@@ -248,7 +254,8 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="text"
                   name="pincode"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
+                  placeholder="Enter your pincode"
                   id="pincode"
                   value={adress.pinCode}
                   onChange={(e) =>
@@ -261,9 +268,11 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Label for="password">Password</Label>
                 <InputGroup>
                   <Input
+                    className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
                     type={showPassword ? "text" : "password"}
                     name="password"
                     style={{ borderRight: "none" }}
+                    placeholder="Enter your password"
                     id="password"
                     value={newUser.password}
                     onChange={(e) =>
@@ -271,10 +280,10 @@ export default function RegisterModal({ toggle, modal, login }) {
                     }
                   >
                   </Input>
-                  <InputGroupText className=' bg-white'>
+                  <InputGroupText className='!border-none !bg-gray-100'>
                     {showPassword ?
-                      <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> :
-                      <EyeOff role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} />
+                      <Eye role="button" strokeWidth={1.5} color="#3b82f6" onClick={() => setShowPassword(!showPassword)} /> :
+                      <EyeOff role="button" strokeWidth={1.5} color="#3b82f6" onClick={() => setShowPassword(!showPassword)} />
                     }
                   </InputGroupText>
                 </InputGroup>
@@ -284,27 +293,28 @@ export default function RegisterModal({ toggle, modal, login }) {
                 <Input
                   type="password"
                   name="confirmPassword"
+                  placeholder="Confirm your password"
                   id="confirmPassword"
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
                   value={newUser.confirmPass}
                   onChange={(e) =>
                     setNewUser({ ...newUser, confirmPass: e.target.value })
                   }
                 />
               </FormGroup>
-              <p>
+              <button className="bg-blue-400 hover:bg-blue-500 text-white !p-[10px] w-full">
+                Register
+              </button>
+              <p className="pt-3 text-sm">
                 Already have an account ?
                 <span
                   role="button"
-                  className="text-black-500 ps-2 font-semibold"
+                  className="font-semibold text-blue-500"
                   onClick={singIn}
                 >
                   Sign in ...!
                 </span>
               </p>
-              <button className="bg-[#dda243] hover:bg-[#c48d35] rounded-lg p-2 w-full">
-                Register
-              </button>
             </Form>
           </ModalBody>
         </Modal>

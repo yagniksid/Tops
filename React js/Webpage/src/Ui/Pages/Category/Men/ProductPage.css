@@ -3,6 +3,7 @@
 }
 
 .strap .btn {
+    width: 71px;
     background-color: white;
     border-radius: 0;
     border: 1px solid #ededed;
@@ -13,7 +14,7 @@
     border-radius: 0;
     border: 1px solid #ededed;
     width: auto;
-    height: 25px;
+    height: 30px;
     font-size: 15px;
 }
 

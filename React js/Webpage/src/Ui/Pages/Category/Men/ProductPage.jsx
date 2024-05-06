@@ -192,11 +192,11 @@ export default function ProductPage() {
                                     >
 
                                         <button
-                                            className="clbtn"
+                                            className="clbtn me-2 !w-[71px] mt-2"
                                         >
-                                            <div className=" flex items-center px-1 gap-1">
+                                            <div className=" flex items-center justify-center py-1 gap-1">
                                                 <span className="text-[13px]">{category}</span>
-                                                <span><X size={15} strokeWidth={1} /></span>
+                                                <span><X className="!m-0 !p-0" size={15} strokeWidth={1} /></span>
                                             </div>
                                         </button>
 

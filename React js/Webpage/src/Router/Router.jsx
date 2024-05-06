@@ -14,7 +14,7 @@ import ProductAdmin from '../Ui/Pages/admin/Product/ProductAdmin';
 import Header from '../Ui/Component/Header/Header';
 import Footer from '../Ui/Component/Footer/Footer';
 import Dashboard from '../Ui/Pages/admin/Dashboard/Dashboard';
-import { AdminProtected, UserProtected } from './ProtectedRouter';
+import { AdminProtected, ProtectedRouter, UserProtected } from './ProtectedRouter';
 import { useCookies } from 'react-cookie';
 import Section7 from '../Ui/Component/Sections/Section7';
 import UserProduct from '../Ui/Pages/user/Product/UserProduct';
@@ -39,7 +39,7 @@ export default function Router() {
                     {/* -------------------------COMMON--------------------- */}
                     <Route path='/whishlist' element={<Whishlist />} />
                     <Route path='/track' element={<Track />} />
-                    <Route path='/profile' element={<Profile />} />
+                    <Route path='/profile' element={<ProtectedRouter Component={<Profile />} />} />
                     <Route path='/forgetPassword' element={<ForgotPassword />} />
 
                     {/* -------------------------ADMIN--------------------- */}
@@ -52,9 +52,9 @@ export default function Router() {
                     <Route path='/user-product' element={<UserProtected Component={<UserProduct />} />} />
                     <Route path='/user-product:id' element={<UserProtected Component={<SingleProduct />} />} />
                     <Route path='/user-cart' element={<UserProtected Component={<Cart />} />} />
-                    <Route path='/user-card' element={<UserProtected Component={<Card />} />} />
+                    <Route path='/user-card' element={<Card />} />
                     <Route path='/user-Order' element={<UserProtected Component={<UserOrder />} />} />
-                    <Route path='/user-card/:id' element={<UserProtected Component={<ProductPreview />} />} />
+                    <Route path='/user-card/:id' element={<ProductPreview />} />
 
                     {/* -------------------------CATAGORY--------------------- */}
                     <Route path='/product/:type' element={<ProductPage />} />

@@ -22,9 +22,9 @@ let cartSlice = createSlice({
     initialState: { cart: [], error: "", reFetch: true, cartId: "" },
     reducers: {
         reFetch: (state, action) => {
-            console.log("🚀 ~ state:", state)
+            // console.log("🚀 ~ state:", state)
             state.reFetch = !state.reFetch
-        }
+        },
     }, extraReducers: (builder) => {
         builder.addCase(fetchCart.fulfilled, (state, { payload }) => {
             state.cart = payload.data

@@ -41,11 +41,11 @@ let populationdata = require("../data.json")
 
 function allCitiesByState(userGivePopulation) {
     return populationdata
-        .filter((city) => {
-            return city.population > userGivePopulation
+        .filter((e) => {
+            return e.population > userGivePopulation
         })
-        .map((city) => {
-            return city.city
+        .map((e) => {
+            return e.city
         });
 }
 

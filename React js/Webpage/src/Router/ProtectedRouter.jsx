@@ -3,18 +3,36 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
-export const AdminProtected = ({ Component }) => {
+export const ProtectedRouter = ({ Component }) => {
 
-    let [cookie, setCookie] = useCookies(["user"])
-    let userData = cookie.user
+    let [{ user, token }, setCookie] = useCookies(["user"])
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!userData || userData.userType !== "admin") {
+        if (!token) {
             navigate("/")
             toast.error("Please log in first")
         }
-    }, [userData])
+    }, [user])
+
+    return (
+        <div>
+            {Component}
+        </div>
+    )
+}
+
+export const AdminProtected = ({ Component }) => {
+
+    let [{ user }, setCookie] = useCookies(["user"])
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!user || user?.userType !== "admin") {
+            navigate("/")
+            toast.error("Please log in first")
+        }
+    }, [user])
 
     return (
         <div>
@@ -26,17 +44,16 @@ export const AdminProtected = ({ Component }) => {
 
 export const UserProtected = ({ Component }) => {
 
-    let [cookie, setCookie] = useCookies(["user"])
+    let [{ user }, setCookie] = useCookies(["user"])
     // console.log("🚀 ~ AdminProtected ~ cookie:", cookie.user)
-    let userData = cookie.user
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!userData || userData.userType !== "customer") {
+        if (!user || user?.userType !== "customer") {
             navigate("/")
             toast.error("Please log in first....")
         }
-    }, [userData])
+    }, [user])
 
     return (
         <div>

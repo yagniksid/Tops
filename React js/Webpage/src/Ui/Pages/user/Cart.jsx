@@ -16,7 +16,7 @@ export default function Cart() {
     });
     console.log("🚀 ~ const{cart,cartId}=useSelector ~ cartId:", cartId)
     console.log("🚀 ~ const{cart,cartId}=useSelector ~ cart:", cart)
-    // Calculate subtotal
+
     const calculateSubtotal = () => {
         let subtotal = 0;
         cart?.forEach(({ productId, count }) => {
@@ -25,18 +25,16 @@ export default function Cart() {
         return subtotal;
     };
 
-    // Calculate total discount
     const calculateTotalDiscount = () => {
         let totalDiscount = 0;
         cart?.forEach(({ productId, count }) => {
-            const discountPercentage = productId?.discountPercentage || 0; // Assuming default to 0 if no discount
+            const discountPercentage = productId?.discountPercentage || 0;
             const discountAmount = (productId?.price * discountPercentage / 100) * count;
             totalDiscount += discountAmount;
         });
         return totalDiscount;
     };
 
-    // Calculate total
     const calculateTotal = () => {
         const subtotal = calculateSubtotal();
         const totalDiscount = calculateTotalDiscount();
@@ -195,7 +193,7 @@ export default function Cart() {
                                 </div>
                             </div>
                         </div >
-                        <button onClick={deleteAllProduct} >Clear cart</button>
+                        <button className='bg-[#c48d35] font-semibold w-25 h-10 mt-2' onClick={deleteAllProduct} >Clear cart</button>
                     </div >
                 </div > :
                 <EmptyCart />

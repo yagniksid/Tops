@@ -11,7 +11,7 @@ export default function Card({ cardData }) {
   }
 
   return (
-    <div className="mb-5 border-2 p-4 rounded-md pb-4" role="button" onClick={() => redirect(cardData._id)}>
+    <div className="mb-5  p-3 pb-4" role="button" onClick={() => redirect(cardData._id)}>
       <div className="relative overflow-hidden">
         <img src={cardData.thumbnail} className=" w-full h-full mb-2" />
         <div className="absolute h-full w-full bg-black/0 flex justify-end  items-start -top-20 hover:-top-3 pe-2 pt-4 hover:opacity-100 opacity-20 transition-all duration-700">
@@ -23,25 +23,11 @@ export default function Card({ cardData }) {
           </span>
         </div>
       </div>
-      <h6 role="button" className="line-clamp-1 hover:underline">
+      <h6 role="button" className="m-0 text-[17px] line-clamp-2 hover:underline">
         {cardData.description}
       </h6>
-      <p className=" text-gray-500">{cardData.mainCategory}</p>
-      <h5 className="pb-3 text-black">{cardData.price}</h5>
-
+      <h6 className=" m-0 py-2 text-sm font-semibold text-gray-400 tracking-wider">{cardData.mainCategory}</h6>
+      <h5 className="pb-3 text-black">₹ {cardData.price}.00</h5>
     </div>
   );
 }
-
-
-/*
-
-
-upadte -> cart/update
-data => {_id:cartId,prductId:productId,isRemove:boolean}
-
-
-delete cart => cart/delete/:id => id = cartId remove whole cart
-
-
-*/

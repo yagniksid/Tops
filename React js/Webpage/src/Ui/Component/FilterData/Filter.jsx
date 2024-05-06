@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from "reactstrap";
-
 import { Input, Label, UncontrolledAccordion } from 'reactstrap';
 import {
     AccordionBody,
@@ -9,7 +7,7 @@ import {
 } from 'reactstrap';
 import Select from "react-select";
 import Slider from 'rc-slider';
-
+import "./Filter.css"
 
 
 const categories = [
@@ -24,7 +22,7 @@ const categories = [
 
 const colorArry = ["Black", "Blue", "Pink", "Purple", "White", "Gold", "Silver", "Diamond", "Red", "Green", "Brown"]
 
-const sizeArray = ["25mm", "26mm", "27mm", "28mm", "29mm", "30mm", "37mm", "38mm", "39mm"]
+const sizeArray = ["25mm", "26mm", "27mm", "28mm", "29mm", "30mm", "37mm", "38mm", "39mm", "40mm", "41mm", "42mm", "43mm", "44mm"]
 
 export default function Filter({ filter, setFilter, isOpen }) {
 
@@ -98,8 +96,8 @@ export default function Filter({ filter, setFilter, isOpen }) {
                         stayOpen
                     >
                         <AccordionItem>
-                            <AccordionHeader targetId="1">
-                                Price
+                            <AccordionHeader className='bg-white p-0' targetId="1">
+                                <span className='p-0'>Price</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="1">
                                 <div>
@@ -108,7 +106,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         type="checkbox"
                                         checked={filter?.price?.gt === 500 && filter?.price?.lt === 1000}
                                         onChange={() => priceSelector("500 to 1000")}
-                                        className="shadow-none ms-2 me-1 text-xl"
+                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
                                     />
                                     <Label>500 to 1000</Label>
                                 </div>
@@ -118,7 +116,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         type="checkbox"
                                         onChange={() => priceSelector("1000 to 2000")}
                                         checked={filter?.price?.gt === 1000 && filter?.price?.lt === 2000}
-                                        className="shadow-none ms-2 me-1 text-xl"
+                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
 
                                     />
                                     <Label>1000 to 2000</Label>
@@ -129,7 +127,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         type="checkbox"
                                         onChange={() => priceSelector("2000 to 3000")}
                                         checked={filter?.price?.gt === 2000 && filter?.price?.lt === 3000}
-                                        className="shadow-none ms-2 me-1 text-xl"
+                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
 
                                     />
                                     <Label>2000 to 3000</Label>
@@ -140,7 +138,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         type="checkbox"
                                         onChange={() => priceSelector("3000 to 4000")}
                                         checked={filter?.price?.gt === 3000 && filter?.price?.lt === 4000}
-                                        className="shadow-none ms-2 me-1 text-xl"
+                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
 
                                     />
                                     <Label>3000 to 4000</Label>
@@ -151,18 +149,18 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         type="checkbox"
                                         onChange={() => priceSelector("4000 to 5500")}
                                         checked={filter?.price?.gt === 4000 && filter?.price?.lt === 5500}
-                                        className="shadow-none ms-2 me-1 text-xl"
+                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
 
                                     />
                                     <Label>4000 to 5500</Label>
                                 </div>
-                                <div className='flex gap-2 pt-2'>
+                                <div className='flex gap-2 ps-[9px] pt-2'>
                                     <Input
                                         name="price"
                                         type="checkbox"
                                         checked={showPrice}
                                         onChange={() => setShowPrice(!showPrice)}
-                                        className="shadow-none"
+                                        className="shadow-none !rounded-none text-black]"
                                     />
                                     <Label>Custom Price</Label>
                                 </div>
@@ -231,7 +229,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                         </AccordionItem>
 
                         <AccordionItem>
-                            <AccordionHeader targetId="2">
+                            <AccordionHeader className='p-0' targetId="2">
                                 Category
                             </AccordionHeader>
                             <AccordionBody accordionId="2">
@@ -243,8 +241,9 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                 />
                             </AccordionBody>
                         </AccordionItem>
+
                         <AccordionItem>
-                            <AccordionHeader targetId="3">
+                            <AccordionHeader className='p-0' targetId="3">
                                 Color
                             </AccordionHeader>
                             <AccordionBody accordionId="3">
@@ -256,7 +255,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                                 type="checkbox"
                                                 checked={filter.color.includes(color)}
                                                 onChange={() => selectHandler(color, "color")}
-                                                className="shadow-noneF ms-2 me-1 text-xl"
+                                                className="shadow-none !rounded-none ms-2 me-1 text-xl"
                                             />
                                             {/* <div
                                                 className="w-4 h-4 rounded-full border border-black"
@@ -270,13 +269,32 @@ export default function Filter({ filter, setFilter, isOpen }) {
                         </AccordionItem>
 
                         <AccordionItem>
-                            <AccordionHeader targetId="4">
+                            <AccordionHeader className='p-0' targetId="4">
                                 Size
                             </AccordionHeader>
                             <AccordionBody accordionId="4">
                                 <div>
-                                    {filter.mainCategory === "Women's Watches" &&
-                                        <>    <div className="font-bold mb-2">Women's Sizes</div>
+                                    {console.log("Main Category:", filter.mainCategory)}
+                                    {filter.mainCategory === "Premium Watches" && (
+                                        <>
+                                            <div className="font-bold mb-2">One size</div>
+                                            <div className='flex flex-wrap'>
+                                                <div className="flex gap-2" style={{ width: '50%' }}>
+                                                    <Input
+                                                        name="size"
+                                                        type="checkbox"
+                                                        checked={filter.size.includes("One Size")}
+                                                        onChange={() => selectHandler("One Size", "size")}
+                                                        className="shadow-none ms-2 me-1 text-xl"
+                                                    />
+                                                    <Label className="text-capitalize">One size</Label>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )}
+                                    {filter.mainCategory === "Women's Watches" && (
+                                        <>
+                                            <div className="font-bold mb-2">Women's Sizes</div>
                                             <div className='flex flex-wrap'>
                                                 {sizeArray.map((size, index) => (
                                                     (parseInt(size) >= 25 && parseInt(size) <= 30) && (
@@ -296,35 +314,62 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                                 ))}
                                             </div>
                                         </>
-                                    }
-                                    {filter.mainCategory === "Men's Watches" && <>                                               <div className="font-bold mb-2 mt-4">Men's Sizes</div>
-                                        <div className='flex flex-wrap'>
-                                            {sizeArray.map((size, e_id) => (
-                                                (parseInt(size) >= 37 && parseInt(size) <= 39) && (
-                                                    <div key={e_id} className="flex gap-2" style={{ width: '50%' }}>
-                                                        <Input
-                                                            name="size"
-                                                            type="checkbox"
-                                                            checked={filter.size.includes(size)}
-                                                            onChange={() => selectHandler(size, "size")}
-                                                            className="shadow-none ms-2 me-1 text-xl"
-                                                        />
-                                                        <Label className="text-capitalize">
-                                                            {size}
-                                                        </Label>
-                                                    </div>
-                                                )
-                                            ))}
-                                        </div>
-                                    </>
-                                    }
+                                    )}
+                                    {filter.mainCategory === "Men's Watches" && (
+                                        <>
+                                            <div className="font-bold mb-2 mt-4">Men's Sizes</div>
+                                            <div className='flex flex-wrap'>
+                                                {sizeArray.map((size, e_id) => (
+                                                    (parseInt(size) >= 37 && parseInt(size) <= 39) && (
+                                                        <div key={e_id} className="flex gap-2" style={{ width: '50%' }}>
+                                                            <Input
+                                                                name="size"
+                                                                type="checkbox"
+                                                                checked={filter.size.includes(size)}
+                                                                onChange={() => selectHandler(size, "size")}
+                                                                className="shadow-none ms-2 me-1 text-xl"
+                                                            />
+                                                            <Label className="text-capitalize">
+                                                                {size}
+                                                            </Label>
+                                                        </div>
+                                                    )
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
+                                    {filter.mainCategory === "Smartwatches" && (
+                                        <>
+                                            <div className="font-bold mb-2 mt-4">Smartwatch Sizes</div>
+                                            <div className='flex flex-wrap'>
+                                                {sizeArray.map((size, e_id) => {
+                                                    console.log("Size:", size);
+                                                    return (
+                                                        (parseInt(size) >= 40 && parseInt(size) <= 44) && (
+                                                            <div key={e_id} className="flex gap-2" style={{ width: '50%' }}>
+                                                                <Input
+                                                                    name="size"
+                                                                    type="checkbox"
+                                                                    checked={filter.size.includes(size)}
+                                                                    onChange={() => selectHandler(size, "size")}
+                                                                    className="shadow-none ms-2 me-1 text-xl"
+                                                                />
+                                                                <Label className="text-capitalize">
+                                                                    {size}
+                                                                </Label>
+                                                            </div>
+                                                        )
+                                                    )
+                                                })}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-
                             </AccordionBody>
                         </AccordionItem>
 
                         <AccordionItem>
-                            <AccordionHeader targetId="5">
+                            <AccordionHeader className='p-0' targetId="5">
                                 DiscountPercentage
                             </AccordionHeader>
                             <AccordionBody accordionId="5">
@@ -380,6 +425,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                 </div>
                             </AccordionBody>
                         </AccordionItem>
+
                     </UncontrolledAccordion>
                 </div>
             }

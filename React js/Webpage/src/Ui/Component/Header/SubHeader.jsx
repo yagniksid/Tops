@@ -1,4 +1,4 @@
-import { Cookie, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
@@ -10,10 +10,9 @@ export default function SubHeader() {
         <>
             {
                 user?.userType === "admin" ?
-                    <div className='bg-white flex justify-center flex-col items-center sticky-top ' style={{ top: "79px", zIndex: "2" }}>
+                    <div className='bg-white flex justify-center flex-col items-center sticky-top' style={{ top: "79px", zIndex: "2" }}>
                         <div className='flex gap-10 justify-around w-50 py-3 relative cursor-pointer group '>
                             <div className='flex flex-col justify-center items-center'>
-
                                 <NavLink className="text-decoration-none text-black" to={"/admin-dashboard"}>Dashboard</NavLink>
                             </div>
                             <div className='flex flex-col justify-center items-center'>
@@ -30,7 +29,6 @@ export default function SubHeader() {
                     </div>
                     :
                     <>
-
                         <div className='userHeader flex gap-10 justify-center pt-3 pb-2 relative cursor-pointer group'>
                             <NavLink className='text-sm font-normal hover:underline underline-offset-4 ' to={"/product/Titan"} >
                                 All Watches
@@ -54,7 +52,6 @@ export default function SubHeader() {
                             <span role='button' className='ps-16'><MapPin strokeWidth={1} size={20} /></span>
                             <span role='button' className='ps-2'>Select a location to see product availability</span>
                         </div>
-
                     </>
             }
         </>

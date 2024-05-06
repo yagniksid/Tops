@@ -60,20 +60,20 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
 
   return (
     <div>
-      <Modal isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
+      <Modal size="lg" isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
         <ModalHeader toggle={toggle}>
-          <h4 className="tracking-wider">Log in </h4>
         </ModalHeader>
-        <ModalBody>
+        <h4 className="text-[30px] pt-5 pb-3">Log in </h4>
+        <ModalBody className="mb-28 mx-36" >
           <Form onSubmit={handleSubmit}>
-
             <FormGroup>
               <Label for="email">Email</Label>
               <Input
-                className="shadow-none"
+                className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
                 type="email"
                 name="email"
                 id="email"
+                placeholder="Enter your email"
                 value={user.email}
                 onChange={(e) =>
                   setUser({ ...user, email: e.target.value.toLowerCase() })
@@ -85,31 +85,32 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
               <Label for="password">Password</Label>
               <InputGroup>
                 <Input
-                  className="shadow-none"
+                  className="shadow-none !border-none !bg-gray-100 !p-[9px] !rounded-none"
                   type={showPassword ? "text" : "password"}
                   style={{ borderRight: "none" }}
                   name="password"
                   id="password"
+                  placeholder="Enter your password"
                   value={user.password}
                   onChange={(e) =>
                     setUser({ ...user, password: e.target.value })
                   }
                 />
-                <InputGroupText className=' bg-white'>
+                <InputGroupText className='!border-none !bg-gray-100'>
                   {
-                    showPassword ? <Eye role="button" strokeWidth={1.5} color="Gray" onClick={() => setShowPassword(!showPassword)} /> : <EyeOff strokeWidth={1.5} role="button" color="Gray" onClick={() => setShowPassword(!showPassword)} />
+                    showPassword ? <Eye role="button" strokeWidth={1.5} color="#3b82f6" onClick={() => setShowPassword(!showPassword)} /> : <EyeOff strokeWidth={1.5} role="button" color="#3b82f6" onClick={() => setShowPassword(!showPassword)} />
                   }
                 </InputGroupText>
               </InputGroup>
             </FormGroup>
 
-            <p role="button" onClick={createAcoount}>
-              Don't have an account ? <span className="font-semibold text-black-500">Create account...!</span>
-            </p>
-            <p role="button" onClick={() => forgetPassword()}>Forgot Password</p>
-            <button className="bg-[#dda243] hover:bg-[#c48d35] rounded-lg p-2 w-full">
-              Login
+            <p role="button" className="text-right font-semibold text-sm text-blue-500 py-[6px]" onClick={() => forgetPassword()}>Forgot Password ?</p>
+            <button className="bg-blue-400 hover:bg-blue-500 text-white p-[10px] w-full">
+              Log in
             </button>
+            <p className="pt-3 text-sm">
+              Don't have an account ? <span onClick={createAcoount} role="button" className="font-semibold text-blue-500">Create an account</span>
+            </p>
 
           </Form>
         </ModalBody>

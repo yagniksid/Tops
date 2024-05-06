@@ -46,3 +46,4 @@ function cityName(statename) {
 
 let x = cityName("Mahārāshtra")
 console.log("🚀 ~ file: practice.js:48 ~ x:", x)
+
