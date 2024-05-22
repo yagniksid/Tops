@@ -25,7 +25,7 @@ import Card from '../Ui/Component/Card/Card';
 import ProductPreview from '../Ui/Pages/Review/ProductPreview';
 
 export default function Router() {
-    let [cookie, setCookie] = useCookies(["user", "token"])
+    let [cookie] = useCookies(["user", "token"])
 
 
     return (

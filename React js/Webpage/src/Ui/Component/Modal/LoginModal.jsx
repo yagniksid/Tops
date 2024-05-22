@@ -36,10 +36,12 @@ export default function LoginModal({ modal, toggle, registerToggle }) {
       data: user
     }).then((res) => {
       console.log("🚀 ~ handleSubmit ~ res:", res)
+      console.log("------point1-----")
       setCookie("user", res.data.data)
       setCookie("token", res.data.token)
       toggle()
       setUser({ email: "", password: "", })
+      window.scrollTo(0, 0)
       dispatch(fetchCart(res.data.token))
       if (res?.data?.data?.userType === "admin") navigate("/admin-dashboard")
       else navigate("/")

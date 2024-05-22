@@ -9,7 +9,7 @@ import { reFetch } from '../../../Redux/feature/cartSlice';
 import { useCookies } from 'react-cookie';
 
 export default function Cart() {
-    let [{ token }, setCookie] = useCookies();
+    let [{ token }] = useCookies();
 
     const { cart, cartId } = useSelector((store) => {
         return store.cartReducer;

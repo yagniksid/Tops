@@ -14,6 +14,8 @@ import dinnersClub from "../../Image/dinersclub.svg";
 import rupay from "../../Image/rupay.svg";
 import icici from "../../Image/icici.svg";
 import axis from "../../Image/axisbank.svg";
+import { Button } from 'reactstrap';
+import { ChevronUp } from 'lucide-react';
 
 const footerLinksData = [
     {
@@ -52,7 +54,7 @@ const footerLinksData = [
 export default function Footer() {
     return (
         <>
-            <div className='px-16 bg-black text-white pt-5 mt-7'>
+            <div className='px-16 bg-black text-white pt-5 mt-7 relative'>
                 <div className='flex justify-between'>
                     <div className='grid grid-cols-4 gap-24'>
                         {footerLinksData.map((section, index) => (
@@ -104,6 +106,12 @@ export default function Footer() {
                         <p role='button' className='text-xs text-white hover:underline underline-offset-4 border-r border-gray-300 px-2'>Privacy Policy</p>
                         <p role='button' className='text-xs text-white hover:underline underline-offset-4 border-r border-gray-300 px-2'>Wearable Privacy Policy</p>
                     </div>
+
+                </div>
+                <div style={{ zIndex: "3" }} onClick={() => window.scrollTo(0, 0)} className='fixed right-10 bottom-10'>
+                    <button className='h-[45px] w-[45px] flex justify-center items-center !rounded-full !bg-[#CA8A04] !border-none shadow-none'>
+                        <ChevronUp />
+                    </button>
                 </div>
             </div>
         </>

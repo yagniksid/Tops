@@ -11,12 +11,11 @@ import cart from "../../Image/cart.svg";
 import { LoginContext } from '../../../App'
 
 export default function ProductPreview() {
-    let [{ token }, setCookie] = useCookies();
+    let [{ token }] = useCookies();
     let [singleProduct, setSingleProduct] = useState([])
 
     let refreshPage = () => {
         setRefresh(!refresh);
-        console.log("=============>>>>>>>>>>>");
     };
 
     const { loginToggle } = useContext(LoginContext);

@@ -3,7 +3,6 @@ import axios from "axios";
 import { BE_URL } from "../../../config";
 
 export const fetchCart = createAsyncThunk("fetchCart", (token) => {
-    console.log("🚀 ~ fetchCart ~ token:", token)
     return axios({
         method: "get",
         url: `${BE_URL}/cart/getAll`,
@@ -11,7 +10,6 @@ export const fetchCart = createAsyncThunk("fetchCart", (token) => {
             authorization: `bearer ${token} `
         }
     }).then((res) => {
-        console.log("🚀 ~ fetchCart ~  res.data:", res.data)
         return res.data
     })
 })
@@ -22,7 +20,6 @@ let cartSlice = createSlice({
     initialState: { cart: [], error: "", reFetch: true, cartId: "" },
     reducers: {
         reFetch: (state, action) => {
-            // console.log("🚀 ~ state:", state)
             state.reFetch = !state.reFetch
         },
     }, extraReducers: (builder) => {

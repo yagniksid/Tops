@@ -1,11 +1,9 @@
 import React from 'react';
 import { useCookies } from 'react-cookie';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { fetchCart } from '../../../Redux/feature/cartSlice';
 
 export default function Profile() {
-    const [cookies, removeCookie] = useCookies(["user", "token"]);
+    const [cookies, setCookies, removeCookie] = useCookies([]);
 
     let navigate = useNavigate();
 
@@ -13,7 +11,7 @@ export default function Profile() {
         removeCookie("token");
         removeCookie("user");
         navigate("/");
-        console.log("=====================>>>>>>>>", cookies.token);
+        window.scrollTo(0, 0)
     };
 
     return (

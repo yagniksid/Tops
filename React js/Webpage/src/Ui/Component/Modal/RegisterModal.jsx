@@ -68,6 +68,8 @@ export default function RegisterModal({ toggle, modal, login }) {
         data: mainData
       })
         .then((res) => {
+          console.log("------point2-----")
+
           setCookie("user", res.data.data);
           setCookie("token", res.data.token);
           if (res.data.data.userType === "admin") navigate("/track");

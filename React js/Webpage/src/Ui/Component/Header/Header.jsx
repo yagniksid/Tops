@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
-import { Box, CircleUser, Mic, PackageCheck, Search, ShoppingCart, User } from "lucide-react";
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { Box, CircleUser, Mic, PackageCheck, Search, User } from "lucide-react";
 import logoImage from "../../Image/titan-logo.svg";
 import track from "../../Image/track.svg";
 import whishlist from "../../Image/Wishlist.webp";

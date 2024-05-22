@@ -83,34 +83,33 @@ export default function Filter({ filter, setFilter, isOpen }) {
 
 
     return (
-        <div className={` sticky-top bg-white transition-all duration-500 overflow-y-scroll ${isOpen ? 'w-80' : 'w-0'}`} style={{ top: "180px", height: "500px", zIndex: "1" }}>
+        <div className={`filter sticky-top bg-white transition-all duration-500 overflow-y-scroll ${isOpen ? 'w-80' : 'w-0'}`} style={{ top: "180px", height: "500px", zIndex: "1" }}>
             {
                 isOpen &&
                 <div className="ps-3">
 
                     <UncontrolledAccordion
                         defaultOpen={[
-                            '1',
-                            '2'
+                            '1', '2', '3', '4', '5'
                         ]}
                         stayOpen
                     >
                         <AccordionItem>
                             <AccordionHeader className='bg-white p-0' targetId="1">
-                                <span className='p-0'>Price</span>
+                                <span className='p-0 font-semibold'>Price</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="1">
-                                <div>
+                                <div className='flex items-center gap-1'>
                                     <Input
                                         name="500-1000"
                                         type="checkbox"
                                         checked={filter?.price?.gt === 500 && filter?.price?.lt === 1000}
                                         onChange={() => priceSelector("500 to 1000")}
-                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
+                                        className="shadow-none ms-2 me-1 mt-0 !rounded-none text-xl"
                                     />
-                                    <Label>500 to 1000</Label>
+                                    <Label className='m-0'>500 to 1000</Label>
                                 </div>
-                                <div>
+                                <div className='flex items-center gap-1'>
                                     <Input
                                         name="1000-2000"
                                         type="checkbox"
@@ -119,50 +118,50 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                         className="shadow-none ms-2 me-1 !rounded-none text-xl"
 
                                     />
-                                    <Label>1000 to 2000</Label>
+                                    <Label className='m-0'>1000 to 2000</Label>
                                 </div>
-                                <div>
+                                <div className='flex items-center gap-1'>
                                     <Input
                                         name="2000-3000"
                                         type="checkbox"
                                         onChange={() => priceSelector("2000 to 3000")}
                                         checked={filter?.price?.gt === 2000 && filter?.price?.lt === 3000}
-                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
+                                        className="shadow-none ms-2 me-1 mt-0 !rounded-none text-xl"
 
                                     />
-                                    <Label>2000 to 3000</Label>
+                                    <Label className='m-0'>2000 to 3000</Label>
                                 </div>
-                                <div>
+                                <div className='flex items-center gap-1'>
                                     <Input
                                         name="3000-4000"
                                         type="checkbox"
                                         onChange={() => priceSelector("3000 to 4000")}
                                         checked={filter?.price?.gt === 3000 && filter?.price?.lt === 4000}
-                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
+                                        className="shadow-none ms-2 me-1 mt-0 !rounded-none text-xl"
 
                                     />
-                                    <Label>3000 to 4000</Label>
+                                    <Label className='m-0'>3000 to 4000</Label>
                                 </div>
-                                <div>
+                                <div className='flex items-center gap-1'>
                                     <Input
                                         name="4000-5500"
                                         type="checkbox"
                                         onChange={() => priceSelector("4000 to 5500")}
                                         checked={filter?.price?.gt === 4000 && filter?.price?.lt === 5500}
-                                        className="shadow-none ms-2 me-1 !rounded-none text-xl"
+                                        className="shadow-none ms-2 me-1 mt-0 !rounded-none text-xl"
 
                                     />
-                                    <Label>4000 to 5500</Label>
+                                    <Label className='m-0'>4000 to 5500</Label>
                                 </div>
-                                <div className='flex gap-2 ps-[9px] pt-2'>
+                                <div className='flex items-center gap-2 ps-[9px] pt-2'>
                                     <Input
                                         name="price"
                                         type="checkbox"
                                         checked={showPrice}
                                         onChange={() => setShowPrice(!showPrice)}
-                                        className="shadow-none !rounded-none text-black]"
+                                        className="shadow-none mt-0 !rounded-none text-black]"
                                     />
-                                    <Label>Custom Price</Label>
+                                    <Label className='m-0'>Custom Price</Label>
                                 </div>
                                 {showPrice &&
                                     <>
@@ -230,7 +229,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
 
                         <AccordionItem>
                             <AccordionHeader className='p-0' targetId="2">
-                                Category
+                                <span className='font-semibold'>Category</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="2">
                                 <Select
@@ -244,7 +243,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
 
                         <AccordionItem>
                             <AccordionHeader className='p-0' targetId="3">
-                                Color
+                                <span className='font-semibold'> Color</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="3">
                                 <div className='flex flex-wrap '>
@@ -257,10 +256,6 @@ export default function Filter({ filter, setFilter, isOpen }) {
                                                 onChange={() => selectHandler(color, "color")}
                                                 className="shadow-none !rounded-none ms-2 me-1 text-xl"
                                             />
-                                            {/* <div
-                                                className="w-4 h-4 rounded-full border border-black"
-                                                style={{ backgroundColor: color }}
-                                            ></div> */}
                                             <Label className="text-capitalize">{color}</Label>
                                         </div>
                                     ))}
@@ -270,7 +265,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
 
                         <AccordionItem>
                             <AccordionHeader className='p-0' targetId="4">
-                                Size
+                                <span className='font-semibold'> Size</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="4">
                                 <div>
@@ -370,7 +365,7 @@ export default function Filter({ filter, setFilter, isOpen }) {
 
                         <AccordionItem>
                             <AccordionHeader className='p-0' targetId="5">
-                                DiscountPercentage
+                                <span className='font-semibold'>DiscountPercentage</span>
                             </AccordionHeader>
                             <AccordionBody accordionId="5">
                                 <div>

@@ -131,7 +131,7 @@ export default function ProductPage() {
                 </div>
                 <div
                     className="strap py-4 px-5 mt-4 flex items-center gap-5 sticky-top "
-                    style={{ top: "79px", zIndex: "2" }}
+                    style={{ top: "84px", zIndex: "2" }}
                 >
                     <div className="ps-20">
                         <h6 className="text-xs pb-0 mb-0 font-normal">Filter By</h6>
